@@ -27,8 +27,18 @@ public:
     {
         setLookAndFeel(&ScaleButtonLookAndFeel);
         // TODO: Temporary bounds values
-        c_scale_button.setBounds (0, 0, 100, 100);
-        addAndMakeVisible(c_scale_button);
+        for (int i = 0; i < scale_buttons.size(); i++){
+            scale_buttons[i] -> setBounds(i * 100, 0, 100, 100);
+            addAndMakeVisible(scale_buttons[i]);
+        }
+//        c_scale_button.setBounds (0, 0, 100, 100);
+//        c_sharp_scale_button.setBounds (0, 0, 100, 100);
+//        d_scale_button.setBounds (0, 0, 100, 100);
+//        d_sharp_scale_button.setBounds (0, 0, 100, 100);
+//        addAndMakeVisible(c_scale_button);
+//        addAndMakeVisible(c_sharp_scale_button);
+//        addAndMakeVisible(d_scale_button);
+//        addAndMakeVisible(d_sharp_scale_button);
         //auto scaleButt = std::make_unique<juce::TextButton>(noteNames[i]);
        // scaleButt->setBounds(i * buttonWidth + 10, 100, buttonWidth, buttonHeight);
 //        addAndMakeVisible(*c_scale_button);
@@ -58,8 +68,32 @@ private:
     //==============================================================================
     
     ScaleButton ScaleButtonLookAndFeel;
-    juce::TextButton c_scale_button;
+    juce::TextButton c_scale_button, c_sharp_scale_button, d_scale_button, d_sharp_scale_button;
+    std::vector<juce::TextButton*> scale_buttons = {
+        &c_scale_button,
+        &c_sharp_scale_button,
+        &d_scale_button,
+        &d_sharp_scale_button,
+    };
+    
+//    std::make_unique<juce::TextButton> c_sharp_scale_button;
+//    std::make_unique<juce::TextButton> d_scale_button;
+//    std::make_unique<juce::TextButton> d_sharp_scale_button;
 //    std::unique_ptr<juce::TextButton> c_scale_button = std::make_unique<ScaleButton>();
+    struct {
+        std::string c = "C";
+        std::string c_sharp = "C#";
+        std::string d = "D";
+        std::string d_sharp = "D#";
+        std::string e = "E";
+        std::string f = "F";
+        std::string f_sharp = "F#";
+        std::string g = "G";
+        std::string g_sharp = "G#";
+        std::string a = "A";
+        std::string a_sharp = "A#";
+        std::string b = "B";
+    } scale_button_labels;
     int border = 4;
     int buttonHeight = 100;
     int buttonWidth = 60;
