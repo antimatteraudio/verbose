@@ -22,11 +22,12 @@ public:
     
     ScaleComponent(VerboseAudioProcessor& p)
     {
+        int buttonHeight = 100;
         setLookAndFeel(&ScaleButtonLookAndFeel);
         // TODO: Temporary bounds values
         for (int i = 0; i < scale_buttons.size(); i++){
             scale_buttons[i] -> setButtonText(scale_button_labels[i]);
-            scale_buttons[i] -> setBounds(i * 100, 0, 100, 100);
+            scale_buttons[i] -> setBounds(i * buttonHeight, 0, buttonHeight, buttonHeight);
             addAndMakeVisible(scale_buttons[i]);
         }
     }
