@@ -322,11 +322,11 @@
 				D61C254CAF3D1B3566A396C2 /* Resources */,
 				01DBFE743BD0237931B401C6 /* PluginProcessor.cpp */,
 				8667886FD3521466226EC04E /* PluginProcessor.h */,
-				7D163D7C3B6C306263AF1BB4 /* PluginEditor.cpp */,
 				B3E1A89BF1F8380DE1881A50 /* GUI_Classes.h */,
 				AE67FB1415ADFC8E8F7964BE /* Main_Component.h */,
 				9B20EF807B384D4F329D163F /* Scale_Component.h */,
 				8125E45068413568EE96EA85 /* APVTS_Params.h */,
+				7D163D7C3B6C306263AF1BB4 /* PluginEditor.cpp */,
 				DE408DCA7F6779F46B9F3B6E /* PluginEditor.h */,
 			);
 			name = Source;

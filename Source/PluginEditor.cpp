@@ -14,8 +14,6 @@
 VerboseAudioProcessorEditor::VerboseAudioProcessorEditor (VerboseAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p), scene(p)
 {
-    // Make sure that before the constructor has finished, you've set the
-    // editor's size to whatever you need it to be.
     addAndMakeVisible(scene);
     setSize (400, 300);
 }

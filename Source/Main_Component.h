@@ -39,7 +39,7 @@ public:
     
     void resized() override
     {
-        auto area = getLocalBounds();
+        //auto area = getLocalBounds();
     }
     
     ~SceneComponent(){

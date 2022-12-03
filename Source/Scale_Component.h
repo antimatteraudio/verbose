@@ -24,7 +24,14 @@ public:
     {
         int buttonHeight = 100;
         setLookAndFeel(&ScaleButtonLookAndFeel);
-        // TODO: Temporary bounds values
+
+        // Button Attachments
+        c_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, "scaleButton_C", c_scale_button));
+        c_sharp_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, "scaleButton_C#", c_sharp_scale_button));
+        d_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, "scaleButton_D" , d_scale_button));
+        d_sharp_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, "scaleButton_D#" , d_sharp_scale_button));
+        
+        
         for (int i = 0; i < scale_buttons.size(); i++){
             scale_buttons[i] -> setButtonText(scale_button_labels[i]);
             scale_buttons[i] -> setBounds(i * buttonHeight, 0, buttonHeight, buttonHeight);
@@ -53,7 +60,11 @@ private:
     //==============================================================================
     
     ScaleButton ScaleButtonLookAndFeel;
+    
     juce::TextButton c_scale_button, c_sharp_scale_button, d_scale_button, d_sharp_scale_button;
+    
+    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> c_scale_button_attachment, c_sharp_scale_button_attachment, d_scale_button_attachment, d_sharp_scale_button_attachment;
+    
     std::vector<juce::TextButton*> scale_buttons = {
         &c_scale_button,
         &c_sharp_scale_button,

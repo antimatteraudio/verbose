@@ -61,7 +61,11 @@ public:
     static juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
     juce::AudioProcessorValueTreeState apvts {*this, nullptr, "Parameters", createParameterLayout()};
     void getAPVTSParams();
-
+    
+    int scaleButtParam_C;
+    int scaleButtParam_CSharp;
+    int scaleButtParam_D;
+    int scaleButtParam_DSharp;
     
 private:
     //==============================================================================
