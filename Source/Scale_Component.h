@@ -28,6 +28,7 @@ public:
         setLookAndFeel(&ScaleButtonLookAndFeel);
         // TODO: Temporary bounds values
         for (int i = 0; i < scale_buttons.size(); i++){
+            scale_buttons[i] -> setButtonText(scale_button_labels[i]);
             scale_buttons[i] -> setBounds(i * 100, 0, 100, 100);
             addAndMakeVisible(scale_buttons[i]);
         }
@@ -80,20 +81,9 @@ private:
 //    std::make_unique<juce::TextButton> d_scale_button;
 //    std::make_unique<juce::TextButton> d_sharp_scale_button;
 //    std::unique_ptr<juce::TextButton> c_scale_button = std::make_unique<ScaleButton>();
-    struct {
-        std::string c = "C";
-        std::string c_sharp = "C#";
-        std::string d = "D";
-        std::string d_sharp = "D#";
-        std::string e = "E";
-        std::string f = "F";
-        std::string f_sharp = "F#";
-        std::string g = "G";
-        std::string g_sharp = "G#";
-        std::string a = "A";
-        std::string a_sharp = "A#";
-        std::string b = "B";
-    } scale_button_labels;
+    std::vector<std::string> scale_button_labels = {
+        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
+    };
     int border = 4;
     int buttonHeight = 100;
     int buttonWidth = 60;
