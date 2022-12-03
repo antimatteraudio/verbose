@@ -20,9 +20,6 @@ class ScaleComponent: public juce::Component
     
 public:
     
-//    std::unique_ptr<ScaleButton> c_scale_button = std::make_unique<ScaleButton>();
-    //    std::vector<std::unique_ptr<juce::TextButton>> scaleButtons;
-    
     ScaleComponent(VerboseAudioProcessor& p)
     {
         setLookAndFeel(&ScaleButtonLookAndFeel);
@@ -32,20 +29,6 @@ public:
             scale_buttons[i] -> setBounds(i * 100, 0, 100, 100);
             addAndMakeVisible(scale_buttons[i]);
         }
-//        c_scale_button.setBounds (0, 0, 100, 100);
-//        c_sharp_scale_button.setBounds (0, 0, 100, 100);
-//        d_scale_button.setBounds (0, 0, 100, 100);
-//        d_sharp_scale_button.setBounds (0, 0, 100, 100);
-//        addAndMakeVisible(c_scale_button);
-//        addAndMakeVisible(c_sharp_scale_button);
-//        addAndMakeVisible(d_scale_button);
-//        addAndMakeVisible(d_sharp_scale_button);
-        //auto scaleButt = std::make_unique<juce::TextButton>(noteNames[i]);
-       // scaleButt->setBounds(i * buttonWidth + 10, 100, buttonWidth, buttonHeight);
-//        addAndMakeVisible(*c_scale_button);
-        //      Add to vector?
-        //      scaleButtons.push_back(std::move(scaleButt));
-        
     }
     
     void paint (juce::Graphics& g) override
@@ -76,11 +59,7 @@ private:
         &d_scale_button,
         &d_sharp_scale_button,
     };
-    
-//    std::make_unique<juce::TextButton> c_sharp_scale_button;
-//    std::make_unique<juce::TextButton> d_scale_button;
-//    std::make_unique<juce::TextButton> d_sharp_scale_button;
-//    std::unique_ptr<juce::TextButton> c_scale_button = std::make_unique<ScaleButton>();
+
     std::vector<std::string> scale_button_labels = {
         "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
     };
