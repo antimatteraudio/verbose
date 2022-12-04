@@ -3,12 +3,11 @@
 <JUCERPROJECT id="jlQIgl" name="verbose" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
   <MAINGROUP id="ImLGRz" name="verbose">
+    <GROUP id="{2A8AA373-2931-7AB1-92EF-9C59E3B5435D}" name="Resources">
+      <FILE id="FhpD7u" name="HelveticaNeue.ttc" compile="0" resource="1"
+            file="Source/Resources/HelveticaNeue.ttc"/>
+    </GROUP>
     <GROUP id="{94AB84F2-CBCA-2EC0-F4CE-FE29939B2EF3}" name="Source">
-      <FILE id="BRD48s" name="LookAndFeel.h" compile="0" resource="0" file="Source/LookAndFeel.h"/>
-      <GROUP id="{8CA3A17D-6D54-4DA0-CD5E-1E6E57B08A52}" name="Resources">
-        <FILE id="I8fMpX" name="HelveticaNeue.ttc" compile="0" resource="1"
-              file="../../../../Desktop/DrawingSquares/Source/Resources/HelveticaNeue.ttc"/>
-      </GROUP>
       <FILE id="HlyNqz" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="hNO0r2" name="PluginProcessor.h" compile="0" resource="0"
