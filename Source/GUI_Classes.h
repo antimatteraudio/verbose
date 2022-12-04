@@ -84,6 +84,7 @@ public:
         g.strokePath (ledRect, juce::PathStrokeType (2.0f));
     }
     
+    
     void drawButtonText (juce::Graphics& g, juce::TextButton& button, bool, bool isButtonDown) override
     {
         auto font = getTextButtonFont (button, button.getHeight());

@@ -1,12 +1,4 @@
-/*
- ==============================================================================
- 
- Components.h
- Created: 21 Nov 2022 9:50:26am
- Author:  jeph
- 
- ==============================================================================
- */
+
 
 #pragma once
 
@@ -22,7 +14,6 @@ public:
     
     ScaleComponent(VerboseAudioProcessor& p)
     {
-        int buttonHeight = 100;
         setLookAndFeel(&ScaleButtonLookAndFeel);
 
         // Button Attachments
@@ -57,7 +48,6 @@ public:
     juce::TextButton button1;
     
 private:
-    //==============================================================================
     
     ScaleButton ScaleButtonLookAndFeel;
     
