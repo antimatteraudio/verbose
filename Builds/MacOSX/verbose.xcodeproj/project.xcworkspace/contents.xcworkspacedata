@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/marri/dev/verbose/Builds/MacOSX/ButtonHelpers.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/marri/dev/verbose/Builds/MacOSX/Shared.h">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

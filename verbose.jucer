@@ -8,6 +8,7 @@
             file="Source/Resources/HelveticaNeue.ttc"/>
     </GROUP>
     <GROUP id="{94AB84F2-CBCA-2EC0-F4CE-FE29939B2EF3}" name="Source">
+      <FILE id="kDDwxl" name="ButtonHelpers.h" compile="0" resource="0" file="Source/ButtonHelpers.h"/>
       <FILE id="HlyNqz" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="hNO0r2" name="PluginProcessor.h" compile="0" resource="0"

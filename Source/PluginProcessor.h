@@ -66,7 +66,15 @@ public:
     int scaleButtParam_CSharp;
     int scaleButtParam_D;
     int scaleButtParam_DSharp;
-    
+    int scaleButtParam_E;
+    int scaleButtParam_F;
+    int scaleButtParam_FSharp;
+    int scaleButtParam_G;
+    int scaleButtParam_GSharp;
+    int scaleButtParam_A;
+    int scaleButtParam_ASharp;
+    int scaleButtParam_B;
+        
 private:
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (VerboseAudioProcessor)
