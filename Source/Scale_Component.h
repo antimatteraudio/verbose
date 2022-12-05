@@ -5,27 +5,12 @@
 #include "GUI_Classes.h"
 #include "PluginEditor.h"
 #include "PluginProcessor.h"
+#include "APVTS_Constants.h"
 
 class ScaleComponent: public juce::Component
 {
     
 public:
-    
-    //TODO: The struct scaleButtonIds is already defined in APVTS_Params. My intention for this was to create a shared constant that could be used across multiple files. IS THERE A GOOD WAY TO SHARE CONSTANTS ACROSS MULTIPLE FILES in C++? I've tried: creating a new .h file for it ('symbol multiply defined' error), sharing it as a public member of ScaleComponent (needed to create an instance of ScaleComponent everywhere I wanted to access it, which was not great), making it static, and putting it in the PluginProcessor file.
-    struct {
-        std::string C = "scaleButton_C";
-        std::string CSharp = "scaleButton_C#";
-        std::string D = "scaleButton_D";
-        std::string DSharp = "scaleButton_D#";
-        std::string E = "scaleButton_E";
-        std::string F = "scaleButton_F";
-        std::string FSharp = "scaleButton_F#";
-        std::string G = "scaleButton_G";
-        std::string GSharp = "scaleButton_G#";
-        std::string A = "scaleButton_A";
-        std::string ASharp = "scaleButton_A#";
-        std::string B = "scaleButton_B";
-    } scaleButtonIds;
     
     ScaleComponent(VerboseAudioProcessor& p)
     {

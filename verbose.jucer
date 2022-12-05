@@ -8,6 +8,12 @@
             file="Source/Resources/HelveticaNeue.ttc"/>
     </GROUP>
     <GROUP id="{94AB84F2-CBCA-2EC0-F4CE-FE29939B2EF3}" name="Source">
+      <FILE id="bZFTgw" name="APVTS_Constants.h" compile="0" resource="0"
+            file="Source/APVTS_Constants.h"/>
+      <FILE id="oVcB6K" name="APVTS_Constants.cpp" compile="1" resource="0"
+            file="Source/APVTS_Constants.cpp"/>
+      <FILE id="xjuq7L" name="ButtonHelpers.cpp" compile="1" resource="0"
+            file="Source/ButtonHelpers.cpp"/>
       <FILE id="kDDwxl" name="ButtonHelpers.h" compile="0" resource="0" file="Source/ButtonHelpers.h"/>
       <FILE id="HlyNqz" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
