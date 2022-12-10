@@ -9,7 +9,7 @@ VerboseAudioProcessorEditor::VerboseAudioProcessorEditor (VerboseAudioProcessor&
     : AudioProcessorEditor (&p), audioProcessor (p), scene(p)
 {
     addAndMakeVisible(scene);
-    setSize (400, 300);
+    setSize (1200, 600);
 }
 
 VerboseAudioProcessorEditor::~VerboseAudioProcessorEditor()

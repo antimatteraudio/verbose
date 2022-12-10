@@ -27,7 +27,7 @@ public:
     {
 
         // TODO: These are temporary bounds values
-        Scale.setBounds (0, 0, 600, 600);
+        Scale.setBounds (0, 0, 1200, 600);
         addAndMakeVisible(Scale);
             
     }
