@@ -27,5 +27,4 @@ void VerboseAudioProcessorEditor::paint (juce::Graphics& g)
 void VerboseAudioProcessorEditor::resized()
 {
     scene.setBounds (0, 0, getWidth(), getHeight());
-
 }

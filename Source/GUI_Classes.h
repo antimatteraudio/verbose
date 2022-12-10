@@ -9,6 +9,7 @@
  */
 
 #pragma once
+#include "PluginEditor.h"
 
 // Global colors
 const juce::Colour black = juce::Colour::fromFloatRGBA (0.0f, 0.0f, 0.0f, 1.0f);

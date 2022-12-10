@@ -26,4 +26,23 @@ static struct {
     std::string B = "scaleButton_B";
 } scaleButtonIds;
 
+static struct {
+    std::string one = "stepButton_one";
+    std::string two = "stepButton_two";
+    std::string three = "stepButton_three";
+    std::string four = "stepButton_four";
+    std::string five = "stepButton_five";
+    std::string six = "stepButton_six";
+    std::string seven = "stepButton_seven";
+    std::string eight = "stepButton_eight";
+    std::string nine = "stepButton_nine";
+    std::string ten = "stepButton_ten";
+    std::string eleven = "stepButton_eleven";
+    std::string twelve = "stepButton_twelve";
+    std::string thirteen = "stepButton_thirteen";
+    std::string fourteen = "stepButton_fourteen";
+    std::string fifteen = "stepButton_fifteen";
+    std::string sixteen = "stepButton_sixteen";
+} stepButtonIds;
+
 

@@ -74,6 +74,23 @@ public:
     int scaleButtParam_A;
     int scaleButtParam_ASharp;
     int scaleButtParam_B;
+    
+    int stepButtParam_one;
+    int stepButtParam_two;
+    int stepButtParam_three;
+    int stepButtParam_four;
+    int stepButtParam_five;
+    int stepButtParam_six;
+    int stepButtParam_seven;
+    int stepButtParam_eight;
+    int stepButtParam_nine;
+    int stepButtParam_ten;
+    int stepButtParam_eleven;
+    int stepButtParam_twelve;
+    int stepButtParam_thirteen;
+    int stepButtParam_fourteen;
+    int stepButtParam_fifteen;
+    int stepButtParam_sixteen;
         
 private:
     //==============================================================================

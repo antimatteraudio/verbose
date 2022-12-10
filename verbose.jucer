@@ -8,25 +8,34 @@
             file="Source/Resources/HelveticaNeue.ttc"/>
     </GROUP>
     <GROUP id="{94AB84F2-CBCA-2EC0-F4CE-FE29939B2EF3}" name="Source">
-      <FILE id="bZFTgw" name="APVTS_Constants.h" compile="0" resource="0"
-            file="Source/APVTS_Constants.h"/>
-      <FILE id="oVcB6K" name="APVTS_Constants.cpp" compile="1" resource="0"
-            file="Source/APVTS_Constants.cpp"/>
-      <FILE id="xjuq7L" name="ButtonHelpers.cpp" compile="1" resource="0"
-            file="Source/ButtonHelpers.cpp"/>
-      <FILE id="kDDwxl" name="ButtonHelpers.h" compile="0" resource="0" file="Source/ButtonHelpers.h"/>
+      <GROUP id="{ACBF6DA2-62F7-A29E-3D6E-FC7AD1B06F18}" name="Utils">
+        <FILE id="f6fjB2" name="APVTS_Params.h" compile="0" resource="0" file="Source/APVTS_Params.h"/>
+        <FILE id="DCnj0n" name="GUI_Classes.h" compile="0" resource="0" file="Source/GUI_Classes.h"/>
+        <FILE id="bZFTgw" name="APVTS_Constants.h" compile="0" resource="0"
+              file="Source/APVTS_Constants.h"/>
+        <FILE id="oVcB6K" name="APVTS_Constants.cpp" compile="1" resource="0"
+              file="Source/APVTS_Constants.cpp"/>
+      </GROUP>
+      <GROUP id="{A0721D3A-B1FC-EDD7-4926-D95A569DC02C}" name="Components">
+        <FILE id="yvDZZi" name="Header_Component.h" compile="0" resource="0"
+              file="Source/Header_Component.h"/>
+        <FILE id="qKuGg5" name="Main_Component.h" compile="0" resource="0"
+              file="Source/Main_Component.h"/>
+        <FILE id="PeUOBu" name="Scale_Component.h" compile="0" resource="0"
+              file="Source/Scale_Component.h"/>
+        <FILE id="u2k04Y" name="Header_Component.cpp" compile="1" resource="0"
+              file="Source/Header_Component.cpp"/>
+        <FILE id="WrUuQS" name="Snapshot_Component.h" compile="0" resource="0"
+              file="Source/Snapshot_Component.h"/>
+        <FILE id="sCs0Jb" name="Snapshot_Component.cpp" compile="1" resource="0"
+              file="Source/Snapshot_Component.cpp"/>
+      </GROUP>
       <FILE id="HlyNqz" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="hNO0r2" name="PluginProcessor.h" compile="0" resource="0"
             file="Source/PluginProcessor.h"/>
       <FILE id="nWbRwN" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
-      <FILE id="DCnj0n" name="GUI_Classes.h" compile="0" resource="0" file="Source/GUI_Classes.h"/>
-      <FILE id="qKuGg5" name="Main_Component.h" compile="0" resource="0"
-            file="Source/Main_Component.h"/>
-      <FILE id="PeUOBu" name="Scale_Component.h" compile="0" resource="0"
-            file="Source/Scale_Component.h"/>
-      <FILE id="f6fjB2" name="APVTS_Params.h" compile="0" resource="0" file="Source/APVTS_Params.h"/>
       <FILE id="FJ9ERj" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
   </MAINGROUP>

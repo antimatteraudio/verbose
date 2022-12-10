@@ -36,8 +36,33 @@ VerboseAudioProcessor::createParameterLayout()
         scaleButtonIds.B
     };
     
+    std::vector<std::string> stepButtonIdsVect = {
+        stepButtonIds.one,
+        stepButtonIds.two,
+        stepButtonIds.three,
+        stepButtonIds.four,
+        stepButtonIds.five,
+        stepButtonIds.six,
+        stepButtonIds.seven,
+        stepButtonIds.eight,
+        stepButtonIds.nine,
+        stepButtonIds.ten,
+        stepButtonIds.eleven,
+        stepButtonIds.twelve,
+        stepButtonIds.thirteen,
+        stepButtonIds.fourteen,
+        stepButtonIds.fifteen,
+        stepButtonIds.sixteen
+    };
+    
+    // Add scale buttons to tree state
     for (int i = 0; i < scaleButtonIdsVect.size(); i++){
         layout.add(std::make_unique<juce::AudioParameterInt>(juce::ParameterID {scaleButtonIdsVect[i],1}, scaleButtonIdsVect[i],0, 1, 0));
+    }
+    
+    // Add step buttons to tree state
+    for (int i = 0; i < stepButtonIdsVect.size(); i++){
+        layout.add(std::make_unique<juce::AudioParameterInt>(juce::ParameterID {stepButtonIdsVect[i],1}, stepButtonIdsVect[i],0, 1, 0));
     }
     
     return layout;
@@ -58,6 +83,23 @@ void VerboseAudioProcessor::getAPVTSParams()
     scaleButtParam_A = *apvts.getRawParameterValue(scaleButtonIds.A);
     scaleButtParam_ASharp = *apvts.getRawParameterValue(scaleButtonIds.ASharp);
     scaleButtParam_B = *apvts.getRawParameterValue(scaleButtonIds.B);
+    
+    stepButtParam_one = *apvts.getRawParameterValue(stepButtonIds.one);
+    stepButtParam_two = *apvts.getRawParameterValue(stepButtonIds.two);
+    stepButtParam_three = *apvts.getRawParameterValue(stepButtonIds.three);
+    stepButtParam_four = *apvts.getRawParameterValue(stepButtonIds.four);
+    stepButtParam_five = *apvts.getRawParameterValue(stepButtonIds.five);
+    stepButtParam_six = *apvts.getRawParameterValue(stepButtonIds.six);
+    stepButtParam_seven = *apvts.getRawParameterValue(stepButtonIds.seven);
+    stepButtParam_eight = *apvts.getRawParameterValue(stepButtonIds.eight);
+    stepButtParam_nine = *apvts.getRawParameterValue(stepButtonIds.nine);
+    stepButtParam_ten = *apvts.getRawParameterValue(stepButtonIds.ten);
+    stepButtParam_eleven = *apvts.getRawParameterValue(stepButtonIds.eleven);
+    stepButtParam_twelve = *apvts.getRawParameterValue(stepButtonIds.twelve);
+    stepButtParam_thirteen = *apvts.getRawParameterValue(stepButtonIds.thirteen);
+    stepButtParam_fourteen = *apvts.getRawParameterValue(stepButtonIds.fourteen);
+    stepButtParam_fifteen = *apvts.getRawParameterValue(stepButtonIds.fifteen);
+    stepButtParam_sixteen = *apvts.getRawParameterValue(stepButtonIds.sixteen);
 }
 
 
