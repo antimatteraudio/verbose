@@ -29,9 +29,9 @@ public:
     {
 
         // TODO: These are temporary bounds values
-        Header.setBounds (0, 0, 1000, 200);
-        Snapshot.setBounds (0, 200, 1000, 200);
-        Scale.setBounds (0, 400, 1000, 200);
+        Header.setBounds (0, 0, 800, 200);
+        Snapshot.setBounds (0, 200, 800, 200);
+        Scale.setBounds (0, 400, 800, 200);
         addAndMakeVisible(Header);
         addAndMakeVisible(Snapshot);
         addAndMakeVisible(Scale);
