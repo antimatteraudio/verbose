@@ -51,43 +51,34 @@ public:
         
         using Track = juce::Grid::TrackInfo;
         using fr = juce::Grid::Fr;
-        
-        sharps.templateRows    = { Track (fr (1)), Track (fr (1))};
-        sharps.templateColumns = {
-            fr(1),
-            fr(1),
-            fr(1),
-            fr(1),
-            fr(1),
-            fr(1),
-            fr(1),
-            fr(1),
-            fr(1),
-            fr(1),
-            fr(1),
-            fr(1),
-            fr(1),
-            fr(1),
-        };
-        
-//        naturals.templateRows    = { Track (fr (1))};
-//        naturals.templateColumns = { fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1) };
+        using px = juce::Grid::Px;
         
         // Sharps
+        
+        sharps.templateRows    = { Track (px (buttonHeight))};
+        sharps.templateColumns = { px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth)};
+        sharps.setGap(juce::Grid::Px(buttonWidth));
+        
         juce::GridItem cSharp = juce::GridItem(c_sharp_scale_button);
         juce::GridItem dSharp = juce::GridItem(d_sharp_scale_button);
         juce::GridItem fSharp = juce::GridItem(f_sharp_scale_button);
         juce::GridItem gSharp = juce::GridItem(g_sharp_scale_button);
         juce::GridItem aSharp = juce::GridItem(a_sharp_scale_button);
         
-        cSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(2));
-        dSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(3));
-        fSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(5));
-        gSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(6));
-        aSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(7));
+        cSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(1));
+        dSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(2));
+        fSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(4));
+        gSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(5));
+        aSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(6));
         
+        sharps.items = { cSharp, dSharp, fSharp, gSharp, aSharp };
         
         // Naturals
+
+        naturals.templateRows    = { Track (px (buttonHeight))};
+        naturals.templateColumns = { px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth) };
+        naturals.setGap(juce::Grid::Px(buttonWidth));
+        
         juce::GridItem c = juce::GridItem(c_scale_button);
         juce::GridItem d = juce::GridItem(d_scale_button);
         juce::GridItem e = juce::GridItem(e_scale_button);
@@ -96,41 +87,18 @@ public:
         juce::GridItem a = juce::GridItem(a_scale_button);
         juce::GridItem b = juce::GridItem(b_scale_button);
         
-        c.setArea(juce::GridItem::Property(2), juce::GridItem::Property(1));
-        d.setArea(juce::GridItem::Property(2), juce::GridItem::Property(2));
-        e.setArea(juce::GridItem::Property(2), juce::GridItem::Property(3));
-        f.setArea(juce::GridItem::Property(2), juce::GridItem::Property(4));
-        g.setArea(juce::GridItem::Property(2), juce::GridItem::Property(5));
-        a.setArea(juce::GridItem::Property(2), juce::GridItem::Property(6));
-        b.setArea(juce::GridItem::Property(2), juce::GridItem::Property(7));
+        c.setArea(juce::GridItem::Property(1), juce::GridItem::Property(1));
+        d.setArea(juce::GridItem::Property(1), juce::GridItem::Property(2));
+        e.setArea(juce::GridItem::Property(1), juce::GridItem::Property(3));
+        f.setArea(juce::GridItem::Property(1), juce::GridItem::Property(4));
+        g.setArea(juce::GridItem::Property(1), juce::GridItem::Property(5));
+        a.setArea(juce::GridItem::Property(1), juce::GridItem::Property(6));
+        b.setArea(juce::GridItem::Property(1), juce::GridItem::Property(7));
         
-        sharps.items = {
-            c,
-            cSharp,
-            d,
-            dSharp,
-            e,
-            f,
-            fSharp,
-            g,
-            gSharp,
-            a,
-            aSharp,
-            b
-        };
+        naturals.items = { c, d, e, f, g, a, b };
         
-//        naturals.items = {
-//            juce::GridItem(c_scale_button),
-//            juce::GridItem(d_scale_button),
-//            juce::GridItem(e_scale_button),
-//            juce::GridItem(f_scale_button),
-//            juce::GridItem(g_scale_button),
-//            juce::GridItem(a_scale_button),
-//            juce::GridItem(b_scale_button)
-//        };
-        
-        sharps.performLayout (juce::Rectangle<int> (800, 100));
-//        naturals.performLayout (juce::Rectangle<int> (800, 100));
+        sharps.performLayout (juce::Rectangle<int> (75, 0, 800, 75));
+        naturals.performLayout (juce::Rectangle<int> (0, 75, 800, 75));
     }
     
     ~ScaleComponent(){
