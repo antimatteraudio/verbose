@@ -54,6 +54,7 @@ public:
  
 //        fb.items.addArray ( { header, snapshot, scale } );
         fb.performLayout (getLocalBounds().toFloat());
+        
     }
     
     ~SceneComponent(){
