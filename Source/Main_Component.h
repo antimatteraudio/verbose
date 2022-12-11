@@ -48,11 +48,11 @@ public:
         juce::FlexBox fb;
         fb.flexDirection = juce::FlexBox::Direction::column;
  
-//        juce::FlexItem header  ((float) getWidth() / 4.0f, (float) getHeight(), Header);
-//        juce::FlexItem snapshot ((float) getWidth() / 4.0f, (float) getHeight(), Snapshot);
-//        juce::FlexItem scale  ((float) getWidth() / 2.0f, (float) getHeight(), Scale);
+        juce::FlexItem header  (800, 100, Header);
+        juce::FlexItem snapshot (800, 200, Snapshot);
+        juce::FlexItem scale  (800, 400, Scale);
  
-//        fb.items.addArray ( { header, snapshot, scale } );
+        fb.items.addArray ( { header, snapshot, scale } );
         fb.performLayout (getLocalBounds().toFloat());
         
     }
