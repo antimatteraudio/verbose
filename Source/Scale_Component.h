@@ -45,8 +45,42 @@ public:
     
     void resized() override
     {
-        auto area = getLocalBounds();
-        button1.setBounds(area.removeFromLeft(buttonWidth).removeFromTop(buttonHeight).reduced(border));
+//        auto area = getLocalBounds();
+        juce::Grid sharps;
+        juce::Grid naturals;
+        
+        using Track = juce::Grid::TrackInfo;
+        using fr = juce::Grid::Fr;
+        
+        sharps.templateRows    = { Track (fr (1))};
+        sharps.templateColumns = { fr(1), fr(1), fr(1), fr(1), fr(1)};
+        
+//        naturals.templateRows    = { Track (fr (1))};
+//        naturals.templateColumns = { fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1) };
+        
+        juce::GridItem cSharp = juce::GridItem(c_sharp_scale_button);
+        cSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(2));
+        
+        sharps.items = {
+            cSharp,
+            juce::GridItem(d_sharp_scale_button),
+            juce::GridItem(f_sharp_scale_button),
+            juce::GridItem(g_sharp_scale_button),
+            juce::GridItem(a_sharp_scale_button)
+        };
+        
+//        naturals.items = {
+//            juce::GridItem(c_scale_button),
+//            juce::GridItem(d_scale_button),
+//            juce::GridItem(e_scale_button),
+//            juce::GridItem(f_scale_button),
+//            juce::GridItem(g_scale_button),
+//            juce::GridItem(a_scale_button),
+//            juce::GridItem(b_scale_button)
+//        };
+        
+        sharps.performLayout (juce::Rectangle<int> (800, 100));
+//        naturals.performLayout (juce::Rectangle<int> (800, 100));
     }
     
     ~ScaleComponent(){
@@ -89,23 +123,26 @@ private:
     
     // Define a vector for iterating over the buttons
     std::vector<juce::TextButton*> scale_buttons = {
-        &c_scale_button,
+//        &c_scale_button,
         &c_sharp_scale_button,
-        &d_scale_button,
+//        &d_scale_button,
         &d_sharp_scale_button,
-        &e_scale_button,
-        &f_scale_button,
+//        &e_scale_button,
+//        &f_scale_button,
         &f_sharp_scale_button,
-        &g_scale_button,
+//        &g_scale_button,
         &g_sharp_scale_button,
-        &a_scale_button,
+//        &a_scale_button,
         &a_sharp_scale_button,
-        &b_scale_button
+//        &b_scale_button
     };
 
     // Define the button labels
+//    std::vector<std::string> scale_button_labels = {
+//        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
+//    };
     std::vector<std::string> scale_button_labels = {
-        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
+        "C#", "D#", "F#", "G#", "A#"
     };
     int border = 4;
     int buttonHeight = 75;
