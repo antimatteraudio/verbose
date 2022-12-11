@@ -52,12 +52,28 @@ public:
         using Track = juce::Grid::TrackInfo;
         using fr = juce::Grid::Fr;
         
-        sharps.templateRows    = { Track (fr (1))};
-        sharps.templateColumns = { fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1)};
+        sharps.templateRows    = { Track (fr (1)), Track (fr (1))};
+        sharps.templateColumns = {
+            fr(1),
+            fr(1),
+            fr(1),
+            fr(1),
+            fr(1),
+            fr(1),
+            fr(1),
+            fr(1),
+            fr(1),
+            fr(1),
+            fr(1),
+            fr(1),
+            fr(1),
+            fr(1),
+        };
         
 //        naturals.templateRows    = { Track (fr (1))};
 //        naturals.templateColumns = { fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1) };
         
+        // Sharps
         juce::GridItem cSharp = juce::GridItem(c_sharp_scale_button);
         juce::GridItem dSharp = juce::GridItem(d_sharp_scale_button);
         juce::GridItem fSharp = juce::GridItem(f_sharp_scale_button);
@@ -70,12 +86,37 @@ public:
         gSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(6));
         aSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(7));
         
+        
+        // Naturals
+        juce::GridItem c = juce::GridItem(c_scale_button);
+        juce::GridItem d = juce::GridItem(d_scale_button);
+        juce::GridItem e = juce::GridItem(e_scale_button);
+        juce::GridItem f = juce::GridItem(f_scale_button);
+        juce::GridItem g = juce::GridItem(g_scale_button);
+        juce::GridItem a = juce::GridItem(a_scale_button);
+        juce::GridItem b = juce::GridItem(b_scale_button);
+        
+        c.setArea(juce::GridItem::Property(2), juce::GridItem::Property(1));
+        d.setArea(juce::GridItem::Property(2), juce::GridItem::Property(2));
+        e.setArea(juce::GridItem::Property(2), juce::GridItem::Property(3));
+        f.setArea(juce::GridItem::Property(2), juce::GridItem::Property(4));
+        g.setArea(juce::GridItem::Property(2), juce::GridItem::Property(5));
+        a.setArea(juce::GridItem::Property(2), juce::GridItem::Property(6));
+        b.setArea(juce::GridItem::Property(2), juce::GridItem::Property(7));
+        
         sharps.items = {
+            c,
             cSharp,
+            d,
             dSharp,
+            e,
+            f,
             fSharp,
+            g,
             gSharp,
-            aSharp
+            a,
+            aSharp,
+            b
         };
         
 //        naturals.items = {
@@ -132,27 +173,25 @@ private:
     
     // Define a vector for iterating over the buttons
     std::vector<juce::TextButton*> scale_buttons = {
-//        &c_scale_button,
+        &c_scale_button,
         &c_sharp_scale_button,
-//        &d_scale_button,
+        &d_scale_button,
         &d_sharp_scale_button,
-//        &e_scale_button,
-//        &f_scale_button,
+        &e_scale_button,
+        &f_scale_button,
         &f_sharp_scale_button,
-//        &g_scale_button,
+        &g_scale_button,
         &g_sharp_scale_button,
-//        &a_scale_button,
+        &a_scale_button,
         &a_sharp_scale_button,
-//        &b_scale_button
+        &b_scale_button
     };
 
     // Define the button labels
-//    std::vector<std::string> scale_button_labels = {
-//        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
-//    };
     std::vector<std::string> scale_button_labels = {
-        "C#", "D#", "F#", "G#", "A#"
+        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
     };
+
     int border = 4;
     int buttonHeight = 75;
     int buttonWidth = 75;
