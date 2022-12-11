@@ -17,6 +17,7 @@ public:
         title.setFont (juce::Font (22.0f, juce::Font::bold));
         title.setText("Chord Portal", juce::dontSendNotification);
         title.setColour (juce::Label::textColourId, juce::Colours::white);
+        addAndMakeVisible(title);
     }
     
     void paint (juce::Graphics& g) override
