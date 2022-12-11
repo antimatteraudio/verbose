@@ -97,8 +97,8 @@ public:
         
         naturals.items = { c, d, e, f, g, a, b };
         
-        sharps.performLayout (juce::Rectangle<int> (75, 0, 800, 75));
-        naturals.performLayout (juce::Rectangle<int> (0, 75, 800, 75));
+        sharps.performLayout (juce::Rectangle<int> (buttonWidth, 0, 800, buttonHeight));
+        naturals.performLayout (juce::Rectangle<int> (0, buttonHeight, 800, buttonHeight));
     }
     
     ~ScaleComponent(){
@@ -162,7 +162,7 @@ private:
 
     int border = 4;
     int buttonHeight = 75;
-    int buttonWidth = 75;
+    int buttonWidth = 50;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ScaleComponent)
 };
 
