@@ -23,12 +23,8 @@
               file="Source/Main_Component.h"/>
         <FILE id="PeUOBu" name="Scale_Component.h" compile="0" resource="0"
               file="Source/Scale_Component.h"/>
-        <FILE id="u2k04Y" name="Header_Component.cpp" compile="1" resource="0"
-              file="Source/Header_Component.cpp"/>
         <FILE id="WrUuQS" name="Snapshot_Component.h" compile="0" resource="0"
               file="Source/Snapshot_Component.h"/>
-        <FILE id="sCs0Jb" name="Snapshot_Component.cpp" compile="1" resource="0"
-              file="Source/Snapshot_Component.cpp"/>
       </GROUP>
       <FILE id="HlyNqz" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>

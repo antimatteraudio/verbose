@@ -48,8 +48,19 @@ public:
     
     void resized() override
     {
-        auto area = getLocalBounds();
-        button1.setBounds(area.removeFromLeft(buttonWidth).removeFromTop(buttonHeight).reduced(border));
+        juce::Grid grid;
+        
+        using Track = juce::Grid::TrackInfo;
+        using fr = juce::Grid::Fr;
+        using px = juce::Grid::Px;
+        using gridItem = juce::GridItem;
+        
+        grid.items = { gridItem(button_one), gridItem(button_two), gridItem(button_three), gridItem(button_four), gridItem(button_five), gridItem(button_six), gridItem(button_seven), gridItem(button_eight), gridItem(button_nine), gridItem(button_ten), gridItem(button_eleven), gridItem(button_twelve), gridItem(button_thirteen), gridItem(button_fourteen), gridItem(button_fifteen), gridItem(button_sixteen) };
+        grid.templateRows = { Track (fr(1)) };
+        grid.templateColumns = { fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1) };
+        grid.setGap(px(4));
+        grid.performLayout(juce::Rectangle<int> (0, 0, 800, 75));
+        
     }
     
     ~SnapshotComponent(){
