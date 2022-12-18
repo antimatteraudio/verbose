@@ -70,7 +70,7 @@ public:
         fSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(4));
         gSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(5));
         aSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(6));
-        
+            
         sharps.items = { cSharp, dSharp, fSharp, gSharp, aSharp };
         
         // Naturals
@@ -161,8 +161,8 @@ private:
     };
 
     int border = 4;
-    int buttonHeight = 75;
-    int buttonWidth = 50;
+    int buttonHeight = 100;
+    int buttonWidth = 60;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ScaleComponent)
 };
 

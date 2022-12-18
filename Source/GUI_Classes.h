@@ -11,7 +11,7 @@
 #pragma once
 #include "PluginEditor.h"
 
-// Global colors
+// Global (not grown-up things) colors
 const juce::Colour black = juce::Colour::fromFloatRGBA (0.0f, 0.0f, 0.0f, 1.0f);
 const juce::Colour darkGrey1 = juce::Colour::fromFloatRGBA (0.14f, 0.14f, 0.14f, 1.0f);
 const juce::Colour midGrey = juce::Colour::fromFloatRGBA (0.25f, 0.25f, 0.25f, 1.0f);
@@ -111,5 +111,35 @@ public:
                               juce::Justification::centredTop, 2);
     }
     
+};
+
+//The triangular button used for octave shifts
+class OctaveButton : public juce::LookAndFeel_V4
+{
+public:
+    int borderThick = 4;
+    int borderThin = 2;
+    
+    void drawButtonBackground (juce::Graphics& g, juce::Button& button, const juce::Colour& backgroundColour,
+                               bool, bool isButtonDown) override
+    {
+        //Main area and border
+        auto buttonArea = button.getLocalBounds();
+        
+        buttonArea.removeFromLeft (borderThick);
+        buttonArea.removeFromTop (borderThick);
+        buttonArea.removeFromRight (borderThick);
+        buttonArea.removeFromBottom (borderThick);
+        button.setClickingTogglesState(1);
+        
+        juce::Path octTriangle;
+        
+        octTriangle.addTriangle(button.getWidth(), button.getHeight(), button.getWidth(), button.getHeight(), button.getWidth(), button.getHeight());
+
+        g.fillPath(octTriangle);
+        
+        g.setColour (darkGrey1);
+        g.strokePath (octTriangle, juce::PathStrokeType (2.0f));
+    }
 };
 
