@@ -6,18 +6,20 @@
 #include "PluginEditor.h"
 #include "PluginProcessor.h"
 #include "APVTS_Constants.h"
+#include "ScaleButtonWrapper_Component.h"
 
 class ScaleComponent: public juce::Component
 {
     
 public:
     
-    ScaleComponent(VerboseAudioProcessor& p)
+    ScaleComponent(VerboseAudioProcessor& p): ScaleButtonWrapperTest(p)
     {
+
         setLookAndFeel(&ScaleButtonLookAndFeel);
 
         // Button Attachments
-        c_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.C, c_scale_button));
+//        c_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.C, c_scale_button));
         c_sharp_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.CSharp, c_sharp_scale_button));
         d_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.D , d_scale_button));
         d_sharp_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.DSharp, d_sharp_scale_button));
@@ -53,6 +55,30 @@ public:
         using fr = juce::Grid::Fr;
         using px = juce::Grid::Px;
         
+        // Triangle experiment
+        
+//        juce::FlexBox buttonContainer;
+//        buttonContainer.flexDirection = juce::FlexBox::Direction::column;
+//        buttonContainer.justifyContent = juce::FlexBox::JustifyContent::center;
+//        buttonContainer.alignItems = juce::FlexBox::AlignItems::center;
+//
+//        juce::FlexItem testButtonFlex = juce::FlexItem(testShapeButton);
+//
+//        buttonContainer.items.add (juce::FlexItem(c_scale_button));
+//        buttonContainer.items.add (testButtonFlex);
+        
+        
+//        juce::Grid buttonContainer;
+//
+//        using Fr = juce::Grid::Fr;
+//
+//        buttonContainer.templateRows    = { Track (Fr (1)) };
+//        buttonContainer.templateColumns = { Track (Fr (1)) };
+//
+//        buttonContainer.items = { juce::GridItem (c_scale_button), juce::GridItem (testShapeButton) };
+//
+//        buttonContainer.performLayout (getLocalBounds());
+        
         // Sharps
         
         sharps.templateRows    = { Track (px (buttonHeight))};
@@ -79,7 +105,7 @@ public:
         naturals.templateColumns = { px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth) };
         naturals.setGap(juce::Grid::Px(buttonWidth));
         
-        juce::GridItem c = juce::GridItem(c_scale_button);
+        juce::GridItem c = juce::GridItem(ScaleButtonWrapperTest);
         juce::GridItem d = juce::GridItem(d_scale_button);
         juce::GridItem e = juce::GridItem(e_scale_button);
         juce::GridItem f = juce::GridItem(f_scale_button);
@@ -112,7 +138,7 @@ private:
     ScaleButton ScaleButtonLookAndFeel;
     
     // Define the scale component buttons
-    juce::TextButton c_scale_button;
+//    juce::TextButton c_scale_button;
     juce::TextButton c_sharp_scale_button;
     juce::TextButton d_scale_button;
     juce::TextButton d_sharp_scale_button;
@@ -125,8 +151,10 @@ private:
     juce::TextButton a_sharp_scale_button;
     juce::TextButton b_scale_button;
     
+    // arrow button test
+    ScaleButtonWrapperComponent ScaleButtonWrapperTest;
     // Define the button attachments
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> c_scale_button_attachment;
+//    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> c_scale_button_attachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> c_sharp_scale_button_attachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> d_scale_button_attachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> d_sharp_scale_button_attachment;
@@ -140,19 +168,19 @@ private:
     std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> b_scale_button_attachment;
     
     // Define a vector for iterating over the buttons
-    std::vector<juce::TextButton*> scale_buttons = {
-        &c_scale_button,
-        &c_sharp_scale_button,
-        &d_scale_button,
-        &d_sharp_scale_button,
-        &e_scale_button,
-        &f_scale_button,
-        &f_sharp_scale_button,
-        &g_scale_button,
-        &g_sharp_scale_button,
-        &a_scale_button,
-        &a_sharp_scale_button,
-        &b_scale_button
+    std::vector<ScaleButtonWrapperComponent*> scale_buttons = {
+        &ScaleButtonWrapperTest,
+//        &c_sharp_scale_button,
+//        &d_scale_button,
+//        &d_sharp_scale_button,
+//        &e_scale_button,
+//        &f_scale_button,
+//        &f_sharp_scale_button,
+//        &g_scale_button,
+//        &g_sharp_scale_button,
+//        &a_scale_button,
+//        &a_sharp_scale_button,
+//        &b_scale_button
     };
 
     // Define the button labels

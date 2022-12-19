@@ -113,33 +113,33 @@ public:
     
 };
 
-//The triangular button used for octave shifts
-class OctaveButton : public juce::LookAndFeel_V4
-{
-public:
-    int borderThick = 4;
-    int borderThin = 2;
-    
-    void drawButtonBackground (juce::Graphics& g, juce::Button& button, const juce::Colour& backgroundColour,
-                               bool, bool isButtonDown) override
-    {
-        //Main area and border
-        auto buttonArea = button.getLocalBounds();
-        
-        buttonArea.removeFromLeft (borderThick);
-        buttonArea.removeFromTop (borderThick);
-        buttonArea.removeFromRight (borderThick);
-        buttonArea.removeFromBottom (borderThick);
-        button.setClickingTogglesState(1);
-        
-        juce::Path octTriangle;
-        
-        octTriangle.addTriangle(button.getWidth(), button.getHeight(), button.getWidth(), button.getHeight(), button.getWidth(), button.getHeight());
-
-        g.fillPath(octTriangle);
-        
-        g.setColour (darkGrey1);
-        g.strokePath (octTriangle, juce::PathStrokeType (2.0f));
-    }
-};
+////The triangular button used for octave shifts
+//class OctaveButton : public juce::LookAndFeel_V4
+//{
+//public:
+//    int borderThick = 4;
+//    int borderThin = 2;
+//    
+//    void drawButtonBackground (juce::Graphics& g, juce::Button& button, const juce::Colour& backgroundColour,
+//                               bool, bool isButtonDown) override
+//    {
+//        //Main area and border
+//        auto buttonArea = button.getLocalBounds();
+//        
+//        buttonArea.removeFromLeft (borderThick);
+//        buttonArea.removeFromTop (borderThick);
+//        buttonArea.removeFromRight (borderThick);
+//        buttonArea.removeFromBottom (borderThick);
+//        button.setClickingTogglesState(1);
+//        
+//        juce::Path octTriangle;
+//        
+//        octTriangle.addTriangle(button.getWidth(), button.getHeight(), button.getWidth(), button.getHeight(), button.getWidth(), button.getHeight());
+//
+//        g.fillPath(octTriangle);
+//        
+//        g.setColour (darkGrey1);
+//        g.strokePath (octTriangle, juce::PathStrokeType (2.0f));
+//    }
+//};
 
