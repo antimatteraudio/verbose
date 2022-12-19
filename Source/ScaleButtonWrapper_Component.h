@@ -11,6 +11,7 @@
 #pragma once
 
 #include "GUI_Classes.h"
+#include "TriangleButton_Component.h"
 
 class ScaleButtonWrapperComponent: public juce::Component
 {
@@ -26,26 +27,16 @@ public:
     
     // TODO: WTF
     ScaleButton ScaleButtonLookAndFeel;
-    ScaleButtonWrapperComponent(VerboseAudioProcessor& p): LeftArrow("LeftArrow", darkGrey1, darkGrey1, darkGrey1),  RightArrow("RightArrow", darkGrey1, darkGrey1, darkGrey1)
+    ScaleButtonWrapperComponent(VerboseAudioProcessor& p): LeftArrow("LeftArrow", 0.45),  RightArrow("RightArrow", -0.45)
     {
         setLookAndFeel(&ScaleButtonLookAndFeel);
-        // TODO: These are temporary bounds values
-        LeftArrow.setShape(Triangle, true, true, false);
-        RightArrow.setShape(Triangle, true, true, false);
-        LeftArrow.setBounds (0, 0, 100, 150);
-        RightArrow.setBounds (0, 0, 100, 150);
-//        OctaveText.setBounds (0, 0, 100, 150);
-//        ScaleButton.setBounds (0, 0, 100, 150);
-//        Triangle.addTriangle({0,0}, {10, 10}, {20, 20});
-//        LeftArrow.setShape(triangle);
 
-        
- 
         addAndMakeVisible(ScaleButton);
-//        setLookAndFeel(&OctaveButtonLookAndFeel);
         addAndMakeVisible(LeftArrow);
-        addAndMakeVisible(RightArrow);
         
+        LeftArrow.setBounds(0, 0, 50, 50);
+        RightArrow.setBounds(0, 0, 50, 50);
+        addAndMakeVisible(RightArrow);
         addAndMakeVisible(OctaveText);
             
     }
@@ -53,15 +44,15 @@ public:
     void paint (juce::Graphics& g) override
     {
         g.fillAll (juce::Colours::black);
-        Triangle.startNewSubPath(19.0 / 2.0, 2.0);
-        Triangle.lineTo(17.0, 17.0);
-        Triangle.lineTo(2.0, 17.0);
-        Triangle.closeSubPath();
-        auto fillType = juce::FillType();
-        fillType.setColour(darkGrey1);
-        g.setFillType(fillType);
-        auto transform = juce::AffineTransform::rotation(-0.45);
-        g.fillPath(Triangle, transform);
+//        Triangle.startNewSubPath(19.0 / 2.0, 2.0);
+//        Triangle.lineTo(17.0, 17.0);
+//        Triangle.lineTo(2.0, 17.0);
+//        Triangle.closeSubPath();
+//        auto fillType = juce::FillType();
+//        fillType.setColour(darkGrey1);
+//        g.setFillType(fillType);
+//        auto transform = juce::AffineTransform::rotation(-0.45);
+//        g.fillPath(Triangle, transform);
         
     }
     
@@ -84,12 +75,10 @@ public:
     }
     
 private:
-    juce::ShapeButton LeftArrow;
-    juce::ShapeButton RightArrow;
+    TriangleButtonComponent LeftArrow;
+    TriangleButtonComponent RightArrow;
     juce::Label OctaveText;
     juce::TextButton ScaleButton;
-    juce::Path Triangle;
-    
 
 //    OctaveButton OctaveButtonLookAndFeel;
 //    int height = 150;

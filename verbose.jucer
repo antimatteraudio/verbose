@@ -27,6 +27,8 @@
               resource="0" file="Source/ScaleButtonWrapper_Component.h"/>
         <FILE id="WrUuQS" name="Snapshot_Component.h" compile="0" resource="0"
               file="Source/Snapshot_Component.h"/>
+        <FILE id="cSGQij" name="TriangleButton_Component.h" compile="0" resource="0"
+              file="Source/TriangleButton_Component.h"/>
       </GROUP>
       <FILE id="HlyNqz" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
