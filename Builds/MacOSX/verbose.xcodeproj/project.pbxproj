@@ -77,6 +77,7 @@
 		10B84DDE04502DAF2DDAD3B9 /* CoreAudio.framework */ /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		1E101C79DED54F01C8DE505A /* QuartzCore.framework */ /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1FAB4E423F1E21CA47CC4198 /* include_juce_gui_extra.mm */ /* include_juce_gui_extra.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_extra.mm; path = ../../JuceLibraryCode/include_juce_gui_extra.mm; sourceTree = SOURCE_ROOT; };
+		22DD5FF5FA533DFCDDD2E90E /* Selector_Component.h */ /* Selector_Component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Selector_Component.h; path = ../../Source/Selector_Component.h; sourceTree = SOURCE_ROOT; };
 		25783737EB06C96EB875D9D8 /* JucePluginDefines.h */ /* JucePluginDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JucePluginDefines.h; path = ../../JuceLibraryCode/JucePluginDefines.h; sourceTree = SOURCE_ROOT; };
 		319CB7AA31258BB43F6FE394 /* HelveticaNeue.ttc */ /* HelveticaNeue.ttc */ = {isa = PBXFileReference; lastKnownFileType = file.ttc; name = HelveticaNeue.ttc; path = ../../Source/Resources/HelveticaNeue.ttc; sourceTree = SOURCE_ROOT; };
 		340B61ADC596B4721AE0BABF /* juce_core */ /* juce_core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_core; path = /Applications/JUCE/modules/juce_core; sourceTree = "<absolute>"; };
@@ -287,6 +288,7 @@
 				AE67FB1415ADFC8E8F7964BE,
 				9B20EF807B384D4F329D163F,
 				E64D09C005E29960535DEDB6,
+				22DD5FF5FA533DFCDDD2E90E,
 				0110025DF1C63B26689F5CA2,
 				585C2127122AF3A42AE72C9F,
 			);

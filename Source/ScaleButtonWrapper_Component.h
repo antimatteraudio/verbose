@@ -11,7 +11,8 @@
 #pragma once
 
 #include "GUI_Classes.h"
-#include "TriangleButton_Component.h"
+#include "Selector_Component.h"
+//#include "TriangleButton_Component.h"
 
 class ScaleButtonWrapperComponent: public juce::Component
 {
@@ -27,33 +28,19 @@ public:
     
     // TODO: WTF
     ScaleButton ScaleButtonLookAndFeel;
-    ScaleButtonWrapperComponent(VerboseAudioProcessor& p): LeftArrow("LeftArrow", 0.45),  RightArrow("RightArrow", -0.45)
+    ScaleButtonWrapperComponent(VerboseAudioProcessor& p): Selector(p, "test")
     {
         setLookAndFeel(&ScaleButtonLookAndFeel);
-
+        ScaleButton.setBounds(0, 0, 50, 50);
+        Selector.setBounds(0, 0, 50, 50);
         addAndMakeVisible(ScaleButton);
-        addAndMakeVisible(LeftArrow);
-        
-        LeftArrow.setBounds(0, 0, 50, 50);
-        RightArrow.setBounds(0, 0, 50, 50);
-        addAndMakeVisible(RightArrow);
-        addAndMakeVisible(OctaveText);
+        addAndMakeVisible(Selector);
             
     }
     
     void paint (juce::Graphics& g) override
     {
         g.fillAll (juce::Colours::black);
-//        Triangle.startNewSubPath(19.0 / 2.0, 2.0);
-//        Triangle.lineTo(17.0, 17.0);
-//        Triangle.lineTo(2.0, 17.0);
-//        Triangle.closeSubPath();
-//        auto fillType = juce::FillType();
-//        fillType.setColour(darkGrey1);
-//        g.setFillType(fillType);
-//        auto transform = juce::AffineTransform::rotation(-0.45);
-//        g.fillPath(Triangle, transform);
-        
     }
     
     void resized() override
@@ -75,10 +62,11 @@ public:
     }
     
 private:
-    TriangleButtonComponent LeftArrow;
-    TriangleButtonComponent RightArrow;
-    juce::Label OctaveText;
+//    TriangleButtonComponent LeftArrow;
+//    TriangleButtonComponent RightArrow;
+//    juce::Label OctaveText;
     juce::TextButton ScaleButton;
+    SelectorComponent Selector;
 
 //    OctaveButton OctaveButtonLookAndFeel;
 //    int height = 150;

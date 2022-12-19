@@ -25,6 +25,8 @@
               file="Source/Scale_Component.h"/>
         <FILE id="wgvuRF" name="ScaleButtonWrapper_Component.h" compile="0"
               resource="0" file="Source/ScaleButtonWrapper_Component.h"/>
+        <FILE id="Kcwz4w" name="Selector_Component.h" compile="0" resource="0"
+              file="Source/Selector_Component.h"/>
         <FILE id="WrUuQS" name="Snapshot_Component.h" compile="0" resource="0"
               file="Source/Snapshot_Component.h"/>
         <FILE id="cSGQij" name="TriangleButton_Component.h" compile="0" resource="0"
