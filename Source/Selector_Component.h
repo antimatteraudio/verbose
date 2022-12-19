@@ -22,9 +22,12 @@ public:
         LeftArrow.setBounds(0, 0, 50, 50);
         RightArrow.setBounds(0, 0, 50, 50);
         LabelText.setBounds(0, 0, 50, 50);
+
         addAndMakeVisible(LeftArrow);
         addAndMakeVisible(RightArrow);
         addAndMakeVisible(LabelText);
+        LabelText.setText(label, juce::dontSendNotification);
+        LabelText.setColour (juce::Label::textColourId, juce::Colours::white);
     }
     
     void paint (juce::Graphics& g) override
