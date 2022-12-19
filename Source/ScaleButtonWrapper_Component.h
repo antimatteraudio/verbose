@@ -60,7 +60,7 @@ public:
         auto fillType = juce::FillType();
         fillType.setColour(darkGrey1);
         g.setFillType(fillType);
-        auto transform = Triangle.getTransformToScaleToFit(getLocalBounds().toFloat(), true);
+        auto transform = juce::AffineTransform::rotation(-0.45);
         g.fillPath(Triangle, transform);
         
     }
