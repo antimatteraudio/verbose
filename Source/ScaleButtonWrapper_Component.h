@@ -28,11 +28,9 @@ public:
     
     // TODO: WTF
     ScaleButton ScaleButtonLookAndFeel;
-    ScaleButtonWrapperComponent(VerboseAudioProcessor& p): Selector(p, "test")
+    ScaleButtonWrapperComponent(VerboseAudioProcessor& p): Selector(p, "0")
     {
         setLookAndFeel(&ScaleButtonLookAndFeel);
-        ScaleButton.setBounds(0, 0, 50, 50);
-        Selector.setBounds(0, 0, 50, 50);
         addAndMakeVisible(ScaleButton);
         addAndMakeVisible(Selector);
             
@@ -45,15 +43,14 @@ public:
     
     void resized() override
     {
-//        juce::FlexBox fb;
-//        fb.flexDirection = juce::FlexBox::Direction::column;
-//
-//        juce::FlexItem leftArrow  (150, 100, LeftArrow);
-//        juce::FlexItem octaveText (150, 100, OctaveText);
-//        juce::FlexItem rightArrow  (150, 100, RightArrow);
-//
-//        fb.items.addArray ( { leftArrow, octaveText, rightArrow } );
-//        fb.performLayout (getLocalBounds().toFloat());
+        juce::FlexBox fb;
+        fb.flexDirection = juce::FlexBox::Direction::column;
+
+        juce::FlexItem scaleButton  (60, 60, ScaleButton);
+        juce::FlexItem selector (60, 60, Selector);
+
+        fb.items.addArray ( { scaleButton, selector } );
+        fb.performLayout (getLocalBounds().toFloat());
         
     }
     

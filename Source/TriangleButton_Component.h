@@ -16,7 +16,6 @@ class TriangleButtonComponent: public juce::Component
 public:
     TriangleButtonComponent(juce::String name, float arrowDirection): ArrowButton(name, darkGrey1, darkGrey1, darkGrey1)
     {
-        // TODO: These are temporary bounds values
         orientation = arrowDirection;
         ArrowButton.setShape(Triangle, true, true, false);
         addAndMakeVisible(ArrowButton);
@@ -31,8 +30,9 @@ public:
         auto fillType = juce::FillType();
         fillType.setColour(darkGrey1);
         g.setFillType(fillType);
-        auto transform = juce::AffineTransform::rotation(orientation);
-        g.fillPath(Triangle, transform);
+//        auto transform = juce::AffineTransform::rotation(orientation);
+//        g.fillPath(Triangle, transform);
+        g.fillPath(Triangle);
         
     }
     

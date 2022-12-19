@@ -15,19 +15,14 @@ class SelectorComponent: public juce::Component
 {
     
 public:
-    SelectorComponent(VerboseAudioProcessor& p, juce::String label): LeftArrow("LeftArrow", 0.45),  RightArrow("RightArrow", -0.45), LabelText(label)
+    SelectorComponent(VerboseAudioProcessor& p, juce::String label): LeftArrow("LeftArrow", 0.45),  RightArrow("RightArrow", -0.45), Label(label)
     {
         addAndMakeVisible(LeftArrow);
-        
-        LeftArrow.setBounds(0, 0, 50, 50);
-        RightArrow.setBounds(0, 0, 50, 50);
-        LabelText.setBounds(0, 0, 50, 50);
-
         addAndMakeVisible(LeftArrow);
         addAndMakeVisible(RightArrow);
-        addAndMakeVisible(LabelText);
-        LabelText.setText(label, juce::dontSendNotification);
-        LabelText.setColour (juce::Label::textColourId, juce::Colours::white);
+        addAndMakeVisible(Label);
+        Label.setText(label, juce::dontSendNotification);
+        Label.setColour (juce::Label::textColourId, juce::Colours::white);
     }
     
     void paint (juce::Graphics& g) override
@@ -38,7 +33,18 @@ public:
     
     void resized() override
     {
-        
+        juce::FlexBox fb;
+        fb.flexDirection = juce::FlexBox::Direction::row;
+        fb.justifyContent = juce::FlexBox::JustifyContent::center;
+        fb.alignItems = juce::FlexBox::AlignItems::center;
+
+        juce::FlexItem leftArrow  (20, 20, LeftArrow);
+        juce::FlexItem octaveText (20, 20, Label);
+        juce::FlexItem rightArrow  (20, 20, RightArrow);
+
+        fb.items.addArray ( { leftArrow, octaveText, rightArrow } );
+        fb.performLayout (getLocalBounds().toFloat());
+    
     }
     
     ~SelectorComponent(){
@@ -47,7 +53,7 @@ public:
 private:
     TriangleButtonComponent LeftArrow;
     TriangleButtonComponent RightArrow;
-    juce::Label LabelText;
+    juce::Label Label;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SelectorComponent)
 };
 
