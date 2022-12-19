@@ -15,7 +15,7 @@ class SelectorComponent: public juce::Component
 {
     
 public:
-    SelectorComponent(VerboseAudioProcessor& p, juce::String label): LeftArrow("LeftArrow", 0.45),  RightArrow("RightArrow", -0.45), Label(label)
+    SelectorComponent(VerboseAudioProcessor& p, juce::String label): LeftArrow("LeftArrow", "left"),  RightArrow("RightArrow", "right"), Label(label)
     {
         addAndMakeVisible(LeftArrow);
         addAndMakeVisible(LeftArrow);
@@ -30,7 +30,7 @@ public:
 
         
     }
-    
+//
     void resized() override
     {
         juce::FlexBox fb;
@@ -38,9 +38,9 @@ public:
         fb.justifyContent = juce::FlexBox::JustifyContent::center;
         fb.alignItems = juce::FlexBox::AlignItems::center;
 
-        juce::FlexItem leftArrow  (20, 20, LeftArrow);
+        juce::FlexItem leftArrow  (40, 40, LeftArrow);
         juce::FlexItem octaveText (20, 20, Label);
-        juce::FlexItem rightArrow  (20, 20, RightArrow);
+        juce::FlexItem rightArrow  (40, 40, RightArrow);
 
         fb.items.addArray ( { leftArrow, octaveText, rightArrow } );
         fb.performLayout (getLocalBounds().toFloat());
