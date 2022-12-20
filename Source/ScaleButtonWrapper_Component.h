@@ -47,7 +47,7 @@ public:
         fb.flexDirection = juce::FlexBox::Direction::column;
 
         juce::FlexItem scaleButton  (60, 60, ScaleButton);
-        juce::FlexItem selector (60, 60, Selector);
+        juce::FlexItem selector (60, 30, Selector);
 
         fb.items.addArray ( { scaleButton, selector } );
         fb.performLayout (getLocalBounds().toFloat());

@@ -39,11 +39,11 @@ public:
         fb.justifyContent = juce::FlexBox::JustifyContent::center;
         fb.alignItems = juce::FlexBox::AlignItems::center;
 
-//        juce::FlexItem leftArrow  (40, 40, LeftArrow);
+        juce::FlexItem leftArrow  (20, 20, LeftArrow);
         juce::FlexItem octaveText (20, 20, Label);
         juce::FlexItem rightArrow  (20, 20, RightArrow);
 
-        fb.items.addArray ( { octaveText, rightArrow } );
+        fb.items.addArray ( { leftArrow, octaveText, rightArrow } );
         fb.performLayout (getLocalBounds().toFloat());
     
     }
