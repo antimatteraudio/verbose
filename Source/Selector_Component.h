@@ -15,9 +15,10 @@ class SelectorComponent: public juce::Component
 {
     
 public:
-    SelectorComponent(VerboseAudioProcessor& p, juce::String label): LeftArrow("LeftArrow", "left"),  RightArrow("RightArrow", "right"), Label(label)
+    SelectorComponent(VerboseAudioProcessor& p, juce::String label): LeftArrow("LeftArrow"),  RightArrow("RightArrow", 3.14f), Label(label)
     {
-        addAndMakeVisible(LeftArrow);
+        LeftArrow.setBounds(0, 0, 20, 20);
+        RightArrow.setBounds(0, 0, 20, 20);
         addAndMakeVisible(LeftArrow);
         addAndMakeVisible(RightArrow);
         addAndMakeVisible(Label);
@@ -38,11 +39,11 @@ public:
         fb.justifyContent = juce::FlexBox::JustifyContent::center;
         fb.alignItems = juce::FlexBox::AlignItems::center;
 
-        juce::FlexItem leftArrow  (40, 40, LeftArrow);
+//        juce::FlexItem leftArrow  (40, 40, LeftArrow);
         juce::FlexItem octaveText (20, 20, Label);
-        juce::FlexItem rightArrow  (40, 40, RightArrow);
+        juce::FlexItem rightArrow  (20, 20, RightArrow);
 
-        fb.items.addArray ( { leftArrow, octaveText, rightArrow } );
+        fb.items.addArray ( { octaveText, rightArrow } );
         fb.performLayout (getLocalBounds().toFloat());
     
     }
