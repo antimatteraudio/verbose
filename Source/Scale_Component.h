@@ -189,7 +189,7 @@ private:
     };
 
     int border = 4;
-    int buttonHeight = 100;
+    int buttonHeight = 120;
     int buttonWidth = 60;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ScaleComponent)
 };
