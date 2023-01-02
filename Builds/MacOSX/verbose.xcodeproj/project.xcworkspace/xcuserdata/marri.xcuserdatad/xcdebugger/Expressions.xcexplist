@@ -6,13 +6,16 @@
          contextName = "TriangleButtonComponent::paint(juce::Graphics&amp;):TriangleButton_Component.h">
          <PersistentStrings>
             <PersistentString
+               value = "ArrowButton.getWidth()">
+            </PersistentString>
+            <PersistentString
+               value = "transform">
+            </PersistentString>
+            <PersistentString
                value = "ArrowButton.getHeight();">
             </PersistentString>
             <PersistentString
                value = "ArrowButton.getHeight()/2">
-            </PersistentString>
-            <PersistentString
-               value = "ArrowButton.getWidth()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

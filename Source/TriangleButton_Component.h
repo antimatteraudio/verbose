@@ -28,10 +28,8 @@ public:
         auto fillType = juce::FillType();
         fillType.setColour(darkGrey1);
         g.setFillType(fillType);
-        
-        
-
-        transform = transform.rotated(arrowDirection, ArrowButton.getWidth()/2, ArrowButton.getHeight()/2);
+    
+        transform = transform.rotation(arrowDirection, ArrowButton.getWidth()/2, ArrowButton.getHeight()/2);
         g.fillPath(Triangle, transform);
         
     }
