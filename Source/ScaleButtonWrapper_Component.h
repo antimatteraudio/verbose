@@ -12,7 +12,6 @@
 
 #include "GUI_Classes.h"
 #include "Selector_Component.h"
-//#include "TriangleButton_Component.h"
 
 class ScaleButtonWrapperComponent: public juce::Component
 {
@@ -46,7 +45,7 @@ public:
         juce::FlexBox fb;
         fb.flexDirection = juce::FlexBox::Direction::column;
 
-        juce::FlexItem scaleButton  (60, 60, ScaleButton);
+        juce::FlexItem scaleButton  (60, 80, ScaleButton);
         juce::FlexItem selector (60, 30, Selector);
 
         fb.items.addArray ( { scaleButton, selector } );
@@ -59,15 +58,9 @@ public:
     }
     
 private:
-//    TriangleButtonComponent LeftArrow;
-//    TriangleButtonComponent RightArrow;
-//    juce::Label OctaveText;
     juce::TextButton ScaleButton;
     SelectorComponent Selector;
 
-//    OctaveButton OctaveButtonLookAndFeel;
-//    int height = 150;
-//    int width = 100;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ScaleButtonWrapperComponent)
 };
 
