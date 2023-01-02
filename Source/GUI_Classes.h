@@ -30,7 +30,7 @@ static const juce::Font getCustomFont()
 }
 
 
-class ScaleButton : public juce::LookAndFeel_V4
+class ScaleButtonLookAndFeel : public juce::LookAndFeel_V4
 {
 public:
     int borderThick = 4;

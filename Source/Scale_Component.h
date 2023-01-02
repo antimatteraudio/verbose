@@ -130,12 +130,12 @@ public:
     ~ScaleComponent(){
         setLookAndFeel(nullptr);
     }
-    ScaleButton mainLookAndFeel;
+    juce::TextButton ScaleButton;
     juce::TextButton button1;
     
 private:
     
-    ScaleButton ScaleButtonLookAndFeel;
+    ScaleButtonLookAndFeel ScaleButtonLookAndFeel;
     
     // Define the scale component buttons
 //    juce::TextButton c_scale_button;

@@ -17,7 +17,7 @@ class ScaleButtonWrapperComponent: public juce::Component
 {
     
 public:
-    
+    juce::TextButton ScaleButton;
     void setButtonText(std::string text) {
         ScaleButton.setButtonText(text);
     }
@@ -25,11 +25,10 @@ public:
 //    std::unique_ptr<ScaleButton> c_scale_button = std::make_unique<ScaleButton>();
 //    std::vector<std::unique_ptr<juce::TextButton>> scaleButtons;
     
-    // TODO: WTF
-    ScaleButton ScaleButtonLookAndFeel;
+
     ScaleButtonWrapperComponent(VerboseAudioProcessor& p): Selector(p, "0")
     {
-        setLookAndFeel(&ScaleButtonLookAndFeel);
+        setLookAndFeel(&scaleButtonLookAndFeel);
         addAndMakeVisible(ScaleButton);
         addAndMakeVisible(Selector);
             
@@ -58,9 +57,9 @@ public:
     }
     
 private:
-    juce::TextButton ScaleButton;
-    SelectorComponent Selector;
 
+    SelectorComponent Selector;
+    ScaleButtonLookAndFeel scaleButtonLookAndFeel;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ScaleButtonWrapperComponent)
 };
 

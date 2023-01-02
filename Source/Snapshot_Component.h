@@ -66,12 +66,12 @@ public:
     ~SnapshotComponent(){
         setLookAndFeel(nullptr);
     }
-    ScaleButton mainLookAndFeel;
+    ScaleButtonLookAndFeel mainLookAndFeel;
     juce::TextButton button1;
     
 private:
     
-    ScaleButton ScaleButtonLookAndFeel;
+    ScaleButtonLookAndFeel ScaleButtonLookAndFeel;
     
     // Define the scale component buttons
     juce::TextButton button_one;
