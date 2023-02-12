@@ -26,7 +26,7 @@ public:
 //    std::vector<std::unique_ptr<juce::TextButton>> scaleButtons;
     
 
-    ScaleButtonWrapperComponent(VerboseAudioProcessor& p): Selector(p, "0")
+    ScaleButtonWrapperComponent(VerboseAudioProcessor& p): Selector(p)
     {
         setLookAndFeel(&scaleButtonLookAndFeel);
         addAndMakeVisible(ScaleButton);

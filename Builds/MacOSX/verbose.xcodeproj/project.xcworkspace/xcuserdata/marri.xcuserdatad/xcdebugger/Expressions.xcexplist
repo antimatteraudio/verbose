@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "std::__1::unique_ptr&lt;juce::ButtonParameterAttachment, std::__1::default_delete&lt;juce::ButtonParameterAttachment&gt; &gt; juce::makeAttachment&lt;juce::ButtonParameterAttachment, juce::Button&gt;(juce::AudioProcessorValueTreeState const&amp;, juce::String const&amp;, juce::Button&amp;):juce_AudioProcessorValueTreeState.cpp">
+      </ContextState>
+      <ContextState
          contextName = "TriangleButtonComponent::paint(juce::Graphics&amp;):TriangleButton_Component.h">
          <PersistentStrings>
             <PersistentString
@@ -16,6 +19,14 @@
             </PersistentString>
             <PersistentString
                value = "ArrowButton.getHeight()/2">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SelectorComponent::SelectorComponent(VerboseAudioProcessor&amp;):Selector_Component.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "RightOctaveArrow.getWidth()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

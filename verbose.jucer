@@ -9,7 +9,9 @@
     </GROUP>
     <GROUP id="{94AB84F2-CBCA-2EC0-F4CE-FE29939B2EF3}" name="Source">
       <GROUP id="{EF22C78D-5E12-CED6-4A70-6C53046F70C0}" name="Styles">
+        <FILE id="mIyakQ" name="Colors.h" compile="0" resource="0" file="Source/Colors.h"/>
         <FILE id="DCnj0n" name="GUI_Classes.h" compile="0" resource="0" file="Source/GUI_Classes.h"/>
+        <FILE id="ag5CN7" name="Shapes.h" compile="0" resource="0" file="Source/Shapes.h"/>
       </GROUP>
       <GROUP id="{ACBF6DA2-62F7-A29E-3D6E-FC7AD1B06F18}" name="Utils">
         <FILE id="f6fjB2" name="APVTS_Params.h" compile="0" resource="0" file="Source/APVTS_Params.h"/>
@@ -29,8 +31,6 @@
               file="Source/Selector_Component.h"/>
         <FILE id="WrUuQS" name="Snapshot_Component.h" compile="0" resource="0"
               file="Source/Snapshot_Component.h"/>
-        <FILE id="cSGQij" name="TriangleButton_Component.h" compile="0" resource="0"
-              file="Source/TriangleButton_Component.h"/>
       </GROUP>
       <FILE id="HlyNqz" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>

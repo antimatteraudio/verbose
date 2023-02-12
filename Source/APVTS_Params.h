@@ -36,6 +36,21 @@ VerboseAudioProcessor::createParameterLayout()
         scaleButtonIds.B
     };
     
+    std::vector<std::string> octaveIdsVect = {
+        octaveIds.C,
+        octaveIds.CSharp,
+        octaveIds.D,
+        octaveIds.DSharp,
+        octaveIds.E,
+        octaveIds.F,
+        octaveIds.FSharp,
+        octaveIds.G,
+        octaveIds.GSharp,
+        octaveIds.A,
+        octaveIds.ASharp,
+        octaveIds.B
+    };
+    
     std::vector<std::string> stepButtonIdsVect = {
         stepButtonIds.one,
         stepButtonIds.two,
