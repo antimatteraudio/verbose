@@ -17,7 +17,7 @@ class SelectorComponent: public juce::Component
 {
     
 public:
-    SelectorComponent(VerboseAudioProcessor& p)
+    SelectorComponent(VerboseAudioProcessor& p, juce::String paramID): LeftOctaveArrowButtonAttachment(p.verboseAPVTS, paramID, LeftOctaveArrowButton), RightOctaveArrowButtonAttachment(p.verboseAPVTS, paramID, RightOctaveArrowButton)
     {
         RightOctaveArrowButton.setBounds(0, 0, 16, 16);
         LeftOctaveArrowButton.setBounds(0, 0, 16, 16);
@@ -63,6 +63,8 @@ private:
     juce::Label Label;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> right_arrow_attachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> left_arrow_attachment;
+    juce::AudioProcessorValueTreeState::ButtonAttachment LeftOctaveArrowButtonAttachment;
+    juce::AudioProcessorValueTreeState::ButtonAttachment RightOctaveArrowButtonAttachment;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SelectorComponent)
 };
 

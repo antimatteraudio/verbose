@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "29B599FF-8A07-4F4E-B556-66728C466EB0"
+   uuid = "1F6540C1-0448-491A-AEDB-882F89162CAF"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6258F9CC-3CB5-4A2C-A257-7C9F19759C5E"
+            uuid = "D5FC78B3-43F4-44E3-B391-30C7B5D43804"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Source/ScaleButtonWrapper_Component.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "ScaleButtonWrapperComponent(p, attachmentId, label)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7AC0638-7016-46C8-9853-9AF9505A68E4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Source/PluginProcessor.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "VerboseAudioProcessor::processBlock(buffer, midiMessages)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE9A9196-6569-4DAD-BEA6-B1B7B1E0C15D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../Source/Scale_Component.h"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "6"
-            endingLineNumber = "6"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "ScaleComponent"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7A5F255D-0204-4A1D-B3D6-3363936CA556"
+            uuid = "B4997F2B-571E-474B-A01D-F1A94F39E15D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../Source/Snapshot_Component.h"
+            filePath = "../../Source/PluginEditor.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "SnapshotComponent(p)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "VerboseAudioProcessorEditor::paint(g)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "38CA043D-1172-4B1A-86D3-8D5B6CC05E90"
+            uuid = "D9A2AF9C-2FD8-4F53-B620-253C369EC952"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../Source/TriangleButton_Component.h"
+            filePath = "../../Source/PluginProcessor.h"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "paint(g)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "693BD551-1A5A-40D2-BE62-C10C821AB567"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Source/TriangleButton_Component.h"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "paint(g)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B8A007E3-41B6-4BC3-B3C8-4465485DCA1F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Source/GUI_Classes.h"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "RightArrowButtonLookAndFeel"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "VerboseAudioProcessor"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>

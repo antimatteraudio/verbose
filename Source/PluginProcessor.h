@@ -58,38 +58,38 @@ public:
     
     //==============================================================================
     static juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
-    juce::AudioProcessorValueTreeState apvts {*this, nullptr, "Parameters", createParameterLayout()};
-    void getAPVTSParams();
+    juce::AudioProcessorValueTreeState verboseAPVTS {*this, nullptr, "Parameters", createParameterLayout()};
+//    void getAPVTSParams();
     
-    int scaleButtParam_C;
-    int scaleButtParam_CSharp;
-    int scaleButtParam_D;
-    int scaleButtParam_DSharp;
-    int scaleButtParam_E;
-    int scaleButtParam_F;
-    int scaleButtParam_FSharp;
-    int scaleButtParam_G;
-    int scaleButtParam_GSharp;
-    int scaleButtParam_A;
-    int scaleButtParam_ASharp;
-    int scaleButtParam_B;
+//    int scaleButtParam_C;
+//    int scaleButtParam_CSharp;
+//    int scaleButtParam_D;
+//    int scaleButtParam_DSharp;
+//    int scaleButtParam_E;
+//    int scaleButtParam_F;
+//    int scaleButtParam_FSharp;
+//    int scaleButtParam_G;
+//    int scaleButtParam_GSharp;
+//    int scaleButtParam_A;
+//    int scaleButtParam_ASharp;
+//    int scaleButtParam_B;
     
-    int stepButtParam_one;
-    int stepButtParam_two;
-    int stepButtParam_three;
-    int stepButtParam_four;
-    int stepButtParam_five;
-    int stepButtParam_six;
-    int stepButtParam_seven;
-    int stepButtParam_eight;
-    int stepButtParam_nine;
-    int stepButtParam_ten;
-    int stepButtParam_eleven;
-    int stepButtParam_twelve;
-    int stepButtParam_thirteen;
-    int stepButtParam_fourteen;
-    int stepButtParam_fifteen;
-    int stepButtParam_sixteen;
+//    int stepButtParam_one;
+//    int stepButtParam_two;
+//    int stepButtParam_three;
+//    int stepButtParam_four;
+//    int stepButtParam_five;
+//    int stepButtParam_six;
+//    int stepButtParam_seven;
+//    int stepButtParam_eight;
+//    int stepButtParam_nine;
+//    int stepButtParam_ten;
+//    int stepButtParam_eleven;
+//    int stepButtParam_twelve;
+//    int stepButtParam_thirteen;
+//    int stepButtParam_fourteen;
+//    int stepButtParam_fifteen;
+//    int stepButtParam_sixteen;
         
 private:
     //==============================================================================

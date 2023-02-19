@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="jlQIgl" name="verbose" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              pluginFormats="buildAUv3,buildVST3">
   <MAINGROUP id="ImLGRz" name="verbose">
     <GROUP id="{2A8AA373-2931-7AB1-92EF-9C59E3B5435D}" name="Resources">
       <FILE id="FhpD7u" name="HelveticaNeue.ttc" compile="0" resource="1"

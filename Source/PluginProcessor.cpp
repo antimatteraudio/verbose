@@ -9,6 +9,7 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 #include "APVTS_Params.h"
+#include "APVTS_Constants.h"
 
 //==============================================================================
 VerboseAudioProcessor::VerboseAudioProcessor()
@@ -126,11 +127,15 @@ void VerboseAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
     juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
-
+    
+    auto val1 = verboseAPVTS.getRawParameterValue(scaleButtonToggleState.C);
+    auto val2 = verboseAPVTS.getRawParameterValue(scaleButtonToggleState.CSharp);
+    
+    std::cout << val1->load() << std::endl << val2->load() << std::endl;
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
-    getAPVTSParams();
+//    getAPVTSParams();
     
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
