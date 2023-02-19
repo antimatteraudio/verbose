@@ -90,8 +90,11 @@ public:
 //    int stepButtParam_fourteen;
 //    int stepButtParam_fifteen;
 //    int stepButtParam_sixteen;
+    int var1 = 0.0;
         
 private:
     //==============================================================================
+    void getGuiParams();
+    std::atomic<float>* gui_var1 = nullptr;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (VerboseAudioProcessor)
 };

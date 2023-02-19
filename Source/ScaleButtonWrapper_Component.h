@@ -26,12 +26,12 @@ public:
 //    std::vector<std::unique_ptr<juce::TextButton>> scaleButtons;
     
 
-    ScaleButtonWrapperComponent(VerboseAudioProcessor& p, juce::String attachmentId, juce::String label): Selector(p, attachmentId)
+    ScaleButtonWrapperComponent(VerboseAudioProcessor& p, juce::String scaleButtonAttachmentId, juce::String selectorAttachmentId, juce::String label): Selector(p, selectorAttachmentId)
     {
         setLookAndFeel(&scaleButtonLookAndFeel);
         ScaleButton.setButtonText(label);
         addAndMakeVisible(ScaleButton);
-        ScaleButtonAttachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, attachmentId, ScaleButton));
+        ScaleButtonAttachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, scaleButtonAttachmentId, ScaleButton));
         
         
         addAndMakeVisible(Selector);

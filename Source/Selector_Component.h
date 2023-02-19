@@ -17,16 +17,20 @@ class SelectorComponent: public juce::Component
 {
     
 public:
-    SelectorComponent(VerboseAudioProcessor& p, juce::String paramID): LeftOctaveArrowButtonAttachment(p.verboseAPVTS, paramID, LeftOctaveArrowButton), RightOctaveArrowButtonAttachment(p.verboseAPVTS, paramID, RightOctaveArrowButton)
+    SelectorComponent(VerboseAudioProcessor& p, juce::String paramID)
     {
-        RightOctaveArrowButton.setBounds(0, 0, 16, 16);
-        LeftOctaveArrowButton.setBounds(0, 0, 16, 16);
-        LeftOctaveArrowButton.setShape(getLeftArrow(LeftOctaveArrowButton.getWidth(), LeftOctaveArrowButton.getHeight()), false, false, false);
-        RightOctaveArrowButton.setShape(getRightArrow(RightOctaveArrowButton.getWidth(), RightOctaveArrowButton.getHeight()), false, false, false);
-        addAndMakeVisible(LeftOctaveArrowButton);
-        addAndMakeVisible(RightOctaveArrowButton);
+        UpOctaveButton.setBounds(0, 0, 16, 16);
+        DownOctaveButton.setBounds(0, 0, 16, 16);
+        DownOctaveButton.setShape(getLeftArrow(DownOctaveButton.getWidth(), DownOctaveButton.getHeight()), false, false, false);
+        UpOctaveButton.setShape(getRightArrow(UpOctaveButton.getWidth(), UpOctaveButton.getHeight()), false, false, false);
+        addAndMakeVisible(DownOctaveButton);
+        addAndMakeVisible(UpOctaveButton);
         addAndMakeVisible(Label);
-        Label.setText("0", juce::dontSendNotification);
+        upOctaveButtonAttachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, paramID, UpOctaveButton));
+        downOctaveButtonAttachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, paramID, DownOctaveButton));
+//        auto labelText = p.verboseAPVTS.getParameter(paramID);
+        auto labelText = std::to_string(p.var1);
+        Label.setText(labelText, juce::dontSendNotification);
         Label.setColour (juce::Label::textColourId, juce::Colours::white);
     }
     
@@ -44,9 +48,9 @@ public:
         fb.justifyContent = juce::FlexBox::JustifyContent::center;
         fb.alignItems = juce::FlexBox::AlignItems::center;
 
-        juce::FlexItem leftOctaveArrowButton  (16, 16, LeftOctaveArrowButton);
+        juce::FlexItem leftOctaveArrowButton  (16, 16, DownOctaveButton);
         juce::FlexItem octaveText (20, 16, Label);
-        juce::FlexItem rightOctaveArrowButton  (16, 16, RightOctaveArrowButton);
+        juce::FlexItem rightOctaveArrowButton  (16, 16, UpOctaveButton);
 
         fb.items.addArray ( { leftOctaveArrowButton, octaveText, rightOctaveArrowButton } );
         fb.performLayout (getLocalBounds().toFloat());
@@ -58,13 +62,13 @@ public:
     }
     
 private:
-    juce::ShapeButton LeftOctaveArrowButton{ "left-octave-button", darkGrey1, darkGrey1, darkGrey1};
-    juce::ShapeButton RightOctaveArrowButton{ "right-octave-button", darkGrey1, darkGrey1, darkGrey1};
+    juce::ShapeButton DownOctaveButton{ "left-octave-button", darkGrey1, darkGrey1, darkGrey1};
+    juce::ShapeButton UpOctaveButton{ "right-octave-button", darkGrey1, darkGrey1, darkGrey1};
     juce::Label Label;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> right_arrow_attachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> left_arrow_attachment;
-    juce::AudioProcessorValueTreeState::ButtonAttachment LeftOctaveArrowButtonAttachment;
-    juce::AudioProcessorValueTreeState::ButtonAttachment RightOctaveArrowButtonAttachment;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> upOctaveButtonAttachment;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> downOctaveButtonAttachment;
+//    juce::AudioProcessorValueTreeState::ButtonAttachment LeftOctaveArrowButtonAttachment;
+//    juce::AudioProcessorValueTreeState::ButtonAttachment RightOctaveArrowButtonAttachment;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SelectorComponent)
 };
 

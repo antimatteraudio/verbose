@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "VerboseAudioProcessor::getGuiParams():PluginProcessor.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "verboseAPVTS.getRawParameterValue(&quot;octaveId_C&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SelectorComponent::SelectorComponent(VerboseAudioProcessor&amp;):Selector_Component.h">
          <PersistentStrings>
             <PersistentString

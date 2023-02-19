@@ -91,6 +91,13 @@ void VerboseAudioProcessor::changeProgramName (int index, const juce::String& ne
 {
 }
 
+void VerboseAudioProcessor::getGuiParams()
+{
+    gui_var1 = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.C);
+    var1 = *gui_var1;
+    std::cout << var1 << "\r";
+}
+
 //==============================================================================
 void VerboseAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
@@ -128,10 +135,19 @@ void VerboseAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
     
-    auto val1 = verboseAPVTS.getRawParameterValue(scaleButtonToggleState.C);
-    auto val2 = verboseAPVTS.getRawParameterValue(scaleButtonToggleState.CSharp);
+//    auto toggleStateC = verboseAPVTS.getRawParameterValue(scaleButtonToggleState.C);
     
-    std::cout << val1->load() << std::endl << val2->load() << std::endl;
+//    auto toggleStateCSharp = verboseAPVTS.getRawParameterValue(scaleButtonToggleState.CSharp);
+    
+    auto scaleButtonOctaveStateC = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.C);
+    auto scaleButtonOctaveStateCSharp = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.CSharp);
+    
+    getGuiParams();
+    
+
+    
+//    std::cout << toggleStateC->load() << std::endl << toggleStateCSharp->load() << std::endl;
+//    std::cout << scaleButtonOctaveStateC->load() << scaleButtonOctaveStateCSharp->load() << std::endl;
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 

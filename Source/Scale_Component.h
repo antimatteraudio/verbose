@@ -13,8 +13,8 @@ class ScaleComponent: public juce::Component
     
 public:
     
-    ScaleComponent(VerboseAudioProcessor& p): CScaleButton(p, scaleButtonToggleState.C, scaleButtonLabels.C),
-    CSharpScaleButton(p, scaleButtonToggleState.CSharp, scaleButtonLabels.CSharp)
+    ScaleComponent(VerboseAudioProcessor& p): CScaleButton(p, scaleButtonToggleState.C, scaleButtonOctaveState.C, scaleButtonLabels.C),
+    CSharpScaleButton(p, scaleButtonToggleState.CSharp,scaleButtonOctaveState.CSharp, scaleButtonLabels.CSharp)
     {
 
         setLookAndFeel(&ScaleButtonLookAndFeel);
