@@ -91,12 +91,12 @@ void VerboseAudioProcessor::changeProgramName (int index, const juce::String& ne
 {
 }
 
-void VerboseAudioProcessor::getGuiParams()
-{
-    gui_var1 = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.C);
-    var1 = *gui_var1;
-    std::cout << var1 << "\r";
-}
+//void VerboseAudioProcessor::getGuiParams()
+//{
+//    gui_var1 = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.C);
+//    var1 = *gui_var1;
+//    std::cout << var1 << "\r";
+//}
 
 //==============================================================================
 void VerboseAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
@@ -142,7 +142,7 @@ void VerboseAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
     auto scaleButtonOctaveStateC = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.C);
     auto scaleButtonOctaveStateCSharp = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.CSharp);
     
-    getGuiParams();
+//    getGuiParams();
     
 
     

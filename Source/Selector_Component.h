@@ -29,7 +29,14 @@ public:
         upOctaveButtonAttachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, paramID, UpOctaveButton));
         downOctaveButtonAttachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, paramID, DownOctaveButton));
 //        auto labelText = p.verboseAPVTS.getParameter(paramID);
-        auto labelText = std::to_string(p.var1);
+//        auto labelText = std::to_string(p.var1);
+//        double f3;
+//        double f2 = std::modf(f, &f3);
+        
+//        float gui_var1 = p.verboseAPVTS.getParameterAsValue(scaleButtonOctaveState.C).getValue();
+        auto gui_var1 = dynamic_cast<juce::AudioParameterInt*>(p.verboseAPVTS.getParameter(scaleButtonOctaveState.C));
+//        auto gui_var1 = p.verboseAPVTS.getParameter(scaleButtonOctaveState.C);
+        auto labelText = std::to_string(gui_var1->get());
         Label.setText(labelText, juce::dontSendNotification);
         Label.setColour (juce::Label::textColourId, juce::Colours::white);
     }
@@ -49,7 +56,7 @@ public:
         fb.alignItems = juce::FlexBox::AlignItems::center;
 
         juce::FlexItem leftOctaveArrowButton  (16, 16, DownOctaveButton);
-        juce::FlexItem octaveText (20, 16, Label);
+        juce::FlexItem octaveText (16, 20, Label);
         juce::FlexItem rightOctaveArrowButton  (16, 16, UpOctaveButton);
 
         fb.items.addArray ( { leftOctaveArrowButton, octaveText, rightOctaveArrowButton } );
