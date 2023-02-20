@@ -13,12 +13,14 @@
 #include "Colors.h"
 #include "Shapes.h"
 
-class SelectorComponent: public juce::Component
+class SelectorComponent: public juce::Component, public juce::Button::Listener
 {
     
 public:
-    SelectorComponent(VerboseAudioProcessor& p, juce::String paramID)
+    SelectorComponent(VerboseAudioProcessor& p, juce::String paramID): audioProcessor(p), paramID(paramID)
     {
+        DownOctaveButton.addListener (this);
+        UpOctaveButton.addListener (this);
         UpOctaveButton.setBounds(0, 0, 16, 16);
         DownOctaveButton.setBounds(0, 0, 16, 16);
         DownOctaveButton.setShape(getLeftArrow(DownOctaveButton.getWidth(), DownOctaveButton.getHeight()), false, false, false);
@@ -34,11 +36,12 @@ public:
 //        double f2 = std::modf(f, &f3);
         
 //        float gui_var1 = p.verboseAPVTS.getParameterAsValue(scaleButtonOctaveState.C).getValue();
-        auto gui_var1 = dynamic_cast<juce::AudioParameterInt*>(p.verboseAPVTS.getParameter(scaleButtonOctaveState.C));
+        octaveVal = dynamic_cast<juce::AudioParameterInt*>(p.verboseAPVTS.getParameter(scaleButtonOctaveState.C));
 //        auto gui_var1 = p.verboseAPVTS.getParameter(scaleButtonOctaveState.C);
-        auto labelText = std::to_string(gui_var1->get());
+        auto labelText = std::to_string(octaveVal->get());
         Label.setText(labelText, juce::dontSendNotification);
         Label.setColour (juce::Label::textColourId, juce::Colours::white);
+        std::cout << "fooo1";
     }
     
     void paint (juce::Graphics& g) override
@@ -64,16 +67,41 @@ public:
     
     }
     
+    void buttonClicked (juce::Button* button) override
+    {
+        std::cout << "clicked";
+        auto val = dynamic_cast<juce::AudioParameterInt*>(octaveVal)->get();
+
+        std::cout << val;
+        if (button == &DownOctaveButton)
+               {
+                   if(val >= -2){
+                       audioProcessor.verboseAPVTS.state.setProperty(paramID, (val - 1), nullptr);
+                       std::cout << val;
+                   };
+               }
+        if (button == &UpOctaveButton)
+               {
+                   if(val < 8){
+                       audioProcessor.verboseAPVTS.state.setProperty(paramID, (val + 1), nullptr);
+                   };
+               }
+        
+    }
+    
     ~SelectorComponent(){
         setLookAndFeel(nullptr);
     }
     
 private:
-    juce::ShapeButton DownOctaveButton{ "left-octave-button", darkGrey1, darkGrey1, darkGrey1};
-    juce::ShapeButton UpOctaveButton{ "right-octave-button", darkGrey1, darkGrey1, darkGrey1};
+    juce::ShapeButton DownOctaveButton{ "DownOctaveButton", darkGrey1, darkGrey1, darkGrey1};
+    juce::ShapeButton UpOctaveButton{ "UpOctaveButton", darkGrey1, darkGrey1, darkGrey1};
     juce::Label Label;
+    juce::AudioParameterInt* octaveVal;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> upOctaveButtonAttachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> downOctaveButtonAttachment;
+    VerboseAudioProcessor& audioProcessor;
+    juce::String paramID;
 //    juce::AudioProcessorValueTreeState::ButtonAttachment LeftOctaveArrowButtonAttachment;
 //    juce::AudioProcessorValueTreeState::ButtonAttachment RightOctaveArrowButtonAttachment;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SelectorComponent)
