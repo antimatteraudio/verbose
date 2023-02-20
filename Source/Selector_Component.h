@@ -67,23 +67,28 @@ public:
     
     }
     
+    
     void buttonClicked (juce::Button* button) override
     {
 
-        auto val = dynamic_cast<juce::AudioParameterInt*>(octaveVal)->get();
-        std::cout << val << paramID << "clicked";
-        std::cout << val;
+        auto val = dynamic_cast<juce::AudioParameterInt*>(this->octaveVal)->get();
+//        std::cout << val << paramID << "clicked";
+//        std::cout << val;
         if (button == &DownOctaveButton)
                {
-                   if(val >= -2){
-                       audioProcessor.verboseAPVTS.state.setProperty(paramID, (val - 1), nullptr);
-                       std::cout << val;
+//                   std::cout << "down";
+                   if(val > -2){
+                       audioProcessor.verboseAPVTS.state.getChildWithName(paramID).sendPropertyChangeMessage("path");
+//                       audioProcessor.verboseAPVTS.state.setProperty(paramID, (val - 1), nullptr);
+                       std::cout << val << "\n" << octaveVal;
                    };
                }
         if (button == &UpOctaveButton)
                {
+//                   std::cout << "up";
                    if(val < 8){
-                       audioProcessor.verboseAPVTS.state.setProperty(paramID, (val + 1), nullptr);
+//                       std::cout << "val < 8";
+//                       audioProcessor.verboseAPVTS.state.setProperty(paramID, (val + 1), nullptr);
                    };
                }
         

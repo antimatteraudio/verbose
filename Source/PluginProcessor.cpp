@@ -172,11 +172,35 @@ juce::AudioProcessorEditor* VerboseAudioProcessor::createEditor()
 //==============================================================================
 void VerboseAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
+    auto state = verboseAPVTS.copyState();
+    std::unique_ptr<juce::XmlElement> xml (state.createXml());
+    copyXmlToBinary (*xml, destData);
 }
 
 void VerboseAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
+    std::unique_ptr<juce::XmlElement> xmlState (getXmlFromBinary (data, sizeInBytes));
+
+    if (xmlState.get() != nullptr)
+        if (xmlState->hasTagName (verboseAPVTS.state.getType()))
+            verboseAPVTS.replaceState (juce::ValueTree::fromXml (*xmlState));
 }
+
+//void getStateInformation (juce::MemoryBlock& destData) override
+//{
+//    auto state = parameters.copyState();
+//    std::unique_ptr<juce::XmlElement> xml (state.createXml());
+//    copyXmlToBinary (*xml, destData);
+//}
+
+//void setStateInformation (const void* data, int sizeInBytes) override
+//{
+//    std::unique_ptr<juce::XmlElement> xmlState (getXmlFromBinary (data, sizeInBytes));
+//
+//    if (xmlState.get() != nullptr)
+//        if (xmlState->hasTagName (parameters.state.getType()))
+//            parameters.replaceState (juce::ValueTree::fromXml (*xmlState));
+//}
 
 //==============================================================================
 // This creates new instances of the plugin..
