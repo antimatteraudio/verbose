@@ -72,18 +72,18 @@ static struct {
 } scaleButtonToggleState;
 
 static struct {
-    std::string C = "octaveId_C";
-    std::string CSharp = "octaveId_C#";
-    std::string D = "octaveId_D";
-    std::string DSharp = "octaveId_D#";
-    std::string E = "octaveId_E";
-    std::string F = "octaveId_F";
-    std::string FSharp = "octaveId_F#";
-    std::string G = "octaveId_G";
-    std::string GSharp = "octaveId_G#";
-    std::string A = "octaveId_A";
-    std::string ASharp = "octaveId_A#";
-    std::string B = "octaveId_B";
+    std::string C = "scaleButtonOctaveState_C";
+    std::string CSharp = "scaleButtonOctaveState_C#";
+    std::string D = "scaleButtonOctaveState_D";
+    std::string DSharp = "scaleButtonOctaveState_D#";
+    std::string E = "scaleButtonOctaveState_E";
+    std::string F = "scaleButtonOctaveState_F";
+    std::string FSharp = "scaleButtonOctaveState_F#";
+    std::string G = "scaleButtonOctaveState_G";
+    std::string GSharp = "scaleButtonOctaveState_G#";
+    std::string A = "scaleButtonOctaveState_A";
+    std::string ASharp = "scaleButtonOctaveState_A#";
+    std::string B = "scaleButtonOctaveState_B";
 } scaleButtonOctaveState;
 
 //static struct {

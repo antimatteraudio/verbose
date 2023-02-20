@@ -69,9 +69,9 @@ public:
     
     void buttonClicked (juce::Button* button) override
     {
-        std::cout << "clicked";
-        auto val = dynamic_cast<juce::AudioParameterInt*>(octaveVal)->get();
 
+        auto val = dynamic_cast<juce::AudioParameterInt*>(octaveVal)->get();
+        std::cout << val << paramID << "clicked";
         std::cout << val;
         if (button == &DownOctaveButton)
                {
