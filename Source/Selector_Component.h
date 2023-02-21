@@ -13,85 +13,44 @@
 #include "Colors.h"
 #include "Shapes.h"
 
-class SelectorComponent: public juce::Component, public juce::Button::Listener
+class SelectorComponent: public juce::Component
 {
     
 public:
     SelectorComponent(VerboseAudioProcessor& p, juce::String paramID): audioProcessor(p), paramID(paramID)
     {
-        DownOctaveButton.addListener (this);
-        UpOctaveButton.addListener (this);
-        UpOctaveButton.setBounds(0, 0, 16, 16);
-        DownOctaveButton.setBounds(0, 0, 16, 16);
-        DownOctaveButton.setShape(getLeftArrow(DownOctaveButton.getWidth(), DownOctaveButton.getHeight()), false, false, false);
-        UpOctaveButton.setShape(getRightArrow(UpOctaveButton.getWidth(), UpOctaveButton.getHeight()), false, false, false);
-        addAndMakeVisible(DownOctaveButton);
-        addAndMakeVisible(UpOctaveButton);
+
+
+        octaveSliderAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment (p.verboseAPVTS, paramID, OctaveSlider));
+
+        juce::Range<double>* r = new juce::Range<double>(-2.0, 8.0);
+        OctaveSlider.setSliderStyle(juce::Slider::SliderStyle::IncDecButtons);
+        OctaveSlider.setRange (*r, 1);
+        auto area = getLocalBounds();
+        OctaveSlider.setBounds(area);
+        OctaveSlider.setValue(0);
+        OctaveSlider.setIncDecButtonsMode (juce::Slider::incDecButtonsDraggable_Vertical);
+        Label.attachToComponent(&OctaveSlider, true);
         addAndMakeVisible(Label);
-        upOctaveButtonAttachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, paramID, UpOctaveButton));
-        downOctaveButtonAttachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, paramID, DownOctaveButton));
-//        auto labelText = p.verboseAPVTS.getParameter(paramID);
-//        auto labelText = std::to_string(p.var1);
-//        double f3;
-//        double f2 = std::modf(f, &f3);
-        
-//        float gui_var1 = p.verboseAPVTS.getParameterAsValue(scaleButtonOctaveState.C).getValue();
-        octaveVal = dynamic_cast<juce::AudioParameterInt*>(p.verboseAPVTS.getParameter(scaleButtonOctaveState.C));
-//        auto gui_var1 = p.verboseAPVTS.getParameter(scaleButtonOctaveState.C);
-        auto labelText = std::to_string(octaveVal->get());
-        Label.setText(labelText, juce::dontSendNotification);
-        Label.setColour (juce::Label::textColourId, juce::Colours::white);
-        std::cout << "fooo1";
+        addAndMakeVisible (OctaveSlider);
+//        OctaveSlider.addListener(this);
     }
     
     void paint (juce::Graphics& g) override
     {
-
+        auto area = getLocalBounds();
+        OctaveSlider.setBounds(area);
         
     }
-//
     void resized() override
     {
-        juce::FlexBox fb;
-        fb.flexDirection = juce::FlexBox::Direction::row;
-        fb.alignContent = juce::FlexBox::AlignContent::center;
-        fb.justifyContent = juce::FlexBox::JustifyContent::center;
-        fb.alignItems = juce::FlexBox::AlignItems::center;
-
-        juce::FlexItem leftOctaveArrowButton  (16, 16, DownOctaveButton);
-        juce::FlexItem octaveText (16, 20, Label);
-        juce::FlexItem rightOctaveArrowButton  (16, 16, UpOctaveButton);
-
-        fb.items.addArray ( { leftOctaveArrowButton, octaveText, rightOctaveArrowButton } );
-        fb.performLayout (getLocalBounds().toFloat());
+//        juce::FlexBox fb;
+//        fb.flexDirection = juce::FlexBox::Direction::row;
+//        fb.alignContent = juce::FlexBox::AlignContent::center;
+//        fb.justifyContent = juce::FlexBox::JustifyContent::center;
+//        fb.alignItems = juce::FlexBox::AlignItems::center;
+//        fb.performLayout (getLocalBounds().toFloat());
     
-    }
-    
-    
-    void buttonClicked (juce::Button* button) override
-    {
-
-        auto val = dynamic_cast<juce::AudioParameterInt*>(this->octaveVal)->get();
-//        std::cout << val << paramID << "clicked";
-//        std::cout << val;
-        if (button == &DownOctaveButton)
-               {
-//                   std::cout << "down";
-                   if(val > -2){
-                       audioProcessor.verboseAPVTS.state.getChildWithName(paramID).sendPropertyChangeMessage("path");
-//                       audioProcessor.verboseAPVTS.state.setProperty(paramID, (val - 1), nullptr);
-                       std::cout << val << "\n" << octaveVal;
-                   };
-               }
-        if (button == &UpOctaveButton)
-               {
-//                   std::cout << "up";
-                   if(val < 8){
-//                       std::cout << "val < 8";
-//                       audioProcessor.verboseAPVTS.state.setProperty(paramID, (val + 1), nullptr);
-                   };
-               }
-        
     }
     
     ~SelectorComponent(){
@@ -99,16 +58,11 @@ public:
     }
     
 private:
-    juce::ShapeButton DownOctaveButton{ "DownOctaveButton", darkGrey1, darkGrey1, darkGrey1};
-    juce::ShapeButton UpOctaveButton{ "UpOctaveButton", darkGrey1, darkGrey1, darkGrey1};
+    juce::Slider OctaveSlider;
     juce::Label Label;
-    juce::AudioParameterInt* octaveVal;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> upOctaveButtonAttachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> downOctaveButtonAttachment;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> octaveSliderAttachment;
     VerboseAudioProcessor& audioProcessor;
     juce::String paramID;
-//    juce::AudioProcessorValueTreeState::ButtonAttachment LeftOctaveArrowButtonAttachment;
-//    juce::AudioProcessorValueTreeState::ButtonAttachment RightOctaveArrowButtonAttachment;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SelectorComponent)
 };
 

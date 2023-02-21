@@ -147,7 +147,7 @@ void VerboseAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
 
     
 //    std::cout << toggleStateC->load() << std::endl << toggleStateCSharp->load() << std::endl;
-//    std::cout << scaleButtonOctaveStateC->load() << scaleButtonOctaveStateCSharp->load() << std::endl;
+    std::cout << scaleButtonOctaveStateC->load() << scaleButtonOctaveStateCSharp->load() << std::endl;
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
