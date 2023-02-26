@@ -8,6 +8,8 @@
 #include "APVTS_Constants.h"
 #include "ScaleButtonWrapper_Component.h"
 
+// This component uses juce::Grid to lay out buttons for sharp and flat notes in a 'keyboard' layout.
+
 class ScaleComponent: public juce::Component
 {
     
@@ -15,11 +17,9 @@ public:
 
     ScaleComponent(VerboseAudioProcessor& p): classMemberProcessor(p)
     {
-//        ScaleComponent::classMemberProcessor = p;
         setLookAndFeel(&ScaleButtonLookAndFeel);
         
         for (int i = 0; i < scale_buttons.size(); i++){
-//            scale_buttons[i] -> setButtonText(scale_button_labels[i]);
             scale_buttons[i] -> setBounds(i * buttonHeight, 0, buttonHeight, buttonHeight);
             addAndMakeVisible(scale_buttons[i]);
         }
@@ -32,7 +32,6 @@ public:
     
     void resized() override
     {
-//        auto area = getLocalBounds();
         juce::Grid sharps;
         juce::Grid naturals;
         
@@ -40,7 +39,7 @@ public:
         using fr = juce::Grid::Fr;
         using px = juce::Grid::Px;
         
-        // Sharps
+        // Grid layout for sharp note buttons
         
         sharps.templateRows    = { Track (px (buttonHeight))};
         sharps.templateColumns = { px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth)};
@@ -61,7 +60,7 @@ public:
             
         sharps.items = { cSharp, dSharp, fSharp, gSharp, aSharp };
         
-        // Naturals
+        // Grid layout for natural note buttons
 
         naturals.templateRows    = { Track (px (buttonHeight))};
         naturals.templateColumns = { px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth) };
@@ -84,7 +83,6 @@ public:
         b.setArea(juce::GridItem::Property(1), juce::GridItem::Property(7));
         
         naturals.items = { c, d, e, f, g, a, b };
-//        naturals.items = { c };
         
         sharps.performLayout (juce::Rectangle<int> (buttonWidth, 0, 800, buttonHeight));
         naturals.performLayout (juce::Rectangle<int> (0, buttonHeight, 800, buttonHeight));
@@ -99,6 +97,7 @@ public:
 private:
     // Adds 'p' as a class member so we can access it outside of the constructor
     VerboseAudioProcessor& classMemberProcessor;
+    
     ScaleButtonLookAndFeel ScaleButtonLookAndFeel;
 
     // Define the scale component buttons for naturals
@@ -132,11 +131,6 @@ private:
         &AScaleButton,
         &ASharpScaleButton,
         &BScaleButton
-    };
-
-    // Define the button labels
-    std::vector<std::string> scale_button_labels = {
-        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
     };
 
     int border = 4;
