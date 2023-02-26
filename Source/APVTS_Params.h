@@ -92,11 +92,14 @@ VerboseAudioProcessor::createParameterLayout()
 //    layout.add(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID {"poles",1}, "poles", juce::NormalisableRange<float>(1, 32,1), 2));
     
 //    layout.add(std::make_unique<juce::AudioParameterFloat> (juce::ParameterID {scaleButtonToggleState.C, 1}, scaleButtonToggleState.C, juce::NormalisableRange<float>(0, 1,0), 0));
-    layout.add(std::make_unique<juce::AudioParameterInt> (scaleButtonToggleState.C, scaleButtonToggleState.C, 0, 1, 0));
-    layout.add(std::make_unique<juce::AudioParameterInt> (scaleButtonOctaveState.C, scaleButtonOctaveState.C, -2, 8, 0));
+    auto scaleButtonC = std::make_unique<juce::AudioParameterInt> (scaleButtonToggleState.C, scaleButtonToggleState.C, 0, 1, 0);
+    auto scaleButtonCSharp = std::make_unique<juce::AudioParameterInt> (scaleButtonToggleState.CSharp, scaleButtonToggleState.CSharp, 0, 1, 0);
     
-    layout.add(std::make_unique<juce::AudioParameterInt> (scaleButtonToggleState.CSharp, scaleButtonToggleState.CSharp, 0, 1, 0));
-    layout.add(std::make_unique<juce::AudioParameterInt> (scaleButtonOctaveState.CSharp, scaleButtonOctaveState.CSharp, -2, 8, 0));
+    
+    auto scaleOctaveButtonC = std::make_unique<juce::AudioParameterInt> (scaleButtonOctaveState.C, scaleButtonOctaveState.C, -2, 8, 0);
+    auto scaleOctaveButtonCSharp = std::make_unique<juce::AudioParameterInt> (scaleButtonOctaveState.CSharp, scaleButtonOctaveState.CSharp, -2, 8, 0);
+    
+    layout.add(std::move(scaleButtonC), std::move(scaleButtonCSharp), std::move(scaleOctaveButtonC), std::move(scaleOctaveButtonCSharp));
     
 //    layout.add(std::make_unique<juce::AudioProcessorParameterGroup>(scaleButtonIds.C, scaleButtonIds.C, "|", std::move(buttonStateC), std::move(octaveStateC)));
     
