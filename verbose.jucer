@@ -15,7 +15,8 @@
         <FILE id="ag5CN7" name="Shapes.h" compile="0" resource="0" file="Source/Shapes.h"/>
       </GROUP>
       <GROUP id="{ACBF6DA2-62F7-A29E-3D6E-FC7AD1B06F18}" name="Utils">
-        <FILE id="f6fjB2" name="APVTS_Params.h" compile="0" resource="0" file="Source/APVTS_Params.h"/>
+        <FILE id="f6fjB2" name="APVTS_ParameterLayout.h" compile="0" resource="0"
+              file="Source/APVTS_ParameterLayout.h"/>
         <FILE id="bZFTgw" name="APVTS_Constants.h" compile="0" resource="0"
               file="Source/APVTS_Constants.h"/>
       </GROUP>

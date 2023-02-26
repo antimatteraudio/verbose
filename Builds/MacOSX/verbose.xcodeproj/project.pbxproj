@@ -98,8 +98,8 @@
 		79B6B7557DA96BD7188E7FD7 /* include_juce_audio_basics.mm */ /* include_juce_audio_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_basics.mm; path = ../../JuceLibraryCode/include_juce_audio_basics.mm; sourceTree = SOURCE_ROOT; };
 		7D163D7C3B6C306263AF1BB4 /* PluginEditor.cpp */ /* PluginEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginEditor.cpp; path = ../../Source/PluginEditor.cpp; sourceTree = SOURCE_ROOT; };
 		802FAC7D8FB678F6B7AC499B /* include_juce_data_structures.mm */ /* include_juce_data_structures.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_data_structures.mm; path = ../../JuceLibraryCode/include_juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
-		8125E45068413568EE96EA85 /* APVTS_Params.h */ /* APVTS_Params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = APVTS_Params.h; path = ../../Source/APVTS_Params.h; sourceTree = SOURCE_ROOT; };
 		821F5B0C51574EB3C0D570AF /* AudioToolbox.framework */ /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		82977773818BA1D2A7400982 /* APVTS_ParameterLayout.h */ /* APVTS_ParameterLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = APVTS_ParameterLayout.h; path = ../../Source/APVTS_ParameterLayout.h; sourceTree = SOURCE_ROOT; };
 		840125E164B953F89F47773B /* AUv3 AppExtension */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = verbose.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8667886FD3521466226EC04E /* PluginProcessor.h */ /* PluginProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginProcessor.h; path = ../../Source/PluginProcessor.h; sourceTree = SOURCE_ROOT; };
 		951A208520D415D4C66E06A3 /* juce_audio_devices */ /* juce_audio_devices */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_devices; path = /Applications/JUCE/modules/juce_audio_devices; sourceTree = "<absolute>"; };
@@ -238,7 +238,7 @@
 		507094C5EFDF16CD95513745 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				8125E45068413568EE96EA85,
+				82977773818BA1D2A7400982,
 				E30DECB0D997C12427FED10D,
 			);
 			name = Utils;

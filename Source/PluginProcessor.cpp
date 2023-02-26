@@ -8,7 +8,7 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
-#include "APVTS_Params.h"
+#include "APVTS_ParameterLayout.h"
 #include "APVTS_Constants.h"
 
 //==============================================================================
