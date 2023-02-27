@@ -57,44 +57,12 @@ public:
 
     
     //==============================================================================
+    
+    // Creates the parameter layout from APVTS/APVTS_ParameterLayout.h
     static juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
     juce::AudioProcessorValueTreeState verboseAPVTS {*this, nullptr, "Parameters", createParameterLayout()};
-//    void getAPVTSParams();
-    
-//    int scaleButtParam_C;
-//    int scaleButtParam_CSharp;
-//    int scaleButtParam_D;
-//    int scaleButtParam_DSharp;
-//    int scaleButtParam_E;
-//    int scaleButtParam_F;
-//    int scaleButtParam_FSharp;
-//    int scaleButtParam_G;
-//    int scaleButtParam_GSharp;
-//    int scaleButtParam_A;
-//    int scaleButtParam_ASharp;
-//    int scaleButtParam_B;
-    
-//    int stepButtParam_one;
-//    int stepButtParam_two;
-//    int stepButtParam_three;
-//    int stepButtParam_four;
-//    int stepButtParam_five;
-//    int stepButtParam_six;
-//    int stepButtParam_seven;
-//    int stepButtParam_eight;
-//    int stepButtParam_nine;
-//    int stepButtParam_ten;
-//    int stepButtParam_eleven;
-//    int stepButtParam_twelve;
-//    int stepButtParam_thirteen;
-//    int stepButtParam_fourteen;
-//    int stepButtParam_fifteen;
-//    int stepButtParam_sixteen;
-//    int var1 = 0.0;
-        
 private:
     //==============================================================================
-//    void getGuiParams();
-//    std::atomic<float>* gui_var1 = nullptr;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (VerboseAudioProcessor)
 };

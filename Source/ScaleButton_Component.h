@@ -1,7 +1,7 @@
 /*
   ==============================================================================
 
-    ScaleButtonWrapper_Component.h
+    ScaleButton_Component.h
     Created: 18 Dec 2022 2:19:53pm
     Author:  Marri Gamard
 
@@ -11,22 +11,18 @@
 #pragma once
 
 #include "GUI_Classes.h"
-#include "Selector_Component.h"
+#include "IncDec_Component.h"
 
-class ScaleButtonWrapperComponent: public juce::Component
+// This component contains a toggle button and an increment/decrement slider component.
+// It requires 'scaleButtonAttachmentId' and 'incDecAttachmentId' strings. This will pass the proper APVTS parameters to the the toggle button and the inc/dec slider.
+// New APVTS parameteres must also be added to APVTS/APVTS_ParameterLayout.h
+
+class ScaleButtonComponent: public juce::Component
 {
     
 public:
 
-//    void setButtonText(std::string text) {
-//        ScaleButton.setButtonText(text);
-//    }
-    
-//    std::unique_ptr<ScaleButton> c_scale_button = std::make_unique<ScaleButton>();
-//    std::vector<std::unique_ptr<juce::TextButton>> scaleButtons;
-    
-
-    ScaleButtonWrapperComponent(VerboseAudioProcessor& p, juce::String scaleButtonAttachmentId, juce::String selectorAttachmentId, juce::String label): Selector(p, selectorAttachmentId)
+    ScaleButtonComponent(VerboseAudioProcessor& p, juce::String scaleButtonAttachmentId, juce::String incDecAttachmentId, juce::String label): IncDec(p, incDecAttachmentId)
     {
         setLookAndFeel(&scaleButtonLookAndFeel);
         ScaleButton.setButtonText(label);
@@ -34,7 +30,7 @@ public:
         ScaleButtonAttachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, scaleButtonAttachmentId, ScaleButton));
         
         
-        addAndMakeVisible(Selector);
+        addAndMakeVisible(IncDec);
     }
     
     void paint (juce::Graphics& g) override
@@ -48,25 +44,23 @@ public:
         fb.flexDirection = juce::FlexBox::Direction::column;
 
         juce::FlexItem scaleButton  (60, 80, ScaleButton);
-        juce::FlexItem selector (60, 30, Selector);
+        juce::FlexItem incDec (60, 30, IncDec);
 
-        fb.items.addArray ( { scaleButton, selector } );
+        fb.items.addArray ( { scaleButton, incDec } );
         fb.performLayout (getLocalBounds().toFloat());
         
     }
     
-    ~ScaleButtonWrapperComponent(){
+    ~ScaleButtonComponent(){
         setLookAndFeel(nullptr);
         ScaleButtonAttachment.reset();
     }
     
 private:
     juce::TextButton ScaleButton;
-//    juce::AudioProcessorValueTreeState::SliderAttachment attachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> ScaleButtonAttachment;
-//    std::unique_ptr<ButtonAttachment> ScaleButtonAttachment;
-    SelectorComponent Selector;
+    IncDecComponent IncDec;
     ScaleButtonLookAndFeel scaleButtonLookAndFeel;
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ScaleButtonWrapperComponent)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ScaleButtonComponent)
 };
 

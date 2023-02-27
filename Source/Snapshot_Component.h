@@ -7,6 +7,10 @@
 #include "PluginProcessor.h"
 #include "APVTS_Constants.h"
 
+// ****************************************
+// TODO: This file is a work in progress.
+// ****************************************
+
 class SnapshotComponent: public juce::Component
 {
     

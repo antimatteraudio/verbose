@@ -14,7 +14,7 @@
         <FILE id="DCnj0n" name="GUI_Classes.h" compile="0" resource="0" file="Source/GUI_Classes.h"/>
         <FILE id="ag5CN7" name="Shapes.h" compile="0" resource="0" file="Source/Shapes.h"/>
       </GROUP>
-      <GROUP id="{ACBF6DA2-62F7-A29E-3D6E-FC7AD1B06F18}" name="Utils">
+      <GROUP id="{ACBF6DA2-62F7-A29E-3D6E-FC7AD1B06F18}" name="APVTS">
         <FILE id="f6fjB2" name="APVTS_ParameterLayout.h" compile="0" resource="0"
               file="Source/APVTS_ParameterLayout.h"/>
         <FILE id="bZFTgw" name="APVTS_Constants.h" compile="0" resource="0"
@@ -27,10 +27,10 @@
               file="Source/Main_Component.h"/>
         <FILE id="PeUOBu" name="Scale_Component.h" compile="0" resource="0"
               file="Source/Scale_Component.h"/>
-        <FILE id="wgvuRF" name="ScaleButtonWrapper_Component.h" compile="0"
-              resource="0" file="Source/ScaleButtonWrapper_Component.h"/>
-        <FILE id="Kcwz4w" name="Selector_Component.h" compile="0" resource="0"
-              file="Source/Selector_Component.h"/>
+        <FILE id="wgvuRF" name="ScaleButton_Component.h" compile="0" resource="0"
+              file="Source/ScaleButton_Component.h"/>
+        <FILE id="Kcwz4w" name="IncDec_Component.h" compile="0" resource="0"
+              file="Source/IncDec_Component.h"/>
         <FILE id="WrUuQS" name="Snapshot_Component.h" compile="0" resource="0"
               file="Source/Snapshot_Component.h"/>
       </GROUP>

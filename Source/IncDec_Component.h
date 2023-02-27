@@ -1,7 +1,7 @@
 /*
   ==============================================================================
 
-    Selector_Component.h
+    IncDec_Component.h
     Created: 18 Dec 2022 7:30:02pm
     Author:  Marri Gamard
 
@@ -13,14 +13,12 @@
 #include "Colors.h"
 #include "Shapes.h"
 
-class SelectorComponent: public juce::Component
+class IncDecComponent: public juce::Component
 {
     
 public:
-    SelectorComponent(VerboseAudioProcessor& p, juce::String paramID): audioProcessor(p), paramID(paramID)
+    IncDecComponent(VerboseAudioProcessor& p, juce::String paramID): audioProcessor(p), paramID(paramID)
     {
-
-
         octaveSliderAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment (p.verboseAPVTS, paramID, OctaveSlider));
 
         juce::Range<double>* r = new juce::Range<double>(-2.0, 8.0);
@@ -33,7 +31,6 @@ public:
         Label.attachToComponent(&OctaveSlider, true);
         addAndMakeVisible(Label);
         addAndMakeVisible (OctaveSlider);
-//        OctaveSlider.addListener(this);
     }
     
     void paint (juce::Graphics& g) override
@@ -44,6 +41,7 @@ public:
     }
     void resized() override
     {
+// TODO: Fix layout
 //        juce::FlexBox fb;
 //        fb.flexDirection = juce::FlexBox::Direction::row;
 //        fb.alignContent = juce::FlexBox::AlignContent::center;
@@ -53,7 +51,7 @@ public:
     
     }
     
-    ~SelectorComponent(){
+    ~IncDecComponent(){
         setLookAndFeel(nullptr);
     }
     
@@ -63,6 +61,6 @@ private:
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> octaveSliderAttachment;
     VerboseAudioProcessor& audioProcessor;
     juce::String paramID;
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SelectorComponent)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (IncDecComponent)
 };
 

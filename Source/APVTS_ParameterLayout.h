@@ -13,7 +13,9 @@
 #include "Scale_Component.h"
 #include "APVTS_Constants.h"
 
-// Set up APVTS parameter layout
+// **************************************************
+// This file sets up the APVTS parameter layout
+// **************************************************
 
 juce::AudioProcessorValueTreeState::ParameterLayout
 VerboseAudioProcessor::createParameterLayout()

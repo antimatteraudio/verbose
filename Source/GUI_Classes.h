@@ -149,7 +149,7 @@ public:
     }
 };
     
-
+// TODO: Fix secector button styles
 ////The triangular button used for octave shifts
 //class OctaveButton : public juce::LookAndFeel_V4
 //{

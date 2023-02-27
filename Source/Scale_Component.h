@@ -6,9 +6,24 @@
 #include "PluginEditor.h"
 #include "PluginProcessor.h"
 #include "APVTS_Constants.h"
-#include "ScaleButtonWrapper_Component.h"
+#include "ScaleButton_Component.h"
 
-// This component uses juce::Grid to lay out buttons for sharp and flat notes in a 'keyboard' layout.
+// This component uses juce::Grid to lay out buttons for sharp and flat notes in a keyboard-style layout.
+
+struct ScaleButtonLabels{
+    std::string C = "C";
+    std::string CSharp = "C#";
+    std::string D = "D";
+    std::string DSharp = "D#";
+    std::string E = "E";
+    std::string F = "F";
+    std::string FSharp = "F#";
+    std::string G = "G";
+    std::string GSharp = "G#";
+    std::string A = "A";
+    std::string ASharp = "A#";
+    std::string B = "B";
+};
 
 class ScaleComponent: public juce::Component
 {
@@ -98,27 +113,29 @@ private:
     // Adds 'p' as a class member so we can access it outside of the constructor
     VerboseAudioProcessor& classMemberProcessor;
     
+    ScaleButtonLabels scaleButtonLabels;
+    
     ScaleButtonLookAndFeel ScaleButtonLookAndFeel;
 
     // Define the scale component buttons for naturals
-    ScaleButtonWrapperComponent CScaleButton { ScaleComponent::classMemberProcessor, scaleButtonToggleState.C, scaleButtonOctaveState.C, scaleButtonLabels.C };
-    ScaleButtonWrapperComponent DScaleButton { this->classMemberProcessor, scaleButtonToggleState.D, scaleButtonOctaveState.D, scaleButtonLabels.D };
-    ScaleButtonWrapperComponent EScaleButton { this->classMemberProcessor, scaleButtonToggleState.E, scaleButtonOctaveState.E, scaleButtonLabels.E };
-    ScaleButtonWrapperComponent FScaleButton { this->classMemberProcessor, scaleButtonToggleState.F, scaleButtonOctaveState.F, scaleButtonLabels.F };
-    ScaleButtonWrapperComponent GScaleButton { this->classMemberProcessor, scaleButtonToggleState.G, scaleButtonOctaveState.G, scaleButtonLabels.G };
-    ScaleButtonWrapperComponent AScaleButton { this->classMemberProcessor, scaleButtonToggleState.A, scaleButtonOctaveState.A, scaleButtonLabels.A };
-    ScaleButtonWrapperComponent BScaleButton { this->classMemberProcessor, scaleButtonToggleState.B, scaleButtonOctaveState.B, scaleButtonLabels.B };
+    ScaleButtonComponent CScaleButton { ScaleComponent::classMemberProcessor, scaleButtonToggleState.C, scaleButtonOctaveState.C, scaleButtonLabels.C };
+    ScaleButtonComponent DScaleButton { this->classMemberProcessor, scaleButtonToggleState.D, scaleButtonOctaveState.D, scaleButtonLabels.D };
+    ScaleButtonComponent EScaleButton { this->classMemberProcessor, scaleButtonToggleState.E, scaleButtonOctaveState.E, scaleButtonLabels.E };
+    ScaleButtonComponent FScaleButton { this->classMemberProcessor, scaleButtonToggleState.F, scaleButtonOctaveState.F, scaleButtonLabels.F };
+    ScaleButtonComponent GScaleButton { this->classMemberProcessor, scaleButtonToggleState.G, scaleButtonOctaveState.G, scaleButtonLabels.G };
+    ScaleButtonComponent AScaleButton { this->classMemberProcessor, scaleButtonToggleState.A, scaleButtonOctaveState.A, scaleButtonLabels.A };
+    ScaleButtonComponent BScaleButton { this->classMemberProcessor, scaleButtonToggleState.B, scaleButtonOctaveState.B, scaleButtonLabels.B };
     
     // Define the scale component buttons for sharps
-    ScaleButtonWrapperComponent CSharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.CSharp, scaleButtonOctaveState.CSharp, scaleButtonLabels.CSharp };
-    ScaleButtonWrapperComponent DSharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.DSharp, scaleButtonOctaveState.DSharp, scaleButtonLabels.DSharp };
-    ScaleButtonWrapperComponent FSharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.FSharp, scaleButtonOctaveState.FSharp, scaleButtonLabels.FSharp };
-    ScaleButtonWrapperComponent GSharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.GSharp, scaleButtonOctaveState.FSharp, scaleButtonLabels.GSharp };
-    ScaleButtonWrapperComponent ASharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.ASharp, scaleButtonOctaveState.ASharp, scaleButtonLabels.ASharp };
+    ScaleButtonComponent CSharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.CSharp, scaleButtonOctaveState.CSharp, scaleButtonLabels.CSharp };
+    ScaleButtonComponent DSharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.DSharp, scaleButtonOctaveState.DSharp, scaleButtonLabels.DSharp };
+    ScaleButtonComponent FSharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.FSharp, scaleButtonOctaveState.FSharp, scaleButtonLabels.FSharp };
+    ScaleButtonComponent GSharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.GSharp, scaleButtonOctaveState.GSharp, scaleButtonLabels.GSharp };
+    ScaleButtonComponent ASharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.ASharp, scaleButtonOctaveState.ASharp, scaleButtonLabels.ASharp };
 
     
     // Define a vector for iterating over the buttons
-    std::vector<ScaleButtonWrapperComponent*> scale_buttons = {
+    std::vector<ScaleButtonComponent*> scale_buttons = {
         &CScaleButton,
         &CSharpScaleButton,
         &DScaleButton,
