@@ -10,17 +10,7 @@
 
 #pragma once
 #include "PluginEditor.h"
-
-// Global colors
-const juce::Colour black = juce::Colour::fromFloatRGBA (0.0f, 0.0f, 0.0f, 1.0f);
-const juce::Colour darkGrey1 = juce::Colour::fromFloatRGBA (0.14f, 0.14f, 0.14f, 1.0f);
-const juce::Colour midGrey = juce::Colour::fromFloatRGBA (0.25f, 0.25f, 0.25f, 1.0f);
-const juce::Colour lightGrey = juce::Colour::fromFloatRGBA (0.45f, 0.45f, 0.45f, 1.0f);
-const juce::Colour darkGrey2 = juce::Colour::fromFloatRGBA (0.45f, 0.45f, 0.45f, 1.0f);
-const juce::Colour white = juce::Colour::fromFloatRGBA (1.0f, 1.0f, 1.0f, 1.0f);
-const juce::Colour whiteGrey = juce::Colour::fromFloatRGBA (.6f, .6f, 0.6f, 1.0f);
-const juce::Colour orange = juce::Colour::fromFloatRGBA (0.91f, 0.38f, 0.19f, 1.0f);
-const juce::Colour lightOrange = juce::Colour::fromFloatRGBA (0.93f, 0.67f, 0.114f, 1.0f);
+#include "Colors.h"
 
 //Embed font
 static const juce::Font getCustomFont()
@@ -30,7 +20,7 @@ static const juce::Font getCustomFont()
 }
 
 
-class ScaleButton : public juce::LookAndFeel_V4
+class ScaleButtonLookAndFeel : public juce::LookAndFeel_V4
 {
 public:
     int borderThick = 4;
@@ -112,4 +102,81 @@ public:
     }
     
 };
+
+
+
+// TODO: Consolidate left and right button classes
+class RightArrowButtonLookAndFeel : public juce::LookAndFeel_V4
+{
+public:
+
+    void drawButtonBackground (juce::Graphics& g, juce::Button& ArrowButton, const juce::Colour& backgroundColour,
+                               bool, bool isButtonDown) override
+    {
+        juce::Path Triangle;
+        juce::AffineTransform transform;
+        
+        ArrowButton.setBoundsRelative(0, 0, 1.0, 1.0);
+        Triangle.addTriangle(0, ArrowButton.getHeight()/2, ArrowButton.getWidth(), 0,ArrowButton.getWidth(), ArrowButton.getHeight());
+        
+        auto fillType = juce::FillType();
+        fillType.setColour(darkGrey1);
+        g.setFillType(fillType);
+    
+        transform = transform.rotation(3.14, ArrowButton.getWidth()/2, ArrowButton.getHeight()/2);
+        g.fillPath(Triangle, transform);
+    }
+};
+
+// TODO: Consolidate left and right button classes
+class LeftArrowButtonLookAndFeel : public juce::LookAndFeel_V4
+{
+public:
+
+    void drawButtonBackground (juce::Graphics& g, juce::Button& ArrowButton, const juce::Colour& backgroundColour,
+                               bool, bool isButtonDown) override
+    {
+        juce::Path Triangle;
+        
+        ArrowButton.setBoundsRelative(0, 0, 1.0, 1.0);
+        Triangle.addTriangle(0, ArrowButton.getHeight()/2, ArrowButton.getWidth(), 0,ArrowButton.getWidth(), ArrowButton.getHeight());
+        
+        auto fillType = juce::FillType();
+        fillType.setColour(darkGrey1);
+        g.setFillType(fillType);
+    
+        g.fillPath(Triangle);
+    }
+};
+    
+// TODO: Fix secector button styles
+////The triangular button used for octave shifts
+//class OctaveButton : public juce::LookAndFeel_V4
+//{
+//public:
+//    int borderThick = 4;
+//    int borderThin = 2;
+//    
+//    void drawButtonBackground (juce::Graphics& g, juce::Button& button, const juce::Colour& backgroundColour,
+//                               bool, bool isButtonDown) override
+//    {
+//        //Main area and border
+//        auto buttonArea = button.getLocalBounds();
+//        
+//        buttonArea.removeFromLeft (borderThick);
+//        buttonArea.removeFromTop (borderThick);
+//        buttonArea.removeFromRight (borderThick);
+//        buttonArea.removeFromBottom (borderThick);
+//        button.setClickingTogglesState(1);
+//        
+//        juce::Path octTriangle;
+//        
+//        octTriangle.addTriangle(button.getWidth(), button.getHeight(), button.getWidth(), button.getHeight(), button.getWidth(), button.getHeight());
+//
+//        g.fillPath(octTriangle);
+//        
+//        g.setColour (darkGrey1);
+//        g.strokePath (octTriangle, juce::PathStrokeType (2.0f));
+//    }
+//};
 

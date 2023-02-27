@@ -8,7 +8,8 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
-#include "APVTS_Params.h"
+#include "APVTS_ParameterLayout.h"
+#include "APVTS_Constants.h"
 
 //==============================================================================
 VerboseAudioProcessor::VerboseAudioProcessor()
@@ -69,8 +70,7 @@ double VerboseAudioProcessor::getTailLengthSeconds() const
 
 int VerboseAudioProcessor::getNumPrograms()
 {
-    return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
-                // so this should be at least 1, even if you're not really implementing programs.
+    return 1;
 }
 
 int VerboseAudioProcessor::getCurrentProgram()
@@ -91,17 +91,20 @@ void VerboseAudioProcessor::changeProgramName (int index, const juce::String& ne
 {
 }
 
+//void VerboseAudioProcessor::getGuiParams()
+//{
+//    gui_var1 = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.C);
+//    var1 = *gui_var1;
+//    std::cout << var1 << "\r";
+//}
+
 //==============================================================================
 void VerboseAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
 }
 
 void VerboseAudioProcessor::releaseResources()
 {
-    // When playback stops, you can use this as an opportunity to free up any
-    // spare memory, etc.
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
@@ -131,11 +134,24 @@ void VerboseAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
     juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
+    
+//    auto toggleStateC = verboseAPVTS.getRawParameterValue(scaleButtonToggleState.C);
+    
+//    auto toggleStateCSharp = verboseAPVTS.getRawParameterValue(scaleButtonToggleState.CSharp);
+    
+    auto scaleButtonOctaveStateC = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.C);
+    auto scaleButtonOctaveStateCSharp = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.CSharp);
+    
+//    getGuiParams();
+    
 
+    
+//    std::cout << toggleStateC->load() << std::endl << toggleStateCSharp->load() << std::endl;
+    std::cout << scaleButtonOctaveStateC->load() << scaleButtonOctaveStateCSharp->load() << std::endl;
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
-    getAPVTSParams();
+//    getAPVTSParams();
     
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
@@ -145,7 +161,7 @@ void VerboseAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
 //==============================================================================
 bool VerboseAudioProcessor::hasEditor() const
 {
-    return true; // (change this to false if you choose to not supply an editor)
+    return true; 
 }
 
 juce::AudioProcessorEditor* VerboseAudioProcessor::createEditor()
@@ -156,18 +172,35 @@ juce::AudioProcessorEditor* VerboseAudioProcessor::createEditor()
 //==============================================================================
 void VerboseAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
-    // You should use this method to store your parameters in the memory block.
-    // You could do that either as raw data, or use the XML or ValueTree classes
-    // as intermediaries to make it easy to save and load complex data.
+    auto state = verboseAPVTS.copyState();
+    std::unique_ptr<juce::XmlElement> xml (state.createXml());
+    copyXmlToBinary (*xml, destData);
 }
 
 void VerboseAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
-    // You should use this method to restore your parameters from this memory block,
-    // whose contents will have been created by the getStateInformation() call.
+    std::unique_ptr<juce::XmlElement> xmlState (getXmlFromBinary (data, sizeInBytes));
+
+    if (xmlState.get() != nullptr)
+        if (xmlState->hasTagName (verboseAPVTS.state.getType()))
+            verboseAPVTS.replaceState (juce::ValueTree::fromXml (*xmlState));
 }
 
+//void getStateInformation (juce::MemoryBlock& destData) override
+//{
+//    auto state = parameters.copyState();
+//    std::unique_ptr<juce::XmlElement> xml (state.createXml());
+//    copyXmlToBinary (*xml, destData);
+//}
 
+//void setStateInformation (const void* data, int sizeInBytes) override
+//{
+//    std::unique_ptr<juce::XmlElement> xmlState (getXmlFromBinary (data, sizeInBytes));
+//
+//    if (xmlState.get() != nullptr)
+//        if (xmlState->hasTagName (parameters.state.getType()))
+//            parameters.replaceState (juce::ValueTree::fromXml (*xmlState));
+//}
 
 //==============================================================================
 // This creates new instances of the plugin..

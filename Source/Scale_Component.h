@@ -6,33 +6,35 @@
 #include "PluginEditor.h"
 #include "PluginProcessor.h"
 #include "APVTS_Constants.h"
+#include "ScaleButton_Component.h"
+
+// This component uses juce::Grid to lay out buttons for sharp and flat notes in a keyboard-style layout.
+
+struct ScaleButtonLabels{
+    std::string C = "C";
+    std::string CSharp = "C#";
+    std::string D = "D";
+    std::string DSharp = "D#";
+    std::string E = "E";
+    std::string F = "F";
+    std::string FSharp = "F#";
+    std::string G = "G";
+    std::string GSharp = "G#";
+    std::string A = "A";
+    std::string ASharp = "A#";
+    std::string B = "B";
+};
 
 class ScaleComponent: public juce::Component
 {
     
 public:
-    
-    ScaleComponent(VerboseAudioProcessor& p)
+
+    ScaleComponent(VerboseAudioProcessor& p): classMemberProcessor(p)
     {
         setLookAndFeel(&ScaleButtonLookAndFeel);
-
-        // Button Attachments
-        c_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.C, c_scale_button));
-        c_sharp_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.CSharp, c_sharp_scale_button));
-        d_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.D , d_scale_button));
-        d_sharp_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.DSharp, d_sharp_scale_button));
-        e_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.E, e_scale_button));
-        f_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.F, f_scale_button));
-        f_sharp_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.FSharp, f_sharp_scale_button));
-        g_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.G, g_scale_button));
-        g_sharp_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.GSharp, g_sharp_scale_button));
-        a_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.A, a_scale_button));
-        a_sharp_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.ASharp, a_sharp_scale_button));
-        b_scale_button_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.apvts, scaleButtonIds.B, b_scale_button));
-        
         
         for (int i = 0; i < scale_buttons.size(); i++){
-            scale_buttons[i] -> setButtonText(scale_button_labels[i]);
             scale_buttons[i] -> setBounds(i * buttonHeight, 0, buttonHeight, buttonHeight);
             addAndMakeVisible(scale_buttons[i]);
         }
@@ -45,7 +47,6 @@ public:
     
     void resized() override
     {
-//        auto area = getLocalBounds();
         juce::Grid sharps;
         juce::Grid naturals;
         
@@ -53,39 +54,40 @@ public:
         using fr = juce::Grid::Fr;
         using px = juce::Grid::Px;
         
-        // Sharps
+        // Grid layout for sharp note buttons
         
         sharps.templateRows    = { Track (px (buttonHeight))};
         sharps.templateColumns = { px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth)};
         sharps.setGap(juce::Grid::Px(buttonWidth));
         
-        juce::GridItem cSharp = juce::GridItem(c_sharp_scale_button);
-        juce::GridItem dSharp = juce::GridItem(d_sharp_scale_button);
-        juce::GridItem fSharp = juce::GridItem(f_sharp_scale_button);
-        juce::GridItem gSharp = juce::GridItem(g_sharp_scale_button);
-        juce::GridItem aSharp = juce::GridItem(a_sharp_scale_button);
         
+        juce::GridItem cSharp = juce::GridItem(CSharpScaleButton);
+        juce::GridItem dSharp = juce::GridItem(DSharpScaleButton);
+        juce::GridItem fSharp = juce::GridItem(FSharpScaleButton);
+        juce::GridItem gSharp = juce::GridItem(GSharpScaleButton);
+        juce::GridItem aSharp = juce::GridItem(ASharpScaleButton);
+    
         cSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(1));
         dSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(2));
         fSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(4));
         gSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(5));
         aSharp.setArea(juce::GridItem::Property(1), juce::GridItem::Property(6));
-        
+            
         sharps.items = { cSharp, dSharp, fSharp, gSharp, aSharp };
         
-        // Naturals
+        // Grid layout for natural note buttons
 
         naturals.templateRows    = { Track (px (buttonHeight))};
         naturals.templateColumns = { px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth), px(buttonWidth) };
         naturals.setGap(juce::Grid::Px(buttonWidth));
         
-        juce::GridItem c = juce::GridItem(c_scale_button);
-        juce::GridItem d = juce::GridItem(d_scale_button);
-        juce::GridItem e = juce::GridItem(e_scale_button);
-        juce::GridItem f = juce::GridItem(f_scale_button);
-        juce::GridItem g = juce::GridItem(g_scale_button);
-        juce::GridItem a = juce::GridItem(a_scale_button);
-        juce::GridItem b = juce::GridItem(b_scale_button);
+        juce::GridItem c = juce::GridItem(CScaleButton);
+        juce::GridItem d = juce::GridItem(DScaleButton);
+        juce::GridItem e = juce::GridItem(EScaleButton);
+        juce::GridItem f = juce::GridItem(FScaleButton);
+        juce::GridItem g = juce::GridItem(GScaleButton);
+        juce::GridItem a = juce::GridItem(AScaleButton);
+        juce::GridItem b = juce::GridItem(BScaleButton);
         
         c.setArea(juce::GridItem::Property(1), juce::GridItem::Property(1));
         d.setArea(juce::GridItem::Property(1), juce::GridItem::Property(2));
@@ -104,65 +106,53 @@ public:
     ~ScaleComponent(){
         setLookAndFeel(nullptr);
     }
-    ScaleButton mainLookAndFeel;
+    juce::TextButton ScaleButton;
     juce::TextButton button1;
     
 private:
+    // Adds 'p' as a class member so we can access it outside of the constructor
+    VerboseAudioProcessor& classMemberProcessor;
     
-    ScaleButton ScaleButtonLookAndFeel;
+    ScaleButtonLabels scaleButtonLabels;
     
-    // Define the scale component buttons
-    juce::TextButton c_scale_button;
-    juce::TextButton c_sharp_scale_button;
-    juce::TextButton d_scale_button;
-    juce::TextButton d_sharp_scale_button;
-    juce::TextButton e_scale_button;
-    juce::TextButton f_scale_button;
-    juce::TextButton f_sharp_scale_button;
-    juce::TextButton g_scale_button;
-    juce::TextButton g_sharp_scale_button;
-    juce::TextButton a_scale_button;
-    juce::TextButton a_sharp_scale_button;
-    juce::TextButton b_scale_button;
+    ScaleButtonLookAndFeel ScaleButtonLookAndFeel;
+
+    // Define the scale component buttons for naturals
+    ScaleButtonComponent CScaleButton { ScaleComponent::classMemberProcessor, scaleButtonToggleState.C, scaleButtonOctaveState.C, scaleButtonLabels.C };
+    ScaleButtonComponent DScaleButton { this->classMemberProcessor, scaleButtonToggleState.D, scaleButtonOctaveState.D, scaleButtonLabels.D };
+    ScaleButtonComponent EScaleButton { this->classMemberProcessor, scaleButtonToggleState.E, scaleButtonOctaveState.E, scaleButtonLabels.E };
+    ScaleButtonComponent FScaleButton { this->classMemberProcessor, scaleButtonToggleState.F, scaleButtonOctaveState.F, scaleButtonLabels.F };
+    ScaleButtonComponent GScaleButton { this->classMemberProcessor, scaleButtonToggleState.G, scaleButtonOctaveState.G, scaleButtonLabels.G };
+    ScaleButtonComponent AScaleButton { this->classMemberProcessor, scaleButtonToggleState.A, scaleButtonOctaveState.A, scaleButtonLabels.A };
+    ScaleButtonComponent BScaleButton { this->classMemberProcessor, scaleButtonToggleState.B, scaleButtonOctaveState.B, scaleButtonLabels.B };
     
-    // Define the button attachments
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> c_scale_button_attachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> c_sharp_scale_button_attachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> d_scale_button_attachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> d_sharp_scale_button_attachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> e_scale_button_attachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> f_scale_button_attachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> f_sharp_scale_button_attachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> g_scale_button_attachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> g_sharp_scale_button_attachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> a_scale_button_attachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> a_sharp_scale_button_attachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> b_scale_button_attachment;
+    // Define the scale component buttons for sharps
+    ScaleButtonComponent CSharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.CSharp, scaleButtonOctaveState.CSharp, scaleButtonLabels.CSharp };
+    ScaleButtonComponent DSharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.DSharp, scaleButtonOctaveState.DSharp, scaleButtonLabels.DSharp };
+    ScaleButtonComponent FSharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.FSharp, scaleButtonOctaveState.FSharp, scaleButtonLabels.FSharp };
+    ScaleButtonComponent GSharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.GSharp, scaleButtonOctaveState.GSharp, scaleButtonLabels.GSharp };
+    ScaleButtonComponent ASharpScaleButton { this->classMemberProcessor, scaleButtonToggleState.ASharp, scaleButtonOctaveState.ASharp, scaleButtonLabels.ASharp };
+
     
     // Define a vector for iterating over the buttons
-    std::vector<juce::TextButton*> scale_buttons = {
-        &c_scale_button,
-        &c_sharp_scale_button,
-        &d_scale_button,
-        &d_sharp_scale_button,
-        &e_scale_button,
-        &f_scale_button,
-        &f_sharp_scale_button,
-        &g_scale_button,
-        &g_sharp_scale_button,
-        &a_scale_button,
-        &a_sharp_scale_button,
-        &b_scale_button
-    };
-
-    // Define the button labels
-    std::vector<std::string> scale_button_labels = {
-        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
+    std::vector<ScaleButtonComponent*> scale_buttons = {
+        &CScaleButton,
+        &CSharpScaleButton,
+        &DScaleButton,
+        &DSharpScaleButton,
+        &EScaleButton,
+        &FScaleButton,
+        &FSharpScaleButton,
+        &GScaleButton,
+        &GSharpScaleButton,
+        &AScaleButton,
+        &ASharpScaleButton,
+        &BScaleButton
     };
 
     int border = 4;
-    int buttonHeight = 75;
-    int buttonWidth = 50;
+    int buttonHeight = 120;
+    int buttonWidth = 60;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ScaleComponent)
 };
 

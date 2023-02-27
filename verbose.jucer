@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="jlQIgl" name="verbose" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              pluginFormats="buildAUv3,buildVST3">
   <MAINGROUP id="ImLGRz" name="verbose">
     <GROUP id="{2A8AA373-2931-7AB1-92EF-9C59E3B5435D}" name="Resources">
       <FILE id="FhpD7u" name="HelveticaNeue.ttc" compile="0" resource="1"
             file="Source/Resources/HelveticaNeue.ttc"/>
     </GROUP>
     <GROUP id="{94AB84F2-CBCA-2EC0-F4CE-FE29939B2EF3}" name="Source">
-      <GROUP id="{ACBF6DA2-62F7-A29E-3D6E-FC7AD1B06F18}" name="Utils">
-        <FILE id="f6fjB2" name="APVTS_Params.h" compile="0" resource="0" file="Source/APVTS_Params.h"/>
+      <GROUP id="{EF22C78D-5E12-CED6-4A70-6C53046F70C0}" name="Styles">
+        <FILE id="mIyakQ" name="Colors.h" compile="0" resource="0" file="Source/Colors.h"/>
         <FILE id="DCnj0n" name="GUI_Classes.h" compile="0" resource="0" file="Source/GUI_Classes.h"/>
+        <FILE id="ag5CN7" name="Shapes.h" compile="0" resource="0" file="Source/Shapes.h"/>
+      </GROUP>
+      <GROUP id="{ACBF6DA2-62F7-A29E-3D6E-FC7AD1B06F18}" name="APVTS">
+        <FILE id="f6fjB2" name="APVTS_ParameterLayout.h" compile="0" resource="0"
+              file="Source/APVTS_ParameterLayout.h"/>
         <FILE id="bZFTgw" name="APVTS_Constants.h" compile="0" resource="0"
               file="Source/APVTS_Constants.h"/>
-        <FILE id="oVcB6K" name="APVTS_Constants.cpp" compile="1" resource="0"
-              file="Source/APVTS_Constants.cpp"/>
       </GROUP>
       <GROUP id="{A0721D3A-B1FC-EDD7-4926-D95A569DC02C}" name="Components">
         <FILE id="yvDZZi" name="Header_Component.h" compile="0" resource="0"
@@ -23,6 +27,10 @@
               file="Source/Main_Component.h"/>
         <FILE id="PeUOBu" name="Scale_Component.h" compile="0" resource="0"
               file="Source/Scale_Component.h"/>
+        <FILE id="wgvuRF" name="ScaleButton_Component.h" compile="0" resource="0"
+              file="Source/ScaleButton_Component.h"/>
+        <FILE id="Kcwz4w" name="IncDec_Component.h" compile="0" resource="0"
+              file="Source/IncDec_Component.h"/>
         <FILE id="WrUuQS" name="Snapshot_Component.h" compile="0" resource="0"
               file="Source/Snapshot_Component.h"/>
       </GROUP>
