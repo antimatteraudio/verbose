@@ -10,7 +10,7 @@
 
 #pragma once
 #include "PluginEditor.h"
-#include "Colors.h"
+#include "StyleConstants.h"
 
 //Embed font
 static const juce::Font getCustomFont()
@@ -19,6 +19,23 @@ static const juce::Font getCustomFont()
     return juce::Font (typeface);
 }
 
+
+class RoundedRectangleBackground : public juce::LookAndFeel_V4 {
+    public:
+    void drawBackground (juce::Graphics& g, juce::Rectangle<int> area, juce::Colour color = midGrey, int borderHorizontal = 4,  int borderVertical = 4){
+        const float x = borderHorizontal;
+        const float y = borderVertical;
+        area.removeFromLeft (borderHorizontal);
+        area.removeFromTop (borderVertical);
+        area.removeFromRight (borderHorizontal);
+        area.removeFromBottom (borderVertical);
+        auto w = area.getWidth();
+        auto h = area.getHeight();
+        g.setColour (color);
+        g.fillRoundedRectangle(x, y, w, h, radius);
+    }
+    const float radius = 15.0f;
+};
 
 class ScaleButtonLookAndFeel : public juce::LookAndFeel_V4
 {

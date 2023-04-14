@@ -10,7 +10,8 @@
     </GROUP>
     <GROUP id="{94AB84F2-CBCA-2EC0-F4CE-FE29939B2EF3}" name="Source">
       <GROUP id="{EF22C78D-5E12-CED6-4A70-6C53046F70C0}" name="Styles">
-        <FILE id="mIyakQ" name="Colors.h" compile="0" resource="0" file="Source/Colors.h"/>
+        <FILE id="mIyakQ" name="StyleConstants.h" compile="0" resource="0"
+              file="Source/StyleConstants.h"/>
         <FILE id="DCnj0n" name="GUI_Classes.h" compile="0" resource="0" file="Source/GUI_Classes.h"/>
         <FILE id="ag5CN7" name="Shapes.h" compile="0" resource="0" file="Source/Shapes.h"/>
       </GROUP>
@@ -21,6 +22,9 @@
               file="Source/APVTS_Constants.h"/>
       </GROUP>
       <GROUP id="{A0721D3A-B1FC-EDD7-4926-D95A569DC02C}" name="Components">
+        <FILE id="Aqorsk" name="Snapshot_Wrapper.h" compile="0" resource="0"
+              file="Source/Snapshot_Wrapper.h"/>
+        <FILE id="iJbWRe" name="Scale_Wrapper.h" compile="0" resource="0" file="Source/Scale_Wrapper.h"/>
         <FILE id="yvDZZi" name="Header_Component.h" compile="0" resource="0"
               file="Source/Header_Component.h"/>
         <FILE id="qKuGg5" name="Main_Component.h" compile="0" resource="0"

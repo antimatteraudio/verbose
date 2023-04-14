@@ -42,11 +42,23 @@ public:
     
     void paint (juce::Graphics& g) override
     {
-        g.fillAll (juce::Colours::black);
+//        auto area = getLocalBounds();
+//        RoundedRectangleBackground.drawBackground(g, area, midGrey, 8, 8);
+//        area.centreWithSize();
+
     }
     
     void resized() override
     {
+//      TODO: Can we make this a global helper function?
+        auto area = getLocalBounds();
+        area.removeFromRight(padding);
+        area.removeFromLeft(padding);
+        area.removeFromBottom(padding);
+        area.removeFromTop(padding);
+//
+        auto buttonWidth = area.getWidth()/columns;
+        
         juce::Grid sharps;
         juce::Grid naturals;
         
@@ -99,8 +111,8 @@ public:
         
         naturals.items = { c, d, e, f, g, a, b };
         
-        sharps.performLayout (juce::Rectangle<int> (buttonWidth, 0, 800, buttonHeight));
-        naturals.performLayout (juce::Rectangle<int> (0, buttonHeight, 800, buttonHeight));
+        sharps.performLayout (juce::Rectangle<int> ((area.getX() + buttonWidth), area.getY(), area.getWidth(), buttonHeight));
+        naturals.performLayout (juce::Rectangle<int> (area.getX(), (area.getY() + buttonHeight), area.getWidth(), buttonHeight));
     }
     
     ~ScaleComponent(){
@@ -116,6 +128,7 @@ private:
     ScaleButtonLabels scaleButtonLabels;
     
     ScaleButtonLookAndFeel ScaleButtonLookAndFeel;
+    RoundedRectangleBackground RoundedRectangleBackground;
 
     // Define the scale component buttons for naturals
     ScaleButtonComponent CScaleButton { ScaleComponent::classMemberProcessor, scaleButtonToggleState.C, scaleButtonOctaveState.C, scaleButtonLabels.C };
@@ -150,9 +163,10 @@ private:
         &BScaleButton
     };
 
-    int border = 4;
+
     int buttonHeight = 120;
-    int buttonWidth = 60;
+    int padding = 16;
+    int columns = 13;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ScaleComponent)
 };
 

@@ -78,8 +78,8 @@
 		340B61ADC596B4721AE0BABF /* juce_core */ /* juce_core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_core; path = /Applications/JUCE/modules/juce_core; sourceTree = "<absolute>"; };
 		37CAEC0D7C7FA2C2A880AEE3 /* include_juce_gui_basics.mm */ /* include_juce_gui_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_basics.mm; path = ../../JuceLibraryCode/include_juce_gui_basics.mm; sourceTree = SOURCE_ROOT; };
 		3863F459326FD844593B35D1 /* include_juce_core.mm */ /* include_juce_core.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_core.mm; path = ../../JuceLibraryCode/include_juce_core.mm; sourceTree = SOURCE_ROOT; };
-		3C3B1D3830FE0AF99408D675 /* Colors.h */ /* Colors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Colors.h; path = ../../Source/Colors.h; sourceTree = SOURCE_ROOT; };
 		3D06C3C8DEA36C5BAEF16A8C /* Shapes.h */ /* Shapes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Shapes.h; path = ../../Source/Shapes.h; sourceTree = SOURCE_ROOT; };
+		3F984621D66096914559DCEF /* StyleConstants.h */ /* StyleConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StyleConstants.h; path = ../../Source/StyleConstants.h; sourceTree = SOURCE_ROOT; };
 		3F9BE6788847973A34A40DD0 /* Info-AUv3_AppExtension.plist */ /* Info-AUv3_AppExtension.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-AUv3_AppExtension.plist"; path = "Info-AUv3_AppExtension.plist"; sourceTree = SOURCE_ROOT; };
 		4276EB1DF5C7B14F49B4F210 /* AVFoundation.framework */ /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4338DBE4FB17853F91141132 /* ScaleButton_Component.h */ /* ScaleButton_Component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ScaleButton_Component.h; path = ../../Source/ScaleButton_Component.h; sourceTree = SOURCE_ROOT; };
@@ -89,6 +89,7 @@
 		58158DB8EC029CEB6B938223 /* juce_audio_utils */ /* juce_audio_utils */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_utils; path = /Applications/JUCE/modules/juce_audio_utils; sourceTree = "<absolute>"; };
 		5C5F97AE5FD8D8DDDDF3ABCE /* IOKit.framework */ /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		5D7E7A6275C236B51F555C80 /* include_juce_events.mm */ /* include_juce_events.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_events.mm; path = ../../JuceLibraryCode/include_juce_events.mm; sourceTree = SOURCE_ROOT; };
+		5DF9B661CA761DED585D3B80 /* Scale_Wrapper.h */ /* Scale_Wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Scale_Wrapper.h; path = ../../Source/Scale_Wrapper.h; sourceTree = SOURCE_ROOT; };
 		5E90A6A8473F774EC9D74B41 /* Cocoa.framework */ /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6678008C4BB2FB9967793BA8 /* Header_Component.h */ /* Header_Component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header_Component.h; path = ../../Source/Header_Component.h; sourceTree = SOURCE_ROOT; };
 		687A84B916A57F86832EF731 /* juce_audio_plugin_client */ /* juce_audio_plugin_client */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_plugin_client; path = /Applications/JUCE/modules/juce_audio_plugin_client; sourceTree = "<absolute>"; };
@@ -120,6 +121,7 @@
 		B715A68E2146A5C6F367E7B8 /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = /Applications/JUCE/modules/juce_graphics; sourceTree = "<absolute>"; };
 		BAD5D0FC284C01D4809CFF9B /* juce_gui_extra */ /* juce_gui_extra */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_extra; path = /Applications/JUCE/modules/juce_gui_extra; sourceTree = "<absolute>"; };
 		BBC1B108083B83A92C1FC624 /* include_juce_audio_plugin_client_VST3.cpp */ /* include_juce_audio_plugin_client_VST3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_VST3.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp; sourceTree = SOURCE_ROOT; };
+		BBD394AF148CBB10425D39B9 /* Snapshot_Wrapper.h */ /* Snapshot_Wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Snapshot_Wrapper.h; path = ../../Source/Snapshot_Wrapper.h; sourceTree = SOURCE_ROOT; };
 		C7449063DC6523F6475C850E /* IncDec_Component.h */ /* IncDec_Component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IncDec_Component.h; path = ../../Source/IncDec_Component.h; sourceTree = SOURCE_ROOT; };
 		C9C008DDC538F4B4B303F4FB /* include_juce_graphics.mm */ /* include_juce_graphics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_graphics.mm; path = ../../JuceLibraryCode/include_juce_graphics.mm; sourceTree = SOURCE_ROOT; };
 		CAF049AD6F19504B0FABCE74 /* include_juce_audio_processors_ara.cpp */ /* include_juce_audio_processors_ara.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_processors_ara.cpp; path = ../../JuceLibraryCode/include_juce_audio_processors_ara.cpp; sourceTree = SOURCE_ROOT; };
@@ -261,6 +263,8 @@
 		6B3DF3AD60CE3C7C340702D6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BBD394AF148CBB10425D39B9,
+				5DF9B661CA761DED585D3B80,
 				6678008C4BB2FB9967793BA8,
 				AE67FB1415ADFC8E8F7964BE,
 				9B20EF807B384D4F329D163F,
@@ -293,7 +297,7 @@
 		8EEC6A4B6E0EE9734CFA3F6A /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				3C3B1D3830FE0AF99408D675,
+				3F984621D66096914559DCEF,
 				B3E1A89BF1F8380DE1881A50,
 				3D06C3C8DEA36C5BAEF16A8C,
 			);

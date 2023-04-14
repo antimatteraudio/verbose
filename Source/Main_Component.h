@@ -13,9 +13,9 @@
 #include "GUI_Classes.h"
 #include "PluginEditor.h"
 #include "PluginProcessor.h"
-#include "Scale_Component.h"
+#include "Scale_Wrapper.h"
 #include "Header_Component.h"
-#include "Snapshot_Component.h"
+#include "Snapshot_Wrapper.h"
 
 class SceneComponent: public juce::Component
 {
@@ -29,18 +29,22 @@ public:
     {
 
         // TODO: These are temporary bounds values
-        Header.setBounds (0, 0, 800, 200);
-        Snapshot.setBounds (0, 200, 800, 200);
-        Scale.setBounds (0, 400, 800, 200);
+        auto area = getLocalBounds();
+    
+        Header.setBounds (area.removeFromTop(headerHeight));
+        Snapshot.setBounds (area.removeFromTop(snapShotHeight));
+        Snapshot.setBounds (area.removeFromTop(scaleHeight));
         addAndMakeVisible(Header);
         addAndMakeVisible(Snapshot);
         addAndMakeVisible(Scale);
+        
             
     }
     
     void paint (juce::Graphics& g) override
     {
-        g.fillAll (juce::Colours::black);
+        auto area = getLocalBounds();
+        RoundedRectangleBackground.drawBackground(g, area, lightGrey);
     }
     
     void resized() override
@@ -48,9 +52,9 @@ public:
         juce::FlexBox fb;
         fb.flexDirection = juce::FlexBox::Direction::column;
  
-        juce::FlexItem header  (800, 100, Header);
-        juce::FlexItem snapshot (800, 200, Snapshot);
-        juce::FlexItem scale  (800, 400, Scale);
+        juce::FlexItem header  (pluginWidth, headerHeight, Header);
+        juce::FlexItem snapshot (pluginWidth, snapShotHeight, Snapshot);
+        juce::FlexItem scale  (pluginWidth, scaleHeight, Scale);
  
         fb.items.addArray ( { header, snapshot, scale } );
         fb.performLayout (getLocalBounds().toFloat());
@@ -62,10 +66,14 @@ public:
     }
     
 private:
-    
-    ScaleComponent Scale;
+    int pluginWidth = 800;
+    int headerHeight = 100;
+    int snapShotHeight = 200;
+    int scaleHeight = 300;
+    ScaleWrapper Scale;
     HeaderComponent Header;
-    SnapshotComponent Snapshot;
+    SnapshotWrapper Snapshot;
+    RoundedRectangleBackground RoundedRectangleBackground;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SceneComponent)
 };
 
