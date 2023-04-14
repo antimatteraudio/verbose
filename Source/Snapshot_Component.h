@@ -59,11 +59,14 @@ public:
         using fr = juce::Grid::Fr;
         using px = juce::Grid::Px;
         using gridItem = juce::GridItem;
+        
+//        TODO: Can we make this a global helper function?
         auto area = getLocalBounds();
         area.removeFromRight(padding);
         area.removeFromLeft(padding);
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
+//
         
         grid.items = { gridItem(button_one), gridItem(button_two), gridItem(button_three), gridItem(button_four), gridItem(button_five), gridItem(button_six), gridItem(button_seven), gridItem(button_eight), gridItem(button_nine), gridItem(button_ten), gridItem(button_eleven), gridItem(button_twelve), gridItem(button_thirteen), gridItem(button_fourteen), gridItem(button_fifteen), gridItem(button_sixteen) };
         grid.templateRows = { Track (fr(1)) };

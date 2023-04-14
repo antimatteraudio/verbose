@@ -50,11 +50,13 @@ public:
     
     void resized() override
     {
+//      TODO: Can we make this a global helper function?
         auto area = getLocalBounds();
         area.removeFromRight(padding);
         area.removeFromLeft(padding);
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
+//
         auto buttonWidth = area.getWidth()/columns;
         
         juce::Grid sharps;

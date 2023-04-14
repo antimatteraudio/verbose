@@ -27,7 +27,13 @@ public:
     
     void resized() override
     {
+//      TODO: Can we make this a global helper function?
         auto area = getLocalBounds();
+        area.removeFromRight(padding);
+        area.removeFromLeft(padding);
+        area.removeFromBottom(padding);
+        area.removeFromTop(padding);
+//
         title.setBounds(area);
     }
     
@@ -37,7 +43,7 @@ public:
 
     
 private:
-    
+    int padding = 16;
     juce::Label title;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (HeaderComponent)
 };
