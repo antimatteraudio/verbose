@@ -10,7 +10,7 @@
 
 #pragma once
 #include "APVTS_Constants.h"
-#include "Colors.h"
+#include "StyleConstants.h"
 #include "Shapes.h"
 
 class IncDecComponent: public juce::Component
