@@ -5,11 +5,28 @@
               jucerFormatVersion="1" pluginFormats="buildAUv3,buildStandalone,buildVST3"
               companyName="antimatter">
   <MAINGROUP id="ImLGRz" name="antimatter-ui-template">
+    <GROUP id="{4D6A5CEB-7469-1E24-85E2-69B2B174E174}" name="amui">
+      <FILE id="YurprL" name="amui_Combobox.h" compile="0" resource="0" file="Source/amui_Combobox.h"/>
+      <FILE id="rRmWUb" name="amui_TextHeader.h" compile="0" resource="0"
+            file="Source/amui_TextHeader.h"/>
+      <FILE id="eLxdIX" name="amui_ImageSlider.h" compile="0" resource="0"
+            file="Source/amui_ImageSlider.h"/>
+      <FILE id="o4BRH8" name="amui_ImageKnob.h" compile="0" resource="0"
+            file="Source/amui_ImageKnob.h"/>
+      <FILE id="ozin4c" name="amui_Card.h" compile="0" resource="0" file="Source/amui_Card.h"/>
+      <FILE id="zTCZYR" name="amui_TextButton.h" compile="0" resource="0"
+            file="Source/amui_TextButton.h"/>
+    </GROUP>
     <GROUP id="{2A8AA373-2931-7AB1-92EF-9C59E3B5435D}" name="Resources">
       <FILE id="FhpD7u" name="HelveticaNeue.ttc" compile="0" resource="1"
             file="Source/Resources/HelveticaNeue.ttc"/>
     </GROUP>
     <GROUP id="{94AB84F2-CBCA-2EC0-F4CE-FE29939B2EF3}" name="Source">
+      <GROUP id="{DAFFEFDB-BE5C-D712-F54F-F38DB8987C4C}" name="Sections">
+        <FILE id="kc8MNb" name="Sections_Main.h" compile="0" resource="0" file="Source/Sections_Main.h"/>
+        <FILE id="vbAXZO" name="Sections_Header.h" compile="0" resource="0"
+              file="Source/Sections_Header.h"/>
+      </GROUP>
       <GROUP id="{EF22C78D-5E12-CED6-4A70-6C53046F70C0}" name="Styles">
         <FILE id="mIyakQ" name="StyleConstants.h" compile="0" resource="0"
               file="Source/StyleConstants.h"/>
@@ -22,7 +39,7 @@
         <FILE id="bZFTgw" name="APVTS_Constants.h" compile="0" resource="0"
               file="Source/APVTS_Constants.h"/>
       </GROUP>
-      <GROUP id="{A0721D3A-B1FC-EDD7-4926-D95A569DC02C}" name="Components">
+      <GROUP id="{A0721D3A-B1FC-EDD7-4926-D95A569DC02C}" name="Components_old">
         <FILE id="Aqorsk" name="Snapshot_Wrapper.h" compile="0" resource="0"
               file="Source/Snapshot_Wrapper.h"/>
         <FILE id="iJbWRe" name="Scale_Wrapper.h" compile="0" resource="0" file="Source/Scale_Wrapper.h"/>
