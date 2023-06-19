@@ -21,7 +21,7 @@ class ScaleWrapper: public juce::Component
     
 public:
 
-    ScaleWrapper(VerboseAudioProcessor& p): Scale(p)
+    ScaleWrapper(AntimatterUITemplateAudioProcessor& p): Scale(p)
     {}
     
     void paint (juce::Graphics& g) override

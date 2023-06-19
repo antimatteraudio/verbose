@@ -12,7 +12,7 @@ class HeaderComponent: public juce::Component
     
 public:
     
-    HeaderComponent(VerboseAudioProcessor& p)
+    HeaderComponent(AntimatterUITemplateAudioProcessor& p)
     {
         title.setFont (juce::Font (22.0f, juce::Font::bold));
         title.setText("Chord Portal", juce::dontSendNotification);

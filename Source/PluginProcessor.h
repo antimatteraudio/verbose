@@ -12,15 +12,15 @@
 
 //==============================================================================
 
-class VerboseAudioProcessor  : public juce::AudioProcessor
+class AntimatterUITemplateAudioProcessor  : public juce::AudioProcessor
                             #if JucePlugin_Enable_ARA
                              , public juce::AudioProcessorARAExtension
                             #endif
 {
 public:
     //==============================================================================
-    VerboseAudioProcessor();
-    ~VerboseAudioProcessor() override;
+    AntimatterUITemplateAudioProcessor();
+    ~AntimatterUITemplateAudioProcessor() override;
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -60,9 +60,9 @@ public:
     
     // Creates the parameter layout from APVTS/APVTS_ParameterLayout.h
     static juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
-    juce::AudioProcessorValueTreeState verboseAPVTS {*this, nullptr, "Parameters", createParameterLayout()};
+    juce::AudioProcessorValueTreeState APVTS {*this, nullptr, "Parameters", createParameterLayout()};
 private:
     //==============================================================================
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (VerboseAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AntimatterUITemplateAudioProcessor)
 };

@@ -21,7 +21,7 @@ class SnapshotWrapper: public juce::Component
     
 public:
 
-    SnapshotWrapper(VerboseAudioProcessor& p): Snapshot(p)
+    SnapshotWrapper(AntimatterUITemplateAudioProcessor& p): Snapshot(p)
     {}
     
     void paint (juce::Graphics& g) override

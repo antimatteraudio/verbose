@@ -30,7 +30,7 @@ class ScaleComponent: public juce::Component
     
 public:
 
-    ScaleComponent(VerboseAudioProcessor& p): classMemberProcessor(p)
+    ScaleComponent(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p)
     {
         setLookAndFeel(&ScaleButtonLookAndFeel);
         
@@ -123,7 +123,7 @@ public:
     
 private:
     // Adds 'p' as a class member so we can access it outside of the constructor
-    VerboseAudioProcessor& classMemberProcessor;
+    AntimatterUITemplateAudioProcessor& classMemberProcessor;
     
     ScaleButtonLabels scaleButtonLabels;
     

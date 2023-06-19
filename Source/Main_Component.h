@@ -25,7 +25,7 @@ public:
 //    std::unique_ptr<ScaleButton> c_scale_button = std::make_unique<ScaleButton>();
 //    std::vector<std::unique_ptr<juce::TextButton>> scaleButtons;
     
-    SceneComponent(VerboseAudioProcessor& p): Scale(p), Header(p), Snapshot(p)
+    SceneComponent(AntimatterUITemplateAudioProcessor& p): Scale(p), Header(p), Snapshot(p)
     {
 
         // TODO: These are temporary bounds values

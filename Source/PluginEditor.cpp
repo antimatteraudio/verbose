@@ -5,7 +5,7 @@
 #include "Scale_Component.h"
 
 //==============================================================================
-VerboseAudioProcessorEditor::VerboseAudioProcessorEditor (VerboseAudioProcessor& p)
+AntimatterUITemplateAudioProcessorEditor::AntimatterUITemplateAudioProcessorEditor (AntimatterUITemplateAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p), scene(p)
 {
     addAndMakeVisible(scene);
@@ -13,19 +13,19 @@ VerboseAudioProcessorEditor::VerboseAudioProcessorEditor (VerboseAudioProcessor&
     setSize (800, 600);
 }
 
-VerboseAudioProcessorEditor::~VerboseAudioProcessorEditor()
+AntimatterUITemplateAudioProcessorEditor::~AntimatterUITemplateAudioProcessorEditor()
 {
 }
 
 //==============================================================================
-void VerboseAudioProcessorEditor::paint (juce::Graphics& g)
+void AntimatterUITemplateAudioProcessorEditor::paint (juce::Graphics& g)
 {
  
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
 
 }
 
-void VerboseAudioProcessorEditor::resized()
+void AntimatterUITemplateAudioProcessorEditor::resized()
 {
     scene.setBounds (0, 0, getWidth(), getHeight());
 }

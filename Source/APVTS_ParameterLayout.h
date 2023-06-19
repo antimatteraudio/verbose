@@ -18,7 +18,7 @@
 // **************************************************
 
 juce::AudioProcessorValueTreeState::ParameterLayout
-VerboseAudioProcessor::createParameterLayout()
+AntimatterUITemplateAudioProcessor::createParameterLayout()
 {
     juce::AudioProcessorValueTreeState::ParameterLayout layout;
     

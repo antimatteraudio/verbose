@@ -16,28 +16,10 @@ class SnapshotComponent: public juce::Component
     
 public:
     
-    SnapshotComponent(VerboseAudioProcessor& p)
+    SnapshotComponent(AntimatterUITemplateAudioProcessor& p)
     {
         setLookAndFeel(&ScaleButtonLookAndFeel);
 
-        // Button Attachments
-//        button_one_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.one, button_one));
-//        button_two_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.two, button_two));
-//        button_three_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.three, button_three));
-//        button_four_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.four, button_four));
-//        button_five_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.five, button_five));
-//        button_six_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.six, button_six));
-//        button_seven_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.seven, button_seven));
-//        button_eight_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.eight, button_eight));
-//        button_nine_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.nine, button_nine));
-//        button_ten_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.ten, button_ten));
-//        button_eleven_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.eleven, button_eleven));
-//        button_twelve_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.twelve, button_twelve));
-//        button_thirteen_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.thirteen, button_thirteen));
-//        button_fourteen_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.fourteen, button_fourteen));
-//        button_fifteen_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.fifteen, button_fifteen));
-//        button_sixteen_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.sixteen, button_sixteen));
-  
         for (int i = 0; i < step_buttons.size(); i++){
             step_buttons[i] -> setButtonText(std::to_string(i + 1));
             step_buttons[i] -> setBounds(i * buttonWidth, 0, buttonWidth, buttonHeight);

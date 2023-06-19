@@ -12,7 +12,7 @@
 #include "APVTS_Constants.h"
 
 //==============================================================================
-VerboseAudioProcessor::VerboseAudioProcessor()
+AntimatterUITemplateAudioProcessor::AntimatterUITemplateAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
      : AudioProcessor (BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
@@ -26,17 +26,17 @@ VerboseAudioProcessor::VerboseAudioProcessor()
 {
 }
 
-VerboseAudioProcessor::~VerboseAudioProcessor()
+AntimatterUITemplateAudioProcessor::~AntimatterUITemplateAudioProcessor()
 {
 }
 
 //==============================================================================
-const juce::String VerboseAudioProcessor::getName() const
+const juce::String AntimatterUITemplateAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
 
-bool VerboseAudioProcessor::acceptsMidi() const
+bool AntimatterUITemplateAudioProcessor::acceptsMidi() const
 {
    #if JucePlugin_WantsMidiInput
     return true;
@@ -45,7 +45,7 @@ bool VerboseAudioProcessor::acceptsMidi() const
    #endif
 }
 
-bool VerboseAudioProcessor::producesMidi() const
+bool AntimatterUITemplateAudioProcessor::producesMidi() const
 {
    #if JucePlugin_ProducesMidiOutput
     return true;
@@ -54,7 +54,7 @@ bool VerboseAudioProcessor::producesMidi() const
    #endif
 }
 
-bool VerboseAudioProcessor::isMidiEffect() const
+bool AntimatterUITemplateAudioProcessor::isMidiEffect() const
 {
    #if JucePlugin_IsMidiEffect
     return true;
@@ -63,52 +63,52 @@ bool VerboseAudioProcessor::isMidiEffect() const
    #endif
 }
 
-double VerboseAudioProcessor::getTailLengthSeconds() const
+double AntimatterUITemplateAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
 }
 
-int VerboseAudioProcessor::getNumPrograms()
+int AntimatterUITemplateAudioProcessor::getNumPrograms()
 {
     return 1;
 }
 
-int VerboseAudioProcessor::getCurrentProgram()
+int AntimatterUITemplateAudioProcessor::getCurrentProgram()
 {
     return 0;
 }
 
-void VerboseAudioProcessor::setCurrentProgram (int index)
+void AntimatterUITemplateAudioProcessor::setCurrentProgram (int index)
 {
 }
 
-const juce::String VerboseAudioProcessor::getProgramName (int index)
+const juce::String AntimatterUITemplateAudioProcessor::getProgramName (int index)
 {
     return {};
 }
 
-void VerboseAudioProcessor::changeProgramName (int index, const juce::String& newName)
+void AntimatterUITemplateAudioProcessor::changeProgramName (int index, const juce::String& newName)
 {
 }
 
-//void VerboseAudioProcessor::getGuiParams()
+//void AntimatterUITemplateAudioProcessor::getGuiParams()
 //{
-//    gui_var1 = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.C);
+//    gui_var1 = APVTS.getRawParameterValue(scaleButtonOctaveState.C);
 //    var1 = *gui_var1;
 //    std::cout << var1 << "\r";
 //}
 
 //==============================================================================
-void VerboseAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void AntimatterUITemplateAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
 }
 
-void VerboseAudioProcessor::releaseResources()
+void AntimatterUITemplateAudioProcessor::releaseResources()
 {
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool VerboseAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+bool AntimatterUITemplateAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
   #if JucePlugin_IsMidiEffect
     juce::ignoreUnused (layouts);
@@ -129,24 +129,24 @@ bool VerboseAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) 
 }
 #endif
 
-void VerboseAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
+void AntimatterUITemplateAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
     juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
     
-//    auto toggleStateC = verboseAPVTS.getRawParameterValue(scaleButtonToggleState.C);
+    auto toggleStateC = APVTS.getRawParameterValue(scaleButtonToggleState.C);
     
-//    auto toggleStateCSharp = verboseAPVTS.getRawParameterValue(scaleButtonToggleState.CSharp);
+    auto toggleStateCSharp = APVTS.getRawParameterValue(scaleButtonToggleState.CSharp);
     
-    auto scaleButtonOctaveStateC = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.C);
-    auto scaleButtonOctaveStateCSharp = verboseAPVTS.getRawParameterValue(scaleButtonOctaveState.CSharp);
+    auto scaleButtonOctaveStateC = APVTS.getRawParameterValue(scaleButtonOctaveState.C);
+    auto scaleButtonOctaveStateCSharp = APVTS.getRawParameterValue(scaleButtonOctaveState.CSharp);
     
 //    getGuiParams();
     
 
     
-//    std::cout << toggleStateC->load() << std::endl << toggleStateCSharp->load() << std::endl;
+    std::cout << toggleStateC->load() << std::endl << toggleStateCSharp->load() << std::endl;
     std::cout << scaleButtonOctaveStateC->load() << scaleButtonOctaveStateCSharp->load() << std::endl;
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
@@ -159,31 +159,31 @@ void VerboseAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
 }
 
 //==============================================================================
-bool VerboseAudioProcessor::hasEditor() const
+bool AntimatterUITemplateAudioProcessor::hasEditor() const
 {
     return true; 
 }
 
-juce::AudioProcessorEditor* VerboseAudioProcessor::createEditor()
+juce::AudioProcessorEditor* AntimatterUITemplateAudioProcessor::createEditor()
 {
-    return new VerboseAudioProcessorEditor (*this);
+    return new AntimatterUITemplateAudioProcessorEditor (*this);
 }
 
 //==============================================================================
-void VerboseAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
+void AntimatterUITemplateAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
-    auto state = verboseAPVTS.copyState();
+    auto state = APVTS.copyState();
     std::unique_ptr<juce::XmlElement> xml (state.createXml());
     copyXmlToBinary (*xml, destData);
 }
 
-void VerboseAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+void AntimatterUITemplateAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     std::unique_ptr<juce::XmlElement> xmlState (getXmlFromBinary (data, sizeInBytes));
 
     if (xmlState.get() != nullptr)
-        if (xmlState->hasTagName (verboseAPVTS.state.getType()))
-            verboseAPVTS.replaceState (juce::ValueTree::fromXml (*xmlState));
+        if (xmlState->hasTagName (APVTS.state.getType()))
+            APVTS.replaceState (juce::ValueTree::fromXml (*xmlState));
 }
 
 //void getStateInformation (juce::MemoryBlock& destData) override
@@ -206,5 +206,5 @@ void VerboseAudioProcessor::setStateInformation (const void* data, int sizeInByt
 // This creates new instances of the plugin..
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
-    return new VerboseAudioProcessor();
+    return new AntimatterUITemplateAudioProcessor();
 }
