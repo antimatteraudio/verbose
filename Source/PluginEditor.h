@@ -7,11 +7,11 @@
 
 //==============================================================================
 
-class VerboseAudioProcessorEditor  : public juce::AudioProcessorEditor
+class AntimatterUITemplateAudioProcessorEditor  : public juce::AudioProcessorEditor
 {
 public:
-    VerboseAudioProcessorEditor (VerboseAudioProcessor&);
-    ~VerboseAudioProcessorEditor() override;
+    AntimatterUITemplateAudioProcessorEditor (AntimatterUITemplateAudioProcessor&);
+    ~AntimatterUITemplateAudioProcessorEditor() override;
 
     //==============================================================================
     void paint (juce::Graphics&) override;
@@ -21,10 +21,10 @@ public:
     
 private:
 
-    VerboseAudioProcessor& audioProcessor;
+    AntimatterUITemplateAudioProcessor& audioProcessor;
 
 
     SceneComponent scene;
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (VerboseAudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AntimatterUITemplateAudioProcessorEditor)
 };

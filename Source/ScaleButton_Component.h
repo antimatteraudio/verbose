@@ -22,12 +22,12 @@ class ScaleButtonComponent: public juce::Component
     
 public:
 
-    ScaleButtonComponent(VerboseAudioProcessor& p, juce::String scaleButtonAttachmentId, juce::String incDecAttachmentId, juce::String label): IncDec(p, incDecAttachmentId)
+    ScaleButtonComponent(AntimatterUITemplateAudioProcessor& p, juce::String scaleButtonAttachmentId, juce::String incDecAttachmentId, juce::String label): IncDec(p, incDecAttachmentId)
     {
         setLookAndFeel(&scaleButtonLookAndFeel);
         ScaleButton.setButtonText(label);
         addAndMakeVisible(ScaleButton);
-        ScaleButtonAttachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, scaleButtonAttachmentId, ScaleButton));
+        ScaleButtonAttachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.APVTS, scaleButtonAttachmentId, ScaleButton));
         
         
         addAndMakeVisible(IncDec);
@@ -35,7 +35,7 @@ public:
     
     void paint (juce::Graphics& g) override
     {
-        g.fillAll (juce::Colours::black);
+//        g.fillAll (juce::Colours::black);
     }
     
     void resized() override

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0DBABAFA725009FF05C63585"
-               BuildableName = "verbose.vst3"
-               BlueprintName = "verbose - VST3"
-               ReferencedContainer = "container:verbose.xcodeproj">
+               BuildableName = "antimatter-ui-template.vst3"
+               BlueprintName = "antimatter-ui-template - VST3"
+               ReferencedContainer = "container:antimatter-ui-template.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0DBABAFA725009FF05C63585"
-            BuildableName = "verbose.vst3"
-            BlueprintName = "verbose - VST3"
-            ReferencedContainer = "container:verbose.xcodeproj">
+            BuildableName = "antimatter-ui-template.vst3"
+            BlueprintName = "antimatter-ui-template - VST3"
+            ReferencedContainer = "container:antimatter-ui-template.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

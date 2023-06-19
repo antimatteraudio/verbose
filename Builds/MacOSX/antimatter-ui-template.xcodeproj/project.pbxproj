@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		4899D6862276BE4CEA6A2F68 /* verbose - All */ = {
+		4899D6862276BE4CEA6A2F68 /* antimatter-ui-template - All */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 6B1ADD0F143ACF1E0394F22C;
 			buildPhases = (
@@ -15,10 +15,11 @@
 			dependencies = (
 				C78572B5ECA7D601275EAF50,
 				7083208453C8E87E97FBA138,
+				D73DE2B39CA70E9166617115,
 				1ACA21E82011C4970527B579,
 			);
-			name = "verbose - All";
-			productName = verbose;
+			name = "antimatter-ui-template - All";
+			productName = "antimatter-ui-template";
 		};
 /* End PBXAggregateTarget section */
 
@@ -39,8 +40,10 @@
 		4E8EBB229903F57A4D8511DC /* BinaryData.cpp */ = {isa = PBXBuildFile; fileRef = 6DA730BA8B8F51205CC9A1BE; };
 		5D405680C29083C099B63909 /* QuartzCore.framework */ = {isa = PBXBuildFile; fileRef = 1E101C79DED54F01C8DE505A; };
 		6A5570790553BF988EE704EA /* VST3 */ = {isa = PBXBuildFile; fileRef = 6C9EEAE7073A0FEFDA0C9D84; };
+		705C0CE183D7C691C065BBAE /* Standalone Plugin */ = {isa = PBXBuildFile; fileRef = E879F1B5A54490D283783C58; };
 		7212C5EB3781A35BF945ADC1 /* include_juce_events.mm */ = {isa = PBXBuildFile; fileRef = 5D7E7A6275C236B51F555C80; };
 		77E3178DE8944AB4136CA73E /* include_juce_audio_utils.mm */ = {isa = PBXBuildFile; fileRef = 9CCA69DA3CC109B80F01B831; };
+		8D84910A0F66D84E32EA1E88 /* include_juce_audio_plugin_client_Standalone.cpp */ = {isa = PBXBuildFile; fileRef = B91C48C9527907D53879CFA8; };
 		8EE8354F0D8BBD11DAB210DD /* include_juce_audio_processors.mm */ = {isa = PBXBuildFile; fileRef = B3B19C176FD93AF3033786C5; };
 		9AFC62704939DFDD43164ADB /* AUv3 AppExtension */ = {isa = PBXBuildFile; fileRef = 840125E164B953F89F47773B; };
 		9FE7E75146FA94E808023960 /* Accelerate.framework */ = {isa = PBXBuildFile; fileRef = D9F99FDED5C1577A3FF26F80; };
@@ -63,10 +66,24 @@
 		FE9AD6D2F38D326F377184EA /* include_juce_audio_plugin_client_VST_utils.mm */ = {isa = PBXBuildFile; fileRef = 6E89F5790177D8BC61343126; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FCC236F843FE281A193B3E94 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AFC62704939DFDD43164ADB,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0110025DF1C63B26689F5CA2 /* Snapshot_Component.h */ /* Snapshot_Component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Snapshot_Component.h; path = ../../Source/Snapshot_Component.h; sourceTree = SOURCE_ROOT; };
 		01DBFE743BD0237931B401C6 /* PluginProcessor.cpp */ /* PluginProcessor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginProcessor.cpp; path = ../../Source/PluginProcessor.cpp; sourceTree = SOURCE_ROOT; };
-		046EF52550AC64F08C5D1167 /* Shared Code */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libverbose.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		046EF52550AC64F08C5D1167 /* Shared Code */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libantimatter-ui-template.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D7A37380DD307BD494FE69 /* include_juce_audio_plugin_client_ARA.cpp */ /* include_juce_audio_plugin_client_ARA.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_ARA.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_ARA.cpp; sourceTree = SOURCE_ROOT; };
 		061F8BE9E5978B6FDA923C48 /* include_juce_audio_formats.mm */ /* include_juce_audio_formats.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_formats.mm; path = ../../JuceLibraryCode/include_juce_audio_formats.mm; sourceTree = SOURCE_ROOT; };
 		0D5E544EDAA779976FC05967 /* CoreMIDI.framework */ /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
@@ -93,7 +110,7 @@
 		5E90A6A8473F774EC9D74B41 /* Cocoa.framework */ /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6678008C4BB2FB9967793BA8 /* Header_Component.h */ /* Header_Component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header_Component.h; path = ../../Source/Header_Component.h; sourceTree = SOURCE_ROOT; };
 		687A84B916A57F86832EF731 /* juce_audio_plugin_client */ /* juce_audio_plugin_client */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_plugin_client; path = /Applications/JUCE/modules/juce_audio_plugin_client; sourceTree = "<absolute>"; };
-		6C9EEAE7073A0FEFDA0C9D84 /* VST3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = verbose.vst3; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C9EEAE7073A0FEFDA0C9D84 /* VST3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "antimatter-ui-template.vst3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA730BA8B8F51205CC9A1BE /* BinaryData.cpp */ /* BinaryData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData.cpp; path = ../../JuceLibraryCode/BinaryData.cpp; sourceTree = SOURCE_ROOT; };
 		6E89F5790177D8BC61343126 /* include_juce_audio_plugin_client_VST_utils.mm */ /* include_juce_audio_plugin_client_VST_utils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_VST_utils.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm; sourceTree = SOURCE_ROOT; };
 		79B6B7557DA96BD7188E7FD7 /* include_juce_audio_basics.mm */ /* include_juce_audio_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_basics.mm; path = ../../JuceLibraryCode/include_juce_audio_basics.mm; sourceTree = SOURCE_ROOT; };
@@ -101,7 +118,7 @@
 		802FAC7D8FB678F6B7AC499B /* include_juce_data_structures.mm */ /* include_juce_data_structures.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_data_structures.mm; path = ../../JuceLibraryCode/include_juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
 		821F5B0C51574EB3C0D570AF /* AudioToolbox.framework */ /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		82977773818BA1D2A7400982 /* APVTS_ParameterLayout.h */ /* APVTS_ParameterLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = APVTS_ParameterLayout.h; path = ../../Source/APVTS_ParameterLayout.h; sourceTree = SOURCE_ROOT; };
-		840125E164B953F89F47773B /* AUv3 AppExtension */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = verbose.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		840125E164B953F89F47773B /* AUv3 AppExtension */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "antimatter-ui-template.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8667886FD3521466226EC04E /* PluginProcessor.h */ /* PluginProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginProcessor.h; path = ../../Source/PluginProcessor.h; sourceTree = SOURCE_ROOT; };
 		951A208520D415D4C66E06A3 /* juce_audio_devices */ /* juce_audio_devices */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_devices; path = /Applications/JUCE/modules/juce_audio_devices; sourceTree = "<absolute>"; };
 		9794B47D784A351AACF189C0 /* RecentFilesMenuTemplate.nib */ /* RecentFilesMenuTemplate.nib */ = {isa = PBXFileReference; lastKnownFileType = file.nib; name = RecentFilesMenuTemplate.nib; path = RecentFilesMenuTemplate.nib; sourceTree = SOURCE_ROOT; };
@@ -119,6 +136,7 @@
 		B3D089E9F324332DC62814B8 /* juce_audio_processors */ /* juce_audio_processors */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_processors; path = /Applications/JUCE/modules/juce_audio_processors; sourceTree = "<absolute>"; };
 		B3E1A89BF1F8380DE1881A50 /* GUI_Classes.h */ /* GUI_Classes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GUI_Classes.h; path = ../../Source/GUI_Classes.h; sourceTree = SOURCE_ROOT; };
 		B715A68E2146A5C6F367E7B8 /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = /Applications/JUCE/modules/juce_graphics; sourceTree = "<absolute>"; };
+		B91C48C9527907D53879CFA8 /* include_juce_audio_plugin_client_Standalone.cpp */ /* include_juce_audio_plugin_client_Standalone.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_Standalone.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp; sourceTree = SOURCE_ROOT; };
 		BAD5D0FC284C01D4809CFF9B /* juce_gui_extra */ /* juce_gui_extra */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_extra; path = /Applications/JUCE/modules/juce_gui_extra; sourceTree = "<absolute>"; };
 		BBC1B108083B83A92C1FC624 /* include_juce_audio_plugin_client_VST3.cpp */ /* include_juce_audio_plugin_client_VST3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_VST3.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp; sourceTree = SOURCE_ROOT; };
 		BBD394AF148CBB10425D39B9 /* Snapshot_Wrapper.h */ /* Snapshot_Wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Snapshot_Wrapper.h; path = ../../Source/Snapshot_Wrapper.h; sourceTree = SOURCE_ROOT; };
@@ -128,12 +146,14 @@
 		D33BD1D289F07E1464CC7ACF /* juce_audio_basics */ /* juce_audio_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_basics; path = /Applications/JUCE/modules/juce_audio_basics; sourceTree = "<absolute>"; };
 		D49C5F7C39D03B5515B8326E /* juce_events */ /* juce_events */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_events; path = /Applications/JUCE/modules/juce_events; sourceTree = "<absolute>"; };
 		D4F6401C69D2EE108C75D934 /* include_juce_audio_plugin_client_AUv3.mm */ /* include_juce_audio_plugin_client_AUv3.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_AUv3.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_AUv3.mm; sourceTree = SOURCE_ROOT; };
+		D94B47A4A9A6FC914D9F855B /* Info-Standalone_Plugin.plist */ /* Info-Standalone_Plugin.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Standalone_Plugin.plist"; path = "Info-Standalone_Plugin.plist"; sourceTree = SOURCE_ROOT; };
 		D9F99FDED5C1577A3FF26F80 /* Accelerate.framework */ /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		DB18B0B8EB37A591A3E0FDA0 /* juce_gui_basics */ /* juce_gui_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_basics; path = /Applications/JUCE/modules/juce_gui_basics; sourceTree = "<absolute>"; };
 		DBABBAEA81D5176C88D32F63 /* include_juce_audio_devices.mm */ /* include_juce_audio_devices.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_devices.mm; path = ../../JuceLibraryCode/include_juce_audio_devices.mm; sourceTree = SOURCE_ROOT; };
 		DE408DCA7F6779F46B9F3B6E /* PluginEditor.h */ /* PluginEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginEditor.h; path = ../../Source/PluginEditor.h; sourceTree = SOURCE_ROOT; };
 		E30DECB0D997C12427FED10D /* APVTS_Constants.h */ /* APVTS_Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = APVTS_Constants.h; path = ../../Source/APVTS_Constants.h; sourceTree = SOURCE_ROOT; };
 		E6B6B2FF7614FBF3C3EB2EFA /* CoreAudioKit.framework */ /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		E879F1B5A54490D283783C58 /* Standalone Plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "antimatter-ui-template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA32BC00B2C75A3A561A72B4 /* JuceHeader.h */ /* JuceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JuceHeader.h; path = ../../JuceLibraryCode/JuceHeader.h; sourceTree = SOURCE_ROOT; };
 		FDB7C12A09172654BDBDAE74 /* juce_data_structures */ /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_data_structures; path = /Applications/JUCE/modules/juce_data_structures; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
@@ -177,6 +197,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E0ED30400D87F66C5A191F53 = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FE7E75146FA94E808023960,
+				C8D92B147873DAD68AAA31EF,
+				D8356398143126778006CC99,
+				D26C7610D74090CEC3EFE22D,
+				2FFB99D0B35F2F9D90302035,
+				C539A22349596C7D96F343E3,
+				A9728BFF6C07B390312BF712,
+				4DA85F165B8DBD1F9206BB78,
+				1EDB6BE849D35BAC51F3BE44,
+				5D405680C29083C099B63909,
+				C9DEF95195EEA69D27492F39,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -205,6 +243,7 @@
 			children = (
 				6C9EEAE7073A0FEFDA0C9D84,
 				840125E164B953F89F47773B,
+				E879F1B5A54490D283783C58,
 				046EF52550AC64F08C5D1167,
 			);
 			name = Products;
@@ -275,13 +314,13 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
-		79775205B8CD3A179DF21EA8 /* verbose */ = {
+		79775205B8CD3A179DF21EA8 /* antimatter-ui-template */ = {
 			isa = PBXGroup;
 			children = (
 				39A1EA122F47F1E953010792,
 				5AF2ABBE971FC1B31EDFC90D,
 			);
-			name = verbose;
+			name = "antimatter-ui-template";
 			sourceTree = "<group>";
 		};
 		885BC26784FF426F2F56131D /* Resources */ = {
@@ -289,6 +328,7 @@
 			children = (
 				B26637098B40474695DA6110,
 				3F9BE6788847973A34A40DD0,
+				D94B47A4A9A6FC914D9F855B,
 				9794B47D784A351AACF189C0,
 			);
 			name = Resources;
@@ -314,6 +354,7 @@
 				061F8BE9E5978B6FDA923C48,
 				04D7A37380DD307BD494FE69,
 				D4F6401C69D2EE108C75D934,
+				B91C48C9527907D53879CFA8,
 				51CA46849A09016648B39372,
 				6E89F5790177D8BC61343126,
 				BBC1B108083B83A92C1FC624,
@@ -349,7 +390,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0AECAF1E21A870C804B3E464 /* verbose - AUv3 AppExtension */ = {
+		0AECAF1E21A870C804B3E464 /* antimatter-ui-template - AUv3 AppExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE42AFBC95B493068389B029;
 			buildPhases = (
@@ -362,12 +403,12 @@
 			dependencies = (
 				5C6D0EA7248186B2720E16C4,
 			);
-			name = "verbose - AUv3 AppExtension";
-			productName = verbose;
+			name = "antimatter-ui-template - AUv3 AppExtension";
+			productName = "antimatter-ui-template";
 			productReference = 840125E164B953F89F47773B;
 			productType = "com.apple.product-type.app-extension";
 		};
-		0DBABAFA725009FF05C63585 /* verbose - VST3 */ = {
+		0DBABAFA725009FF05C63585 /* antimatter-ui-template - VST3 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCFC326C5ED864EB0F997F7A;
 			buildPhases = (
@@ -380,12 +421,32 @@
 			dependencies = (
 				5CF35B7FAA05439DC7CADC8F,
 			);
-			name = "verbose - VST3";
-			productName = verbose;
+			name = "antimatter-ui-template - VST3";
+			productName = "antimatter-ui-template";
 			productReference = 6C9EEAE7073A0FEFDA0C9D84;
 			productType = "com.apple.product-type.bundle";
 		};
-		CB2FDE6DC8E4272EF30978CC /* verbose - Shared Code */ = {
+		330C2841073221EB49DE91F6 /* antimatter-ui-template - Standalone Plugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D53FEC483A52FB00BBABD21B;
+			buildPhases = (
+				8216AEBE5AC7EA1F7609E155,
+				B70E62FEF5E61AD470176762,
+				E0ED30400D87F66C5A191F53,
+				FCC236F843FE281A193B3E94,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6460E0CC6ACDFA8C2302E131,
+				03205090D8217EDB1B8FD3F6,
+			);
+			name = "antimatter-ui-template - Standalone Plugin";
+			productName = "antimatter-ui-template";
+			productReference = E879F1B5A54490D283783C58;
+			productType = "com.apple.product-type.application";
+		};
+		CB2FDE6DC8E4272EF30978CC /* antimatter-ui-template - Shared Code */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9BA6FCFB9329C1598328AC9;
 			buildPhases = (
@@ -395,8 +456,8 @@
 			);
 			dependencies = (
 			);
-			name = "verbose - Shared Code";
-			productName = verbose;
+			name = "antimatter-ui-template - Shared Code";
+			productName = "antimatter-ui-template";
 			productReference = 046EF52550AC64F08C5D1167;
 			productType = "com.apple.product-type.library.static";
 		};
@@ -407,7 +468,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1340;
-				ORGANIZATIONNAME = "";
+				ORGANIZATIONNAME = "antimatter";
 				TargetAttributes = {
 					0AECAF1E21A870C804B3E464 = {
 						SystemCapabilities = {
@@ -432,6 +493,28 @@
 						};
 					};
 					0DBABAFA725009FF05C63585 = {
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.HardenedRuntime = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+					330C2841073221EB49DE91F6 = {
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -513,12 +596,21 @@
 				4899D6862276BE4CEA6A2F68,
 				0DBABAFA725009FF05C63585,
 				0AECAF1E21A870C804B3E464,
+				330C2841073221EB49DE91F6,
 				CB2FDE6DC8E4272EF30978CC,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8216AEBE5AC7EA1F7609E155 = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7BEFFBAD2E73530AC929B28,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8946349466D15D97B106544A = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -538,6 +630,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B70E62FEF5E61AD470176762 = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D84910A0F66D84E32EA1E88,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D078B0E8E307035D623AE5DF = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -583,6 +683,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		03205090D8217EDB1B8FD3F6 = {
+			isa = PBXTargetDependency;
+			target = CB2FDE6DC8E4272EF30978CC;
+		};
 		1ACA21E82011C4970527B579 = {
 			isa = PBXTargetDependency;
 			target = CB2FDE6DC8E4272EF30978CC;
@@ -595,6 +699,10 @@
 			isa = PBXTargetDependency;
 			target = CB2FDE6DC8E4272EF30978CC;
 		};
+		6460E0CC6ACDFA8C2302E131 = {
+			isa = PBXTargetDependency;
+			target = 0AECAF1E21A870C804B3E464;
+		};
 		7083208453C8E87E97FBA138 = {
 			isa = PBXTargetDependency;
 			target = 0AECAF1E21A870C804B3E464;
@@ -602,6 +710,10 @@
 		C78572B5ECA7D601275EAF50 = {
 			isa = PBXTargetDependency;
 			target = 0DBABAFA725009FF05C63585;
+		};
+		D73DE2B39CA70E9166617115 = {
+			isa = PBXTargetDependency;
+			target = 330C2841073221EB49DE91F6;
 		};
 /* End PBXTargetDependency section */
 
@@ -652,10 +764,10 @@
 					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
 					"JucePlugin_Enable_ARA=0",
-					"JucePlugin_Name=\\\"verbose\\\"",
-					"JucePlugin_Desc=\\\"verbose\\\"",
-					"JucePlugin_Manufacturer=\\\"yourcompany\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_Name=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Desc=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Manufacturer=\\\"antimatter\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"www.antimatter.com\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x4a6c7169",
@@ -672,11 +784,11 @@
 					"JucePlugin_Vst3Category=\\\"Fx\\\"",
 					"JucePlugin_AUMainType=\\'aufx\\'",
 					"JucePlugin_AUSubType=JucePlugin_PluginCode",
-					"JucePlugin_AUExportPrefix=verboseAU",
-					"JucePlugin_AUExportPrefixQuoted=\\\"verboseAU\\\"",
+					"JucePlugin_AUExportPrefix=antimatteruitemplateAU",
+					"JucePlugin_AUExportPrefixQuoted=\\\"antimatteruitemplateAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_CFBundleIdentifier=com.yourcompany.verbose",
-					"JucePlugin_AAXIdentifier=com.yourcompany.verbose",
+					"JucePlugin_CFBundleIdentifier=com.antimatter.antimatteruitemplate",
+					"JucePlugin_AAXIdentifier=com.antimatter.antimatteruitemplate",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
 					"JucePlugin_AAXCategory=0",
@@ -684,13 +796,13 @@
 					"JucePlugin_AAXDisableMultiMono=0",
 					"JucePlugin_IAAType=0x61757278",
 					"JucePlugin_IAASubType=JucePlugin_PluginCode",
-					"JucePlugin_IAAName=\\\"yourcompany:\\ verbose\\\"",
+					"JucePlugin_IAAName=\\\"antimatter:\\ antimatter-ui-template\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.verbose.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.verbose.aradocumentarchive.1.0.0\\\"",
+					"JucePlugin_ARAFactoryID=\\\"com.antimatter.antimatteruitemplate.factory\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.antimatter.antimatteruitemplate.aradocumentarchive.1.0.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -712,9 +824,9 @@
 				LIBRARY_STYLE = Bundle;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_HEADER_SEARCH_PATHS = "/Applications/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Applications/JUCE/modules /Applications/JUCE/modules/juce_audio_plugin_client";
-				OTHER_LDFLAGS = "-bundle -lverbose -weak_framework Metal -weak_framework MetalKit";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.verbose;
-				PRODUCT_NAME = "verbose";
+				OTHER_LDFLAGS = "-bundle -lantimatter-ui-template -weak_framework Metal -weak_framework MetalKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antimatter.antimatteruitemplate;
+				PRODUCT_NAME = "antimatter-ui-template";
 				USE_HEADERMAP = NO;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
 				WRAPPER_EXTENSION = vst3;
@@ -762,7 +874,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME = "verbose";
+				PRODUCT_NAME = "antimatter-ui-template";
 				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wreorder";
 				ZERO_LINK = NO;
@@ -815,10 +927,10 @@
 					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
 					"JucePlugin_Enable_ARA=0",
-					"JucePlugin_Name=\\\"verbose\\\"",
-					"JucePlugin_Desc=\\\"verbose\\\"",
-					"JucePlugin_Manufacturer=\\\"yourcompany\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_Name=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Desc=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Manufacturer=\\\"antimatter\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"www.antimatter.com\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x4a6c7169",
@@ -835,11 +947,11 @@
 					"JucePlugin_Vst3Category=\\\"Fx\\\"",
 					"JucePlugin_AUMainType=\\'aufx\\'",
 					"JucePlugin_AUSubType=JucePlugin_PluginCode",
-					"JucePlugin_AUExportPrefix=verboseAU",
-					"JucePlugin_AUExportPrefixQuoted=\\\"verboseAU\\\"",
+					"JucePlugin_AUExportPrefix=antimatteruitemplateAU",
+					"JucePlugin_AUExportPrefixQuoted=\\\"antimatteruitemplateAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_CFBundleIdentifier=com.yourcompany.verbose",
-					"JucePlugin_AAXIdentifier=com.yourcompany.verbose",
+					"JucePlugin_CFBundleIdentifier=com.antimatter.antimatteruitemplate",
+					"JucePlugin_AAXIdentifier=com.antimatter.antimatteruitemplate",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
 					"JucePlugin_AAXCategory=0",
@@ -847,13 +959,13 @@
 					"JucePlugin_AAXDisableMultiMono=0",
 					"JucePlugin_IAAType=0x61757278",
 					"JucePlugin_IAASubType=JucePlugin_PluginCode",
-					"JucePlugin_IAAName=\\\"yourcompany:\\ verbose\\\"",
+					"JucePlugin_IAAName=\\\"antimatter:\\ antimatter-ui-template\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.verbose.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.verbose.aradocumentarchive.1.0.0\\\"",
+					"JucePlugin_ARAFactoryID=\\\"com.antimatter.antimatteruitemplate.factory\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.antimatter.antimatteruitemplate.aradocumentarchive.1.0.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -876,9 +988,9 @@
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_HEADER_SEARCH_PATHS = "/Applications/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Applications/JUCE/modules /Applications/JUCE/modules/juce_audio_plugin_client";
-				OTHER_LDFLAGS = "-bundle -lverbose -weak_framework Metal -weak_framework MetalKit";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.verbose;
-				PRODUCT_NAME = "verbose";
+				OTHER_LDFLAGS = "-bundle -lantimatter-ui-template -weak_framework Metal -weak_framework MetalKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antimatter.antimatteruitemplate;
+				PRODUCT_NAME = "antimatter-ui-template";
 				USE_HEADERMAP = NO;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
 				WRAPPER_EXTENSION = vst3;
@@ -892,6 +1004,115 @@
 				SDKROOT = macosx;
 			};
 			name = Release;
+		};
+		7609E1F903783E71DBA5E4EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_ARCHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG=1",
+					"DEBUG=1",
+					"JUCE_DISPLAY_SPLASH_SCREEN=1",
+					"JUCE_USE_DARK_SPLASH_SCREEN=1",
+					"JUCE_PROJUCER_VERSION=0x70002",
+					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
+					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
+					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
+					"JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1",
+					"JUCE_MODULE_AVAILABLE_juce_audio_processors=1",
+					"JUCE_MODULE_AVAILABLE_juce_audio_utils=1",
+					"JUCE_MODULE_AVAILABLE_juce_core=1",
+					"JUCE_MODULE_AVAILABLE_juce_data_structures=1",
+					"JUCE_MODULE_AVAILABLE_juce_events=1",
+					"JUCE_MODULE_AVAILABLE_juce_graphics=1",
+					"JUCE_MODULE_AVAILABLE_juce_gui_basics=1",
+					"JUCE_MODULE_AVAILABLE_juce_gui_extra=1",
+					"JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1",
+					"JUCE_VST3_CAN_REPLACE_VST2=0",
+					"JUCE_STRICT_REFCOUNTEDPOINTER=1",
+					"JucePlugin_Build_VST=0",
+					"JucePlugin_Build_VST3=0",
+					"JucePlugin_Build_AU=0",
+					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_AAX=0",
+					"JucePlugin_Build_Standalone=1",
+					"JucePlugin_Build_Unity=0",
+					"JucePlugin_Build_LV2=0",
+					"JucePlugin_Enable_IAA=0",
+					"JucePlugin_Enable_ARA=0",
+					"JucePlugin_Name=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Desc=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Manufacturer=\\\"antimatter\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"www.antimatter.com\\\"",
+					"JucePlugin_ManufacturerEmail=\\\"\\\"",
+					"JucePlugin_ManufacturerCode=0x4d616e75",
+					"JucePlugin_PluginCode=0x4a6c7169",
+					"JucePlugin_IsSynth=0",
+					"JucePlugin_WantsMidiInput=0",
+					"JucePlugin_ProducesMidiOutput=0",
+					"JucePlugin_IsMidiEffect=0",
+					"JucePlugin_EditorRequiresKeyboardFocus=0",
+					"JucePlugin_Version=1.0.0",
+					"JucePlugin_VersionCode=0x10000",
+					"JucePlugin_VersionString=\\\"1.0.0\\\"",
+					"JucePlugin_VSTUniqueID=JucePlugin_PluginCode",
+					"JucePlugin_VSTCategory=kPlugCategEffect",
+					"JucePlugin_Vst3Category=\\\"Fx\\\"",
+					"JucePlugin_AUMainType=\\'aufx\\'",
+					"JucePlugin_AUSubType=JucePlugin_PluginCode",
+					"JucePlugin_AUExportPrefix=antimatteruitemplateAU",
+					"JucePlugin_AUExportPrefixQuoted=\\\"antimatteruitemplateAU\\\"",
+					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
+					"JucePlugin_CFBundleIdentifier=com.antimatter.antimatteruitemplate",
+					"JucePlugin_AAXIdentifier=com.antimatter.antimatteruitemplate",
+					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
+					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
+					"JucePlugin_AAXCategory=0",
+					"JucePlugin_AAXDisableBypass=0",
+					"JucePlugin_AAXDisableMultiMono=0",
+					"JucePlugin_IAAType=0x61757278",
+					"JucePlugin_IAASubType=JucePlugin_PluginCode",
+					"JucePlugin_IAAName=\\\"antimatter:\\ antimatter-ui-template\\\"",
+					"JucePlugin_VSTNumMidiInputs=16",
+					"JucePlugin_VSTNumMidiOutputs=16",
+					"JucePlugin_ARAContentTypes=0",
+					"JucePlugin_ARATransformationFlags=0",
+					"JucePlugin_ARAFactoryID=\\\"com.antimatter.antimatteruitemplate.factory\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.antimatter.antimatteruitemplate.aradocumentarchive.1.0.0\\\"",
+					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
+					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
+					"JUCER_XCODE_MAC_F6D2F4CF=1",
+					"JUCE_APP_VERSION=1.0.0",
+					"JUCE_APP_VERSION_HEX=0x10000",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"/Applications/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
+					"$(SRCROOT)/../../JuceLibraryCode",
+					"/Applications/JUCE/modules",
+					"/Applications/JUCE/modules/juce_audio_plugin_client",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
+				INFOPLIST_PREPROCESS = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_HEADER_SEARCH_PATHS = "/Applications/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Applications/JUCE/modules /Applications/JUCE/modules/juce_audio_plugin_client";
+				OTHER_LDFLAGS = "-lantimatter-ui-template -weak_framework Metal -weak_framework MetalKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antimatter.antimatteruitemplate;
+				PRODUCT_NAME = "antimatter-ui-template";
+				USE_HEADERMAP = NO;
+				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
+			};
+			name = Debug;
 		};
 		8AB5FE8F39F10D6DF0A04DCE /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -939,10 +1160,10 @@
 					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
 					"JucePlugin_Enable_ARA=0",
-					"JucePlugin_Name=\\\"verbose\\\"",
-					"JucePlugin_Desc=\\\"verbose\\\"",
-					"JucePlugin_Manufacturer=\\\"yourcompany\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_Name=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Desc=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Manufacturer=\\\"antimatter\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"www.antimatter.com\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x4a6c7169",
@@ -959,11 +1180,11 @@
 					"JucePlugin_Vst3Category=\\\"Fx\\\"",
 					"JucePlugin_AUMainType=\\'aufx\\'",
 					"JucePlugin_AUSubType=JucePlugin_PluginCode",
-					"JucePlugin_AUExportPrefix=verboseAU",
-					"JucePlugin_AUExportPrefixQuoted=\\\"verboseAU\\\"",
+					"JucePlugin_AUExportPrefix=antimatteruitemplateAU",
+					"JucePlugin_AUExportPrefixQuoted=\\\"antimatteruitemplateAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_CFBundleIdentifier=com.yourcompany.verbose",
-					"JucePlugin_AAXIdentifier=com.yourcompany.verbose",
+					"JucePlugin_CFBundleIdentifier=com.antimatter.antimatteruitemplate",
+					"JucePlugin_AAXIdentifier=com.antimatter.antimatteruitemplate",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
 					"JucePlugin_AAXCategory=0",
@@ -971,13 +1192,13 @@
 					"JucePlugin_AAXDisableMultiMono=0",
 					"JucePlugin_IAAType=0x61757278",
 					"JucePlugin_IAASubType=JucePlugin_PluginCode",
-					"JucePlugin_IAAName=\\\"yourcompany:\\ verbose\\\"",
+					"JucePlugin_IAAName=\\\"antimatter:\\ antimatter-ui-template\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.verbose.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.verbose.aradocumentarchive.1.0.0\\\"",
+					"JucePlugin_ARAFactoryID=\\\"com.antimatter.antimatteruitemplate.factory\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.antimatter.antimatteruitemplate.aradocumentarchive.1.0.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -997,9 +1218,9 @@
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_HEADER_SEARCH_PATHS = "/Applications/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Applications/JUCE/modules /Applications/JUCE/modules/juce_audio_plugin_client";
-				OTHER_LDFLAGS = "-lverbose -weak_framework Metal -weak_framework MetalKit";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.verbose.verboseAUv3;
-				PRODUCT_NAME = "verbose";
+				OTHER_LDFLAGS = "-lantimatter-ui-template -weak_framework Metal -weak_framework MetalKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antimatter.antimatteruitemplate.antimatteruitemplateAUv3;
+				PRODUCT_NAME = "antimatter-ui-template";
 				USE_HEADERMAP = NO;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
 			};
@@ -1044,15 +1265,15 @@
 					"JucePlugin_Build_AU=0",
 					"JucePlugin_Build_AUv3=1",
 					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=0",
+					"JucePlugin_Build_Standalone=1",
 					"JucePlugin_Build_Unity=0",
 					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
 					"JucePlugin_Enable_ARA=0",
-					"JucePlugin_Name=\\\"verbose\\\"",
-					"JucePlugin_Desc=\\\"verbose\\\"",
-					"JucePlugin_Manufacturer=\\\"yourcompany\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_Name=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Desc=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Manufacturer=\\\"antimatter\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"www.antimatter.com\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x4a6c7169",
@@ -1069,11 +1290,11 @@
 					"JucePlugin_Vst3Category=\\\"Fx\\\"",
 					"JucePlugin_AUMainType=\\'aufx\\'",
 					"JucePlugin_AUSubType=JucePlugin_PluginCode",
-					"JucePlugin_AUExportPrefix=verboseAU",
-					"JucePlugin_AUExportPrefixQuoted=\\\"verboseAU\\\"",
+					"JucePlugin_AUExportPrefix=antimatteruitemplateAU",
+					"JucePlugin_AUExportPrefixQuoted=\\\"antimatteruitemplateAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_CFBundleIdentifier=com.yourcompany.verbose",
-					"JucePlugin_AAXIdentifier=com.yourcompany.verbose",
+					"JucePlugin_CFBundleIdentifier=com.antimatter.antimatteruitemplate",
+					"JucePlugin_AAXIdentifier=com.antimatter.antimatteruitemplate",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
 					"JucePlugin_AAXCategory=0",
@@ -1081,13 +1302,13 @@
 					"JucePlugin_AAXDisableMultiMono=0",
 					"JucePlugin_IAAType=0x61757278",
 					"JucePlugin_IAASubType=JucePlugin_PluginCode",
-					"JucePlugin_IAAName=\\\"yourcompany:\\ verbose\\\"",
+					"JucePlugin_IAAName=\\\"antimatter:\\ antimatter-ui-template\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.verbose.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.verbose.aradocumentarchive.1.0.0\\\"",
+					"JucePlugin_ARAFactoryID=\\\"com.antimatter.antimatteruitemplate.factory\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.antimatter.antimatteruitemplate.aradocumentarchive.1.0.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -1108,8 +1329,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_HEADER_SEARCH_PATHS = "/Applications/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Applications/JUCE/modules /Applications/JUCE/modules/juce_audio_plugin_client";
 				OTHER_LDFLAGS = "-weak_framework Metal -weak_framework MetalKit";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.verbose;
-				PRODUCT_NAME = "verbose";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antimatter.antimatteruitemplate;
+				PRODUCT_NAME = "antimatter-ui-template";
 				SKIP_INSTALL = YES;
 				USE_HEADERMAP = NO;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
@@ -1155,15 +1376,15 @@
 					"JucePlugin_Build_AU=0",
 					"JucePlugin_Build_AUv3=1",
 					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=0",
+					"JucePlugin_Build_Standalone=1",
 					"JucePlugin_Build_Unity=0",
 					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
 					"JucePlugin_Enable_ARA=0",
-					"JucePlugin_Name=\\\"verbose\\\"",
-					"JucePlugin_Desc=\\\"verbose\\\"",
-					"JucePlugin_Manufacturer=\\\"yourcompany\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_Name=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Desc=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Manufacturer=\\\"antimatter\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"www.antimatter.com\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x4a6c7169",
@@ -1180,11 +1401,11 @@
 					"JucePlugin_Vst3Category=\\\"Fx\\\"",
 					"JucePlugin_AUMainType=\\'aufx\\'",
 					"JucePlugin_AUSubType=JucePlugin_PluginCode",
-					"JucePlugin_AUExportPrefix=verboseAU",
-					"JucePlugin_AUExportPrefixQuoted=\\\"verboseAU\\\"",
+					"JucePlugin_AUExportPrefix=antimatteruitemplateAU",
+					"JucePlugin_AUExportPrefixQuoted=\\\"antimatteruitemplateAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_CFBundleIdentifier=com.yourcompany.verbose",
-					"JucePlugin_AAXIdentifier=com.yourcompany.verbose",
+					"JucePlugin_CFBundleIdentifier=com.antimatter.antimatteruitemplate",
+					"JucePlugin_AAXIdentifier=com.antimatter.antimatteruitemplate",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
 					"JucePlugin_AAXCategory=0",
@@ -1192,13 +1413,13 @@
 					"JucePlugin_AAXDisableMultiMono=0",
 					"JucePlugin_IAAType=0x61757278",
 					"JucePlugin_IAASubType=JucePlugin_PluginCode",
-					"JucePlugin_IAAName=\\\"yourcompany:\\ verbose\\\"",
+					"JucePlugin_IAAName=\\\"antimatter:\\ antimatter-ui-template\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.verbose.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.verbose.aradocumentarchive.1.0.0\\\"",
+					"JucePlugin_ARAFactoryID=\\\"com.antimatter.antimatteruitemplate.factory\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.antimatter.antimatteruitemplate.aradocumentarchive.1.0.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -1218,13 +1439,123 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_HEADER_SEARCH_PATHS = "/Applications/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Applications/JUCE/modules /Applications/JUCE/modules/juce_audio_plugin_client";
 				OTHER_LDFLAGS = "-weak_framework Metal -weak_framework MetalKit";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.verbose;
-				PRODUCT_NAME = "verbose";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antimatter.antimatteruitemplate;
+				PRODUCT_NAME = "antimatter-ui-template";
 				SKIP_INSTALL = YES;
 				USE_HEADERMAP = NO;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
 			};
 			name = Debug;
+		};
+		BBB90EF1311BEC1C57C1F67F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
+				DEAD_CODE_STRIPPING = YES;
+				EXCLUDED_ARCHS = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_NDEBUG=1",
+					"NDEBUG=1",
+					"JUCE_DISPLAY_SPLASH_SCREEN=1",
+					"JUCE_USE_DARK_SPLASH_SCREEN=1",
+					"JUCE_PROJUCER_VERSION=0x70002",
+					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
+					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
+					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
+					"JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1",
+					"JUCE_MODULE_AVAILABLE_juce_audio_processors=1",
+					"JUCE_MODULE_AVAILABLE_juce_audio_utils=1",
+					"JUCE_MODULE_AVAILABLE_juce_core=1",
+					"JUCE_MODULE_AVAILABLE_juce_data_structures=1",
+					"JUCE_MODULE_AVAILABLE_juce_events=1",
+					"JUCE_MODULE_AVAILABLE_juce_graphics=1",
+					"JUCE_MODULE_AVAILABLE_juce_gui_basics=1",
+					"JUCE_MODULE_AVAILABLE_juce_gui_extra=1",
+					"JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1",
+					"JUCE_VST3_CAN_REPLACE_VST2=0",
+					"JUCE_STRICT_REFCOUNTEDPOINTER=1",
+					"JucePlugin_Build_VST=0",
+					"JucePlugin_Build_VST3=0",
+					"JucePlugin_Build_AU=0",
+					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_AAX=0",
+					"JucePlugin_Build_Standalone=1",
+					"JucePlugin_Build_Unity=0",
+					"JucePlugin_Build_LV2=0",
+					"JucePlugin_Enable_IAA=0",
+					"JucePlugin_Enable_ARA=0",
+					"JucePlugin_Name=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Desc=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Manufacturer=\\\"antimatter\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"www.antimatter.com\\\"",
+					"JucePlugin_ManufacturerEmail=\\\"\\\"",
+					"JucePlugin_ManufacturerCode=0x4d616e75",
+					"JucePlugin_PluginCode=0x4a6c7169",
+					"JucePlugin_IsSynth=0",
+					"JucePlugin_WantsMidiInput=0",
+					"JucePlugin_ProducesMidiOutput=0",
+					"JucePlugin_IsMidiEffect=0",
+					"JucePlugin_EditorRequiresKeyboardFocus=0",
+					"JucePlugin_Version=1.0.0",
+					"JucePlugin_VersionCode=0x10000",
+					"JucePlugin_VersionString=\\\"1.0.0\\\"",
+					"JucePlugin_VSTUniqueID=JucePlugin_PluginCode",
+					"JucePlugin_VSTCategory=kPlugCategEffect",
+					"JucePlugin_Vst3Category=\\\"Fx\\\"",
+					"JucePlugin_AUMainType=\\'aufx\\'",
+					"JucePlugin_AUSubType=JucePlugin_PluginCode",
+					"JucePlugin_AUExportPrefix=antimatteruitemplateAU",
+					"JucePlugin_AUExportPrefixQuoted=\\\"antimatteruitemplateAU\\\"",
+					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
+					"JucePlugin_CFBundleIdentifier=com.antimatter.antimatteruitemplate",
+					"JucePlugin_AAXIdentifier=com.antimatter.antimatteruitemplate",
+					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
+					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
+					"JucePlugin_AAXCategory=0",
+					"JucePlugin_AAXDisableBypass=0",
+					"JucePlugin_AAXDisableMultiMono=0",
+					"JucePlugin_IAAType=0x61757278",
+					"JucePlugin_IAASubType=JucePlugin_PluginCode",
+					"JucePlugin_IAAName=\\\"antimatter:\\ antimatter-ui-template\\\"",
+					"JucePlugin_VSTNumMidiInputs=16",
+					"JucePlugin_VSTNumMidiOutputs=16",
+					"JucePlugin_ARAContentTypes=0",
+					"JucePlugin_ARATransformationFlags=0",
+					"JucePlugin_ARAFactoryID=\\\"com.antimatter.antimatteruitemplate.factory\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.antimatter.antimatteruitemplate.aradocumentarchive.1.0.0\\\"",
+					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
+					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
+					"JUCER_XCODE_MAC_F6D2F4CF=1",
+					"JUCE_APP_VERSION=1.0.0",
+					"JUCE_APP_VERSION_HEX=0x10000",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"/Applications/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
+					"$(SRCROOT)/../../JuceLibraryCode",
+					"/Applications/JUCE/modules",
+					"/Applications/JUCE/modules/juce_audio_plugin_client",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
+				INFOPLIST_PREPROCESS = NO;
+				LLVM_LTO = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_HEADER_SEARCH_PATHS = "/Applications/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Applications/JUCE/modules /Applications/JUCE/modules/juce_audio_plugin_client";
+				OTHER_LDFLAGS = "-lantimatter-ui-template -weak_framework Metal -weak_framework MetalKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antimatter.antimatteruitemplate;
+				PRODUCT_NAME = "antimatter-ui-template";
+				USE_HEADERMAP = NO;
+				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
+			};
+			name = Release;
 		};
 		C09933A248443282525C1DAA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1272,10 +1603,10 @@
 					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
 					"JucePlugin_Enable_ARA=0",
-					"JucePlugin_Name=\\\"verbose\\\"",
-					"JucePlugin_Desc=\\\"verbose\\\"",
-					"JucePlugin_Manufacturer=\\\"yourcompany\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_Name=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Desc=\\\"antimatter-ui-template\\\"",
+					"JucePlugin_Manufacturer=\\\"antimatter\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"www.antimatter.com\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x4a6c7169",
@@ -1292,11 +1623,11 @@
 					"JucePlugin_Vst3Category=\\\"Fx\\\"",
 					"JucePlugin_AUMainType=\\'aufx\\'",
 					"JucePlugin_AUSubType=JucePlugin_PluginCode",
-					"JucePlugin_AUExportPrefix=verboseAU",
-					"JucePlugin_AUExportPrefixQuoted=\\\"verboseAU\\\"",
+					"JucePlugin_AUExportPrefix=antimatteruitemplateAU",
+					"JucePlugin_AUExportPrefixQuoted=\\\"antimatteruitemplateAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_CFBundleIdentifier=com.yourcompany.verbose",
-					"JucePlugin_AAXIdentifier=com.yourcompany.verbose",
+					"JucePlugin_CFBundleIdentifier=com.antimatter.antimatteruitemplate",
+					"JucePlugin_AAXIdentifier=com.antimatter.antimatteruitemplate",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
 					"JucePlugin_AAXCategory=0",
@@ -1304,13 +1635,13 @@
 					"JucePlugin_AAXDisableMultiMono=0",
 					"JucePlugin_IAAType=0x61757278",
 					"JucePlugin_IAASubType=JucePlugin_PluginCode",
-					"JucePlugin_IAAName=\\\"yourcompany:\\ verbose\\\"",
+					"JucePlugin_IAAName=\\\"antimatter:\\ antimatter-ui-template\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.verbose.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.verbose.aradocumentarchive.1.0.0\\\"",
+					"JucePlugin_ARAFactoryID=\\\"com.antimatter.antimatteruitemplate.factory\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.antimatter.antimatteruitemplate.aradocumentarchive.1.0.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -1329,9 +1660,9 @@
 				INFOPLIST_PREPROCESS = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_HEADER_SEARCH_PATHS = "/Applications/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Applications/JUCE/modules /Applications/JUCE/modules/juce_audio_plugin_client";
-				OTHER_LDFLAGS = "-lverbose -weak_framework Metal -weak_framework MetalKit";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.verbose.verboseAUv3;
-				PRODUCT_NAME = "verbose";
+				OTHER_LDFLAGS = "-lantimatter-ui-template -weak_framework Metal -weak_framework MetalKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antimatter.antimatteruitemplate.antimatteruitemplateAUv3;
+				PRODUCT_NAME = "antimatter-ui-template";
 				USE_HEADERMAP = NO;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
 			};
@@ -1379,7 +1710,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "verbose";
+				PRODUCT_NAME = "antimatter-ui-template";
 				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wreorder";
 				ZERO_LINK = NO;
@@ -1429,6 +1760,15 @@
 			buildConfigurations = (
 				B0FFEC41C80FD11BB8B877A3,
 				93DBFE29D9F518CDEBA572E5,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D53FEC483A52FB00BBABD21B = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7609E1F903783E71DBA5E4EF,
+				BBB90EF1311BEC1C57C1F67F,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

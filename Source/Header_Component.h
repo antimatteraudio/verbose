@@ -12,7 +12,7 @@ class HeaderComponent: public juce::Component
     
 public:
     
-    HeaderComponent(VerboseAudioProcessor& p)
+    HeaderComponent(AntimatterUITemplateAudioProcessor& p)
     {
         title.setFont (juce::Font (22.0f, juce::Font::bold));
         title.setText("Chord Portal", juce::dontSendNotification);
@@ -22,12 +22,18 @@ public:
     
     void paint (juce::Graphics& g) override
     {
-        g.fillAll (juce::Colours::black);
+
     }
     
     void resized() override
     {
+//      TODO: Can we make this a global helper function?
         auto area = getLocalBounds();
+        area.removeFromRight(padding);
+        area.removeFromLeft(padding);
+        area.removeFromBottom(padding);
+        area.removeFromTop(padding);
+//
         title.setBounds(area);
     }
     
@@ -37,7 +43,7 @@ public:
 
     
 private:
-    
+    int padding = 16;
     juce::Label title;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (HeaderComponent)
 };

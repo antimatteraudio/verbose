@@ -41,8 +41,8 @@
 #if ! JUCE_DONT_DECLARE_PROJECTINFO
 namespace ProjectInfo
 {
-    const char* const  projectName    = "verbose";
-    const char* const  companyName    = "";
+    const char* const  projectName    = "antimatter-ui-template";
+    const char* const  companyName    = "antimatter";
     const char* const  versionString  = "1.0.0";
     const int          versionNumber  = 0x10000;
 }

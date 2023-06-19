@@ -10,16 +10,16 @@
 
 #pragma once
 #include "APVTS_Constants.h"
-#include "Colors.h"
+#include "StyleConstants.h"
 #include "Shapes.h"
 
 class IncDecComponent: public juce::Component
 {
     
 public:
-    IncDecComponent(VerboseAudioProcessor& p, juce::String paramID): audioProcessor(p), paramID(paramID)
+    IncDecComponent(AntimatterUITemplateAudioProcessor& p, juce::String paramID): audioProcessor(p), paramID(paramID)
     {
-        octaveSliderAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment (p.verboseAPVTS, paramID, OctaveSlider));
+        octaveSliderAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment (p.APVTS, paramID, OctaveSlider));
 
         juce::Range<double>* r = new juce::Range<double>(-2.0, 8.0);
         OctaveSlider.setSliderStyle(juce::Slider::SliderStyle::IncDecButtons);
@@ -59,7 +59,7 @@ private:
     juce::Slider OctaveSlider;
     juce::Label Label;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> octaveSliderAttachment;
-    VerboseAudioProcessor& audioProcessor;
+    AntimatterUITemplateAudioProcessor& audioProcessor;
     juce::String paramID;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (IncDecComponent)
 };

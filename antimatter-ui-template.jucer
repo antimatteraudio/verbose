@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="jlQIgl" name="verbose" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
-              pluginFormats="buildAUv3,buildVST3">
-  <MAINGROUP id="ImLGRz" name="verbose">
+<JUCERPROJECT id="jlQIgl" name="antimatter-ui-template" projectType="audioplug"
+              useAppConfig="0" addUsingNamespaceToJuceHeader="0" displaySplashScreen="1"
+              jucerFormatVersion="1" pluginFormats="buildAUv3,buildStandalone,buildVST3"
+              companyName="antimatter">
+  <MAINGROUP id="ImLGRz" name="antimatter-ui-template">
     <GROUP id="{2A8AA373-2931-7AB1-92EF-9C59E3B5435D}" name="Resources">
       <FILE id="FhpD7u" name="HelveticaNeue.ttc" compile="0" resource="1"
             file="Source/Resources/HelveticaNeue.ttc"/>
     </GROUP>
     <GROUP id="{94AB84F2-CBCA-2EC0-F4CE-FE29939B2EF3}" name="Source">
       <GROUP id="{EF22C78D-5E12-CED6-4A70-6C53046F70C0}" name="Styles">
-        <FILE id="mIyakQ" name="Colors.h" compile="0" resource="0" file="Source/Colors.h"/>
+        <FILE id="mIyakQ" name="StyleConstants.h" compile="0" resource="0"
+              file="Source/StyleConstants.h"/>
         <FILE id="DCnj0n" name="GUI_Classes.h" compile="0" resource="0" file="Source/GUI_Classes.h"/>
         <FILE id="ag5CN7" name="Shapes.h" compile="0" resource="0" file="Source/Shapes.h"/>
       </GROUP>
@@ -21,6 +23,9 @@
               file="Source/APVTS_Constants.h"/>
       </GROUP>
       <GROUP id="{A0721D3A-B1FC-EDD7-4926-D95A569DC02C}" name="Components">
+        <FILE id="Aqorsk" name="Snapshot_Wrapper.h" compile="0" resource="0"
+              file="Source/Snapshot_Wrapper.h"/>
+        <FILE id="iJbWRe" name="Scale_Wrapper.h" compile="0" resource="0" file="Source/Scale_Wrapper.h"/>
         <FILE id="yvDZZi" name="Header_Component.h" compile="0" resource="0"
               file="Source/Header_Component.h"/>
         <FILE id="qKuGg5" name="Main_Component.h" compile="0" resource="0"
@@ -47,8 +52,8 @@
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" targetName="verbose"/>
-        <CONFIGURATION isDebug="0" name="Release" targetName="verbose"/>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="antimatter-ui-template"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="antimatter-ui-template"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path="../../../../../../Applications/JUCE/modules"/>

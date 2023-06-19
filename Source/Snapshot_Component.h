@@ -16,28 +16,10 @@ class SnapshotComponent: public juce::Component
     
 public:
     
-    SnapshotComponent(VerboseAudioProcessor& p)
+    SnapshotComponent(AntimatterUITemplateAudioProcessor& p)
     {
         setLookAndFeel(&ScaleButtonLookAndFeel);
 
-        // Button Attachments
-//        button_one_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.one, button_one));
-//        button_two_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.two, button_two));
-//        button_three_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.three, button_three));
-//        button_four_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.four, button_four));
-//        button_five_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.five, button_five));
-//        button_six_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.six, button_six));
-//        button_seven_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.seven, button_seven));
-//        button_eight_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.eight, button_eight));
-//        button_nine_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.nine, button_nine));
-//        button_ten_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.ten, button_ten));
-//        button_eleven_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.eleven, button_eleven));
-//        button_twelve_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.twelve, button_twelve));
-//        button_thirteen_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.thirteen, button_thirteen));
-//        button_fourteen_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.fourteen, button_fourteen));
-//        button_fifteen_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.fifteen, button_fifteen));
-//        button_sixteen_attachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.verboseAPVTS, stepButtonIds.sixteen, button_sixteen));
-  
         for (int i = 0; i < step_buttons.size(); i++){
             step_buttons[i] -> setButtonText(std::to_string(i + 1));
             step_buttons[i] -> setBounds(i * buttonWidth, 0, buttonWidth, buttonHeight);
@@ -47,7 +29,8 @@ public:
     
     void paint (juce::Graphics& g) override
     {
-        g.fillAll (juce::Colours::black);
+//        auto area = getLocalBounds();
+//        RoundedRectangleBackground.drawBackground(g, area, midGrey, 8, 0);
     }
     
     void resized() override
@@ -59,11 +42,19 @@ public:
         using px = juce::Grid::Px;
         using gridItem = juce::GridItem;
         
+//        TODO: Can we make this a global helper function?
+        auto area = getLocalBounds();
+        area.removeFromRight(padding);
+        area.removeFromLeft(padding);
+        area.removeFromBottom(padding);
+        area.removeFromTop(padding);
+//
+        
         grid.items = { gridItem(button_one), gridItem(button_two), gridItem(button_three), gridItem(button_four), gridItem(button_five), gridItem(button_six), gridItem(button_seven), gridItem(button_eight), gridItem(button_nine), gridItem(button_ten), gridItem(button_eleven), gridItem(button_twelve), gridItem(button_thirteen), gridItem(button_fourteen), gridItem(button_fifteen), gridItem(button_sixteen) };
         grid.templateRows = { Track (fr(1)) };
         grid.templateColumns = { fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1), fr(1) };
-        grid.setGap(px(4));
-        grid.performLayout(juce::Rectangle<int> (0, 0, 800, 75));
+        grid.setGap(px(2));
+        grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), 75));
         
     }
     
@@ -135,7 +126,10 @@ private:
 
     int border = 4;
     int buttonHeight = 75;
-    int buttonWidth = 50;
+    int buttonWidth = 40;
+    // TODO: Can we make this a global constant?
+    int padding = 16;
+//    RoundedRectangleBackground RoundedRectangleBackground;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SnapshotComponent)
 };
 
