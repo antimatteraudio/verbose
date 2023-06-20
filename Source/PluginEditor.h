@@ -3,7 +3,7 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
-#include "Main_Component.h"
+#include "Sections_Main.h"
 
 //==============================================================================
 
@@ -23,8 +23,7 @@ private:
 
     AntimatterUITemplateAudioProcessor& audioProcessor;
 
-
-    SceneComponent scene;
+    Main mainComponent;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AntimatterUITemplateAudioProcessorEditor)
 };

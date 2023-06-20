@@ -11,8 +11,11 @@ namespace BinaryData
     extern const char*   HelveticaNeue_ttc;
     const int            HelveticaNeue_ttcSize = 5929340;
 
+    extern const char*   knob1_png;
+    const int            knob1_pngSize = 734301;
+
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 1;
+    const int namedResourceListSize = 2;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

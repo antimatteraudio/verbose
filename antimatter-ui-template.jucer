@@ -6,6 +6,8 @@
               companyName="antimatter">
   <MAINGROUP id="ImLGRz" name="antimatter-ui-template">
     <GROUP id="{4D6A5CEB-7469-1E24-85E2-69B2B174E174}" name="amui">
+      <FILE id="iw1RuK" name="amui.h" compile="0" resource="0" file="Source/amui.h"/>
+      <FILE id="kt99fM" name="demo.h" compile="0" resource="0" file="Source/demo.h"/>
       <FILE id="YurprL" name="amui_Combobox.h" compile="0" resource="0" file="Source/amui_Combobox.h"/>
       <FILE id="rRmWUb" name="amui_TextHeader.h" compile="0" resource="0"
             file="Source/amui_TextHeader.h"/>
@@ -20,6 +22,7 @@
     <GROUP id="{2A8AA373-2931-7AB1-92EF-9C59E3B5435D}" name="Resources">
       <FILE id="FhpD7u" name="HelveticaNeue.ttc" compile="0" resource="1"
             file="Source/Resources/HelveticaNeue.ttc"/>
+      <FILE id="pdRsLB" name="knob1.png" compile="0" resource="1" file="../../modules/amui/assets/knob1.png"/>
     </GROUP>
     <GROUP id="{94AB84F2-CBCA-2EC0-F4CE-FE29939B2EF3}" name="Source">
       <GROUP id="{DAFFEFDB-BE5C-D712-F54F-F38DB8987C4C}" name="Sections">
@@ -36,25 +39,6 @@
       <GROUP id="{ACBF6DA2-62F7-A29E-3D6E-FC7AD1B06F18}" name="APVTS">
         <FILE id="f6fjB2" name="APVTS_ParameterLayout.h" compile="0" resource="0"
               file="Source/APVTS_ParameterLayout.h"/>
-        <FILE id="bZFTgw" name="APVTS_Constants.h" compile="0" resource="0"
-              file="Source/APVTS_Constants.h"/>
-      </GROUP>
-      <GROUP id="{A0721D3A-B1FC-EDD7-4926-D95A569DC02C}" name="Components_old">
-        <FILE id="Aqorsk" name="Snapshot_Wrapper.h" compile="0" resource="0"
-              file="Source/Snapshot_Wrapper.h"/>
-        <FILE id="iJbWRe" name="Scale_Wrapper.h" compile="0" resource="0" file="Source/Scale_Wrapper.h"/>
-        <FILE id="yvDZZi" name="Header_Component.h" compile="0" resource="0"
-              file="Source/Header_Component.h"/>
-        <FILE id="qKuGg5" name="Main_Component.h" compile="0" resource="0"
-              file="Source/Main_Component.h"/>
-        <FILE id="PeUOBu" name="Scale_Component.h" compile="0" resource="0"
-              file="Source/Scale_Component.h"/>
-        <FILE id="wgvuRF" name="ScaleButton_Component.h" compile="0" resource="0"
-              file="Source/ScaleButton_Component.h"/>
-        <FILE id="Kcwz4w" name="IncDec_Component.h" compile="0" resource="0"
-              file="Source/IncDec_Component.h"/>
-        <FILE id="WrUuQS" name="Snapshot_Component.h" compile="0" resource="0"
-              file="Source/Snapshot_Component.h"/>
       </GROUP>
       <FILE id="HlyNqz" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>

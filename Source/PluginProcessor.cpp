@@ -9,7 +9,6 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 #include "APVTS_ParameterLayout.h"
-#include "APVTS_Constants.h"
 
 //==============================================================================
 AntimatterUITemplateAudioProcessor::AntimatterUITemplateAudioProcessor()
@@ -135,19 +134,14 @@ void AntimatterUITemplateAudioProcessor::processBlock (juce::AudioBuffer<float>&
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
     
-    auto toggleStateC = APVTS.getRawParameterValue(scaleButtonToggleState.C);
+    auto ImageKnobDemoState = APVTS.getRawParameterValue("TextButtonDemoState");
     
-    auto toggleStateCSharp = APVTS.getRawParameterValue(scaleButtonToggleState.CSharp);
-    
-    auto scaleButtonOctaveStateC = APVTS.getRawParameterValue(scaleButtonOctaveState.C);
-    auto scaleButtonOctaveStateCSharp = APVTS.getRawParameterValue(scaleButtonOctaveState.CSharp);
     
 //    getGuiParams();
     
 
     
-    std::cout << toggleStateC->load() << std::endl << toggleStateCSharp->load() << std::endl;
-    std::cout << scaleButtonOctaveStateC->load() << scaleButtonOctaveStateCSharp->load() << std::endl;
+    std::cout << ImageKnobDemoState->load() << "TESTYTEST666420" << '\n';
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 

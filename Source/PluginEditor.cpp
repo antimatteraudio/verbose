@@ -2,13 +2,14 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
-#include "Scale_Component.h"
+#include "Sections_Main.h"
 
 //==============================================================================
 AntimatterUITemplateAudioProcessorEditor::AntimatterUITemplateAudioProcessorEditor (AntimatterUITemplateAudioProcessor& p)
-    : AudioProcessorEditor (&p), audioProcessor (p), scene(p)
+    : AudioProcessorEditor (&p), audioProcessor (p), mainComponent(p)
 {
-    addAndMakeVisible(scene);
+    mainComponent.setBounds (0, 0, getWidth(), getHeight());
+    addAndMakeVisible(mainComponent);
     
     setSize (800, 600);
 }
@@ -27,5 +28,5 @@ void AntimatterUITemplateAudioProcessorEditor::paint (juce::Graphics& g)
 
 void AntimatterUITemplateAudioProcessorEditor::resized()
 {
-    scene.setBounds (0, 0, getWidth(), getHeight());
+    mainComponent.setBounds (0, 0, getWidth(), getHeight());
 }

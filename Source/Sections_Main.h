@@ -9,7 +9,7 @@
 */
 
 #pragma once
-#include "amui_ImageKnob.h"
+#include "amui.h"
 #include "GUI_Classes.h"
 #include "PluginEditor.h"
 #include "PluginProcessor.h"
@@ -18,21 +18,22 @@ class Main: public juce::Component
 {
     
 public:
-    
-    
-    Main(AntimatterUITemplateAudioProcessor& p): ImageKnob(p, "ImageKnobAttachment")
+    Main(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p)
     {
 
         auto area = getLocalBounds();
     
-        imageKnob.setBounds (area);
-        addAndMakeVisible(imageKnob);
+//        imageKnob.setBounds (area);
+//        addAndMakeVisible(imageKnob);
+        
+        textButton.setBounds (area);
+        addAndMakeVisible(textButton);
 
     }
     
     void paint (juce::Graphics& g) override
     {
-        auto area = getLocalBounds();
+
     }
     
     void resized() override
@@ -50,7 +51,7 @@ public:
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
         
-        grid.items = { gridItem(imageKnob) };
+        grid.items = { gridItem(textButton) };
         grid.templateRows = { Track (fr(1)) };
         grid.templateColumns = { fr(1) };
         grid.setGap(px(gap));
@@ -64,7 +65,10 @@ public:
 private:
     int padding = 20;
     int gap = 2;
-    ImageKnob imageKnob;
+    AntimatterUITemplateAudioProcessor& classMemberProcessor;
+    amui::ImageKnob imageKnob {juce::ImageCache::getFromMemory(BinaryData::knob1_png, BinaryData::knob1_pngSize), "ImageKnobDemoState", classMemberProcessor};
+    amui::TextButton textButton { Main::classMemberProcessor, "TextButtonDemoState", "Poopy" };
+//    AntimatterUITemplateAudioProcessor& classMemberProcessor;
     RoundedRectangleBackground RoundedRectangleBackground;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Main)
 };
