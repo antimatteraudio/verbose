@@ -21,13 +21,14 @@ public:
     Main(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p)
     {
 
-        auto area = getLocalBounds();
+//        auto area = getLocalBounds();
     
 //        imageKnob.setBounds (area);
-//        addAndMakeVisible(imageKnob);
+        addAndMakeVisible(imageKnob);
         
-        textButton.setBounds (area);
+//        textButton.setBounds (area);
         addAndMakeVisible(textButton);
+        addAndMakeVisible(comboBox);
 
     }
     
@@ -51,11 +52,13 @@ public:
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
         
-        grid.items = { gridItem(textButton) };
+        grid.items = { gridItem(textButton), gridItem(imageKnob), gridItem(comboBox) };
         grid.templateRows = { Track (fr(1)) };
-        grid.templateColumns = { fr(1) };
+        grid.templateColumns = { fr(1), fr(1), fr(1) };
         grid.setGap(px(gap));
         grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), 75));
+        foo.add("runkl");
+        foo.add("dax");
     }
     
     ~Main(){
@@ -66,9 +69,10 @@ private:
     int padding = 20;
     int gap = 2;
     AntimatterUITemplateAudioProcessor& classMemberProcessor;
+    juce::StringArray foo{ "runkl", "dax"};
     amui::ImageKnob imageKnob {juce::ImageCache::getFromMemory(BinaryData::knob1_png, BinaryData::knob1_pngSize), "ImageKnobDemoState", classMemberProcessor};
     amui::TextButton textButton { Main::classMemberProcessor, "TextButtonDemoState", "Poopy" };
-//    AntimatterUITemplateAudioProcessor& classMemberProcessor;
+    amui::ComboBox comboBox { Main::classMemberProcessor, "ComboBoxDemoState", foo};
     RoundedRectangleBackground RoundedRectangleBackground;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Main)
 };

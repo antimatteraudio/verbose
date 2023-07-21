@@ -13,11 +13,14 @@ public:
     numFrames_(numFrames),
     isHorizontal_(stripIsHorizontal)
     {
-
+                auto area = getLocalBounds();
+            
+                Slider.setBounds (area);
+        ImageKnobAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment (p.APVTS, attachmentId, Slider));
 
         if(filmStrip.isValid())
         {
-            ImageKnobAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment (p.APVTS, attachmentId, Slider));
+
 
             setTextBoxStyle(NoTextBox, 0, 0, 0);
             setSliderStyle(RotaryVerticalDrag);

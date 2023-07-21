@@ -134,14 +134,16 @@ void AntimatterUITemplateAudioProcessor::processBlock (juce::AudioBuffer<float>&
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
     
-    auto ImageKnobDemoState = APVTS.getRawParameterValue("TextButtonDemoState");
+    auto TextButtonDemoState = APVTS.getRawParameterValue("TextButtonDemoState");
+    
+    auto ImageKnobDemoState = APVTS.getRawParameterValue("ImageKnobDemoState");
     
     
 //    getGuiParams();
     
 
     
-    std::cout << ImageKnobDemoState->load() << "TESTYTEST666420" << '\n';
+    std::cout << '\n' << TextButtonDemoState->load() << " " << "TextButtonDemoState" << '\n' << ImageKnobDemoState->load() << " " << "ImageKnobDemoState" <<'\n';
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 

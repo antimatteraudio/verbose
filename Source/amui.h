@@ -11,10 +11,12 @@
 #pragma once
 #include "amui_ImageKnob.h"
 #include "amui_TextButton.h"
+#include "amui_ComboBox.h"
 
 namespace amui {
     class ImageKnob;
     class TextButton;
+    class ComboBox;
 }
 
 
